@@ -1,626 +1,454 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Zaki Bagier, portfolio, Zaki, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
-    <meta name="description" content="Welcome to Zaki's Portfolio. Full-Stack Web Developer" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Favicon -->
-    <link id='favicon' rel="shortcut icon" href="./assets/images/favicon2.png" type="image/x-png">
-    <title>Portofolio | Zaki Bagier</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaki Assegaf — AI Content Creator</title>
+<meta name="description" content="Zaki Assegaf — AI Content Creator, Video Editor, dan Sosmed Manager. Produksi video pemasaran berbasis AI dari brief sampai siap tayang.">
+<style>
+
+@font-face{ font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
+@font-face{ font-family:'Instrument Sans'; src:url('fonts/InstrumentSans-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:'Instrument Sans'; src:url('fonts/InstrumentSans-Bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-display:swap; }
+@font-face{ font-family:'Instrument Sans'; src:url('fonts/InstrumentSans-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
+
+:root{
+  --paper:#F7F8FC;
+  --card:#FFFFFF;
+  --ink:#14152B;
+  --ink-soft:#585A72;
+  --ink-faint:#9799AE;
+  --brand:#1334F0;
+  --brand-dark:#0C238C;
+  --baby-blue:#B7E3FF;
+  --lilac:#C9B4F7;
+  --fuchsia:#E91E63;
+  --line: rgba(20,21,43,0.13);
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'Instrument Sans', Arial, sans-serif;
+  --maxw: 1120px;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+section{ position:relative; padding:76px 0; }
+.kicker{ font-family:var(--serif); font-style:italic; font-size:20px; color:var(--brand); margin-bottom:8px; }
+h2.heading{ font-family:var(--serif); font-weight:400; font-size:40px; line-height:1.08; color:var(--ink); margin-bottom:28px; }
+.chip{ font-size:13.5px; padding:7px 15px; border:1px solid var(--line); border-radius:20px; color:var(--ink-soft); white-space:nowrap; }
+.btn{
+  display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-weight:700; font-size:15px;
+  padding:14px 26px; border-radius:30px; transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary{ background:var(--brand); color:#fff; box-shadow:0 8px 20px rgba(19,52,240,0.28); }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 26px rgba(19,52,240,0.36); }
+.btn-ghost{ border:1.5px solid var(--line); color:var(--ink); }
+.btn-ghost:hover{ border-color:var(--brand); color:var(--brand); }
+.deco-blob{ position:absolute; border-radius:50%; z-index:0; pointer-events:none; }
+
+/* ---------- header ---------- */
+header{
+  position:sticky; top:0; z-index:50; background:rgba(247,248,252,0.86); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+header .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 24px; }
+.brandmark{ display:flex; align-items:center; gap:9px; }
+.brandmark img{ width:24px; height:24px; object-fit:contain; }
+.brandmark span{ font-weight:700; font-size:15px; }
+header .btn-primary{ padding:10px 20px; font-size:14px; }
+
+/* ---------- hero ---------- */
+.hero{ padding:64px 0 88px 0; overflow:hidden; }
+.hero .wrap{ display:flex; align-items:center; gap:48px; }
+.hero-text{ flex:1.15; position:relative; z-index:1; }
+.hero-eyebrow{ font-size:15px; color:var(--ink-faint); margin-bottom:10px; }
+.hero-name{ font-family:var(--serif); font-weight:400; font-size:72px; line-height:0.98; color:var(--ink); }
+.hero-role{ font-family:var(--sans); font-weight:700; font-size:19px; color:var(--brand); margin-top:18px; line-height:1.5; }
+.hero-desc{ font-family:var(--serif); font-style:italic; font-size:21px; color:var(--ink-soft); margin-top:14px; max-width:480px; line-height:1.4; }
+.hero-cta{ display:flex; gap:14px; margin-top:30px; flex-wrap:wrap; }
+.hero-visual{ flex:1; position:relative; display:flex; justify-content:center; align-items:flex-end; min-width:260px; }
+.hero-blob{ position:absolute; right:10%; bottom:0; width:280px; height:400px; background:var(--lilac); opacity:0.55; border-radius:150px 150px 40px 40px; z-index:0; }
+.hero-photo{ position:relative; z-index:1; height:380px; filter:drop-shadow(0 16px 26px rgba(20,21,43,0.18)); }
+
+/* ---------- about ---------- */
+.about-body{ display:flex; gap:44px; align-items:flex-start; }
+.about-left{ flex:1.2; }
+.lead{ font-family:var(--serif); font-style:italic; font-size:23px; color:var(--ink); line-height:1.34; margin-bottom:16px; max-width:540px; }
+.body-text{ font-size:16px; color:var(--ink-soft); line-height:1.65; max-width:520px; }
+.focus-row{ display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+.about-right{ flex:1; background:var(--card); border-radius:20px; padding:28px 30px; border:1px solid var(--line); }
+.mini-label{ font-size:13.5px; color:var(--brand); font-weight:700; margin-bottom:16px; }
+.approach-list{ list-style:none; display:flex; flex-direction:column; gap:14px; }
+.approach-list li{ display:flex; gap:13px; align-items:baseline; }
+.approach-list .num{ font-family:var(--serif); font-size:18px; color:var(--lilac); width:22px; flex-shrink:0; }
+.approach-list .txt{ font-size:15px; color:var(--ink); line-height:1.4; }
+
+/* ---------- services ---------- */
+.service-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.service-card{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px; }
+.s-dot{ width:12px; height:12px; border-radius:50%; margin-bottom:14px; }
+.s-title{ font-weight:700; font-size:18px; margin-bottom:7px; }
+.s-desc{ font-size:14.5px; color:var(--ink-soft); line-height:1.55; }
+
+/* ---------- showcase ---------- */
+.showcase-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.video-card{ background:var(--card); border:1px solid var(--line); border-radius:18px; overflow:hidden; }
+.video-card video{ width:100%; aspect-ratio:9/16; object-fit:cover; background:#000; display:block; }
+.video-meta{ padding:16px 18px; }
+.vc-title{ font-weight:700; font-size:15.5px; }
+.vc-tag{ font-size:13px; color:var(--ink-faint); margin-top:3px; }
+.showcase-note{ margin-top:20px; font-size:14px; color:var(--ink-faint); text-align:center; }
+
+/* ---------- process ---------- */
+.step-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.step-card{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; }
+.step-badge{ width:30px; height:30px; border-radius:50%; background:var(--brand); color:#fff; font-family:var(--serif); font-size:15px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+.step-title{ font-weight:700; font-size:16px; margin-bottom:5px; }
+.step-desc{ font-size:13.5px; color:var(--ink-soft); line-height:1.45; }
+
+/* ---------- stack ---------- */
+.tool-group{ margin-bottom:16px; }
+.tool-group:last-child{ margin-bottom:0; }
+.tg-label{ font-size:14px; font-weight:700; color:var(--brand); margin-bottom:6px; }
+.tool-row{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding:9px 0; border-bottom:1px solid var(--line); }
+.t-name{ font-size:16px; font-weight:700; }
+.t-desc{ font-size:13.5px; color:var(--ink-faint); text-align:right; }
+
+/* ---------- pricing ---------- */
+.price-card{ background:var(--brand); color:#fff; border-radius:24px; padding:34px; position:relative; overflow:hidden; }
+.pc-ring{ position:absolute; right:-60px; top:-60px; width:180px; height:180px; border-radius:50%; border:32px solid rgba(255,255,255,0.08); }
+.pc-top{ display:flex; flex-wrap:wrap; gap:16px; align-items:baseline; justify-content:space-between; position:relative; }
+.pc-kicker{ font-size:13px; color:rgba(255,255,255,0.75); margin-bottom:6px; }
+.pc-title{ font-family:var(--serif); font-size:26px; }
+.pc-price{ font-family:var(--serif); font-size:42px; line-height:1; }
+.pc-sub{ font-size:13px; color:rgba(255,255,255,0.75); margin-top:4px; }
+.pc-list{ list-style:none; display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:22px; margin-bottom:20px; position:relative; }
+.pc-list li{ font-size:14.5px; padding-left:22px; position:relative; }
+.pc-list li:before{ content:'✓'; position:absolute; left:0; color:var(--lilac); font-weight:700; }
+.pc-note{ font-size:13px; color:rgba(255,255,255,0.68); line-height:1.6; position:relative; border-top:1px solid rgba(255,255,255,0.18); padding-top:14px; }
+
+/* ---------- clients ---------- */
+.client-list{ border-top:1px solid var(--line); }
+.client-row{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding:16px 2px; border-bottom:1px solid var(--line); }
+.c-name{ font-family:var(--serif); font-size:26px; }
+.c-tag{ font-size:13.5px; color:var(--ink-faint); white-space:nowrap; }
+
+/* ---------- proof ---------- */
+.proof-body{ display:flex; gap:44px; flex-wrap:wrap; }
+.proof-left{ flex:1; min-width:240px; }
+.stat-num{ font-family:var(--serif); font-size:56px; color:var(--brand); line-height:1; }
+.stat-label{ font-size:14px; color:var(--ink-faint); margin-top:6px; }
+.platform-row{ display:flex; flex-wrap:wrap; gap:9px; margin-top:18px; }
+.proof-right{ flex:1.1; min-width:260px; display:flex; flex-direction:column; gap:15px; }
+.why-item{ border-left:3px solid var(--lilac); padding-left:16px; }
+.why-title{ font-weight:700; font-size:16px; margin-bottom:3px; }
+.why-desc{ font-size:13.5px; color:var(--ink-soft); line-height:1.5; }
+
+/* ---------- contact ---------- */
+.contact{ background:var(--ink); color:#fff; border-radius:28px 28px 0 0; margin-top:20px; }
+.contact .kicker{ color:var(--lilac); }
+.contact-heading{ font-family:var(--serif); font-weight:400; font-size:48px; line-height:1.08; color:#fff; }
+.contact-lead{ font-size:16px; color:rgba(255,255,255,0.72); line-height:1.6; max-width:520px; margin-top:16px; }
+.contact-cta{ display:flex; gap:14px; margin-top:28px; flex-wrap:wrap; }
+.contact .btn-ghost{ border-color:rgba(255,255,255,0.3); color:#fff; }
+.contact .btn-ghost:hover{ border-color:#fff; }
+.contact-grid{ display:flex; flex-wrap:wrap; gap:28px; margin-top:44px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.14); }
+.contact-grid .item .label{ font-size:12px; color:rgba(255,255,255,0.55); margin-bottom:5px; }
+.contact-grid .item .value{ font-size:16px; font-weight:700; }
+footer.sitefoot{ text-align:center; padding:22px 0; font-size:12.5px; color:rgba(255,255,255,0.45); }
+
+/* ---------- mobile ---------- */
+@media (max-width: 860px){
+  section{ padding:52px 0; }
+  h2.heading{ font-size:30px; margin-bottom:20px; }
+  .hero{ padding:40px 0 56px 0; }
+  .hero .wrap{ flex-direction:column; gap:36px; }
+  .hero-name{ font-size:52px; }
+  .hero-desc{ max-width:100%; }
+  .hero-visual{ order:-1; width:100%; }
+  .hero-photo{ height:300px; }
+  .hero-blob{ width:220px; height:300px; right:50%; transform:translateX(50%); }
+  .about-body{ flex-direction:column; }
+  .service-grid{ grid-template-columns:1fr; }
+  .showcase-grid{ grid-template-columns:1fr; max-width:360px; margin:0 auto; }
+  .step-grid{ grid-template-columns:1fr; }
+  .proof-body{ flex-direction:column; }
+  .pc-top{ flex-direction:column; align-items:flex-start; }
+  .pc-list li{ width:100%; }
+  .contact-heading{ font-size:36px; }
+  header .brandmark span{ display:none; }
+}
+</style>
 </head>
-<body oncontextmenu="return false">
+<body>
 
-<!-- pre loader -->
-<!-- <div class="loader-container">
-  <img draggable="false" src="./assets/images/preloader.gif" alt="">
-</div> -->
-
-<!-- navbar starts -->
 <header>
-        <a href="/" class="logo"><i class=""></i> ZAKI BAGIER</a>
-
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-<!--             <li><a href="#education">Testimonial</a></li> -->
-            <li><a href="#work">Work</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+  <div class="wrap">
+    <div class="brandmark">
+      <img src="assets/logo.png" alt="Zaki Assegaf logo">
+      <span>Zaki Assegaf</span>
+    </div>
+    <a class="btn btn-primary" href="https://wa.me/6285752040156" target="_blank" rel="noopener">Chat WhatsApp</a>
+  </div>
 </header>
-<!-- navbar ends -->
 
+<!-- HERO -->
+<section class="hero">
+  <div class="deco-blob" style="left:-120px; top:40px; width:260px; height:260px; background:var(--baby-blue); opacity:0.4;"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Halo, saya</div>
+      <div class="hero-name">Zaki<br>Assegaf</div>
+      <div class="hero-role">AI Content Creator&nbsp;&nbsp;/&nbsp;&nbsp;Video Editor&nbsp;&nbsp;/&nbsp;&nbsp;Sosmed Manager</div>
+      <div class="hero-desc">Mengubah brief menjadi video pemasaran yang siap tayang, dibangun cepat dengan bantuan AI.</div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://wa.me/6285752040156" target="_blank" rel="noopener">Chat di WhatsApp</a>
+        <a class="btn btn-ghost" href="https://instagram.com/zakibagier" target="_blank" rel="noopener">Lihat @zakibagier</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <img class="hero-photo" src="assets/zaki_portrait.png" alt="Foto Zaki Assegaf">
+    </div>
+  </div>
+</section>
 
-<!-- hero section starts -->
-<section class="home" id="home">
-    <div id="particles-js"></div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">About</div>
+    <h2 class="heading">Tentang Saya</h2>
+    <div class="about-body">
+      <div class="about-left">
+        <p class="lead">Bukan sekadar edit video. Saya membangun proses dari brief sampai video siap tayang, dengan AI sebagai bagian dari cara kerja.</p>
+        <p class="body-text">Saya Zaki Assegaf, AI Content Creator, Video Editor, dan Sosmed Manager yang membangun sistem produksi video pemasaran berbasis AI. Saya terbiasa menerima brief client, merancang prompt dan alur kerja AI, memilih hasil terbaik, lalu menyusun video yang siap dipakai untuk promosi.</p>
+        <div class="focus-row">
+          <span class="chip">Product Marketing</span>
+          <span class="chip">Short-form Video</span>
+          <span class="chip">AI Visual Production</span>
+          <span class="chip">Social Media</span>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="mini-label">Pendekatan Kerja</div>
+        <ol class="approach-list">
+          <li><span class="num">01</span><span class="txt">Pahami produk & brief client</span></li>
+          <li><span class="num">02</span><span class="txt">Rancang konsep & prompt AI</span></li>
+          <li><span class="num">03</span><span class="txt">Generate visual / video dengan AI</span></li>
+          <li><span class="num">04</span><span class="txt">Edit, pacing, caption & finishing</span></li>
+          <li><span class="num">05</span><span class="txt">Siapkan output sesuai platform</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="content">
-    <h2>Hi There,<br/> I'm Zaki <span>Bagier</span></h2>
-    <p>i am into <span class="typing-text"></span></p>
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/zakiassegafu/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-          <li><a class="github" aria-label="GitHub" href="https://github.com/zakinajwahabsyi" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="whatsapp" aria-label="Whatsapp" href="https://wa.me/6285752040156" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-          <li><a class="telegram" aria-label="Telegram" href="https://t.me/zakiassegafu" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
-          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/najwachauro"><i class="fab fa-instagram" target="_blank"></i></a></li>
+<!-- SERVICES -->
+<section id="services" style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="kicker">Services</div>
+    <h2 class="heading">Layanan</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="s-dot" style="background:var(--brand)"></div>
+        <div class="s-title">AI Video Production</div>
+        <div class="s-desc">Mengubah brief produk menjadi visual dan video pemasaran berbasis AI.</div>
+      </div>
+      <div class="service-card">
+        <div class="s-dot" style="background:var(--fuchsia)"></div>
+        <div class="s-title">Video Editing</div>
+        <div class="s-desc">Cutting, pacing, transisi, sound, caption, dan hook, difinalisasi di CapCut.</div>
+      </div>
+      <div class="service-card">
+        <div class="s-dot" style="background:var(--lilac)"></div>
+        <div class="s-title">Content Adaptation</div>
+        <div class="s-desc">Menyesuaikan format dan pesan untuk TikTok, Instagram, Facebook, dan YouTube.</div>
+      </div>
+      <div class="service-card">
+        <div class="s-dot" style="background:var(--brand-dark)"></div>
+        <div class="s-title">Sosmed Management</div>
+        <div class="s-desc">Mengatur jadwal posting, caption, dan engagement akun sosial media client.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE -->
+<section id="showcase">
+  <div class="deco-blob" style="right:-100px; top:60px; width:240px; height:240px; background:var(--lilac); opacity:0.35;"></div>
+  <div class="wrap">
+    <div class="kicker">Showcase</div>
+    <h2 class="heading">Hasil Video</h2>
+    <div class="showcase-grid">
+      <div class="video-card">
+        <video controls preload="none" playsinline poster="posters/rak-trailer.jpg">
+          <source src="videos/rak-trailer.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta">
+          <div class="vc-title">Rezky Abadi Karoseri</div>
+          <div class="vc-tag">AI Presenter Trailer</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <video controls preload="none" playsinline poster="posters/alfaplast.jpg">
+          <source src="videos/alfaplast.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta">
+          <div class="vc-title">Alfaplast</div>
+          <div class="vc-tag">Product & Problem-Solution Video</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <video controls preload="none" playsinline poster="posters/syntif.jpg">
+          <source src="videos/syntif.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta">
+          <div class="vc-title">Syntif</div>
+          <div class="vc-tag">Perfume Lifestyle Ad</div>
+        </div>
+      </div>
+    </div>
+    <p class="showcase-note">Tap video untuk memutar · Lebih banyak hasil di @zakibagier</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="kicker">Process</div>
+    <h2 class="heading">Proses Kerja</h2>
+    <div class="step-grid">
+      <div class="step-card"><div class="step-badge">01</div><div class="step-title">Brief</div><div class="step-desc">Produk, target, referensi, dan request client.</div></div>
+      <div class="step-card"><div class="step-badge">02</div><div class="step-title">Concept</div><div class="step-desc">Hook, angle, scene, dan CTA.</div></div>
+      <div class="step-card"><div class="step-badge">03</div><div class="step-title">Prompt</div><div class="step-desc">Menyusun prompt visual dan video.</div></div>
+      <div class="step-card"><div class="step-badge">04</div><div class="step-title">Production</div><div class="step-desc">Generate asset AI, pilih hasil terbaik.</div></div>
+      <div class="step-card"><div class="step-badge">05</div><div class="step-title">Edit</div><div class="step-desc">Pacing, audio, dan caption di CapCut.</div></div>
+      <div class="step-card"><div class="step-badge">06</div><div class="step-title">Delivery</div><div class="step-desc">Video final siap dipublikasikan.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI STACK + PRICING -->
+<section id="pricing">
+  <div class="wrap" style="display:flex; gap:44px; flex-wrap:wrap; align-items:flex-start;">
+    <div style="flex:1; min-width:280px;">
+      <div class="kicker">Tools</div>
+      <h2 class="heading">AI Stack</h2>
+      <div class="tool-group">
+        <div class="tg-label">Prompting</div>
+        <div class="tool-row"><span class="t-name">Claude Sonnet</span><span class="t-desc">Pengembangan prompt dari brief</span></div>
+      </div>
+      <div class="tool-group">
+        <div class="tg-label">Image</div>
+        <div class="tool-row"><span class="t-name">GPT Image 2</span><span class="t-desc">Visual produk & scene</span></div>
+        <div class="tool-row"><span class="t-name">Nano Banana 2</span><span class="t-desc">Eksplorasi visual AI</span></div>
+      </div>
+      <div class="tool-group">
+        <div class="tg-label">Video</div>
+        <div class="tool-row"><span class="t-name">Omni 1.1</span><span class="t-desc">Generate video dari konsep</span></div>
+        <div class="tool-row"><span class="t-name">Seedance 2.5</span><span class="t-desc">Eksplorasi gerak & video AI</span></div>
+        <div class="tool-row"><span class="t-name">Minimax H3</span><span class="t-desc">Alternatif produksi video AI</span></div>
+      </div>
+      <div class="tool-group">
+        <div class="tg-label">Editing</div>
+        <div class="tool-row"><span class="t-name">CapCut</span><span class="t-desc">Editing, pacing, audio, caption</span></div>
+      </div>
+    </div>
+
+    <div style="flex:1.1; min-width:300px;">
+      <div class="kicker">Package</div>
+      <h2 class="heading">Paket Harga</h2>
+      <div class="price-card">
+        <div class="pc-ring"></div>
+        <div class="pc-top">
+          <div>
+            <div class="pc-kicker">30 Video Package</div>
+            <div class="pc-title">Produksi Rutin Bulanan</div>
+          </div>
+          <div>
+            <div class="pc-price">Rp2.000.000</div>
+            <div class="pc-sub">untuk 30 video pemasaran</div>
+          </div>
+        </div>
+        <ul class="pc-list">
+          <li>Produksi video berbasis AI</li>
+          <li>Editing & finishing di CapCut</li>
+          <li>Mengikuti brief & request client</li>
+          <li>2× revisi per video</li>
         </ul>
+        <div class="pc-note">Scope dapat disesuaikan dengan kebutuhan, jumlah asset, kompleksitas scene, dan format output.</div>
       </div>
     </div>
-<div class="image">
-    <img draggable="false" class="tilt" src="./assets/images/hero2.png" alt="">
-</div>
-</section>
-<!-- hero section ends -->
-
-
-<!-- about section starts -->
-<section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
-
-    <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/profile2.jpg" alt="">
-    </div>
-    <div class="content">
-        <h3>I'm Zaki</h3>
-        <span class="tag">Full Stack Developer</span>
-        
-        <p>I am a Full Stack Developer with a proven track record of building high-performing, efficient, and user-friendly web. Skilled in both front-end and back-end development, I specialize in modern technologies such as React, Node.js, Python, PHP, as well as databases like MySQL, MongoDB, and cloud platforms. </p>
-        <p>My focus is on delivering solutions that not only meet technical requirements but also provide exceptional user experiences. Combining technical expertise, business insight, and a commitment to quality, I am dedicated to completing projects that exceed expectations.</p>
-        <p>Let’s bring your ideas to life! Feel free to reach out to discuss how I can help. </p>
-
-        
-        <div class="box-container">
-            <!-- <div class="box">
-              <p><span> age: </span> 20</p>
-              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
-            </div> -->
-            <div class="box">
-              <p><span> email : </span> zakiassegafu@gmail.com</p>
-              <p><span> place : </span> Borneo South, Indonesia</p>
-            </div>
-        </div>
-        
-        <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/13TxHL-c6mMwsyiY6nuJKOUEqEkpNnCvj/view" target="_blank" class="btn"><span>Resume</span>
-                <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
-
-    </div>
-    </div>
-</section>
-<!-- about section ends -->
-
-<!-- skills section starts -->
-<section class="skills" id="skills">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
-    <div class="container">
-          <div class="row" id="skillsContainer">
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"/>
-                <span>ReactJS</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/fluency/48/000000/node-js.png"/>
-                <span>ExpressJS</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/nodejs.png"/>
-                <span>NodeJS</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png"/>
-                <span>TailwindCSS</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/bootstrap.png"/>
-                <span>Bootstrap</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/html-5--v1.png"/>
-                <span>HTML5</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/css3.png"/>
-                <span>CSS3</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/javascript--v1.png"/>
-                <span>JavaScript</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"/>
-                <span>Java</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/offices/48/000000/php-logo.png"/>
-                <span>PHP</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/python--v1.png"/>
-                <span>Python</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/mongodb.png"/>
-                <span>MongoDB</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/mysql-logo.png"/>
-                <span>MySQL</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/postgreesql.png"/>
-                <span>PostgreSQL</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/glyph-neue/48/ffffff/github.png"/>
-                <span>GitHub</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/wordpress.png"/>
-                <span>WordPress</span>
-              </div>
-            </div>
-
-      </div>
-</div>
-</section>
-<!-- skills section ends -->
-
-
-<!-- testimonial section starts -->
-<!-- <section class="education" id="education">
-
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> Client <span>Testimoni</span></h1>
-
-    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
-    <div class="box-container">
-
-    <div class="box">
-        <div class="image">
-        <img draggable="false" src="./assets/images/educat/college.jpg" alt="">
-        </div>
-        <div class="content">
-        <h3>Bachelor of Engineering in Information Technology</h3>
-        <p>Zeal College of engineering and research | SPPU</p>
-        <h4>2020-2024 | Pursuing</h4>
-        </div>
-    </div>
-
-    <div class="box">
-      <div class="image">
-      <img draggable="false" src="./assets/images/educat/school.jpg" alt="">
-      </div>
-      <div class="content">
-      <h3>HSC Science | Informatic Practices</h3>
-      <p>Shri  L. G. Haria Multipurpose School | CBSE</p>
-      <h4>2018-2020 | Completed</h4>
-      </div>
-    </div>
-
-</div>
-</section> -->
-<!-- education section ends -->
-
-
-<!-- work project section starts -->
-<section class="work" id="work">
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-
-  <div class="box-container">
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/rukem-abna.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Cash Management Application for Funeral Associations</h3>
-        </div>
-        <div class="desc">
-          <p>A clean and user-friendly application interface designed specifically for managing funeral association funds.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/kukkuk.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Thai Tea Branch Store Management Application</h3>
-        </div>
-        <div class="desc">
-          <p>The application provides various features that assist store owners and managers in overseeing daily operations, inventory, and sales.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/dispora.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Athlete Development Application</h3>
-        </div>
-        <div class="desc">
-          <p>The Athlete Development Application is a comprehensive platform designed to support and enhance the growth of high-performing athletes.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/penyewaan-futsal.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Futsal Rental Application</h3>
-        </div>
-        <div class="desc">
-          <p>The Futsal Rental Application is an intuitive platform designed to streamline the process of booking futsal courts for recreational players and teams.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/penjualan-sparepart.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Spare Parts Sales Application</h3>
-        </div>
-        <div class="desc">
-          <p>The Spare Parts Sales Application is a comprehensive platform designed to simplify the process of buying and selling spare parts for various industries, including automotive, machinery, and electronics.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/saw-bantuan.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Social Assistance Eligibility Determination Application</h3>
-        </div>
-        <div class="desc">
-          <p>The app uses the Simple Additive Weighting (SAW) method, a decision-making technique that evaluates and ranks candidates based on multiple criteria to ensure fair and accurate selection for social aid.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/appkosmetik.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Cosmetic Sales Application</h3>
-        </div>
-        <div class="desc">
-          <p>The Cosmetic Sales Application is a modern and user-friendly platform designed to provide a seamless shopping experience for customers looking to purchase cosmetic products.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/penyakit-mata.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Symptom-Based Diagnosis Application</h3>
-        </div>
-        <div class="desc">
-          <p>The Symptom-Based Diagnosis Application is a powerful tool designed to help users identify potential health conditions based on the symptoms they are experiencing.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/rs-operasi.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Surgical Procedure Management Application</h3>
-        </div>
-        <div class="desc">
-          <p>The Surgical Procedure Management Application is a specialized platform designed for hospitals and medical facilities to streamline and manage surgical operations.</p>
-          <div class="btns">
-<!--             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-<!-- <div class="viewall">
-  <a href="/projects" class="btn"><span>View All</span>
-    <i class="fas fa-arrow-right"></i>
-</a>
-</div> -->
-
-</section>
-<!-- work project section ends -->
-
-<!-- experience section starts -->
-<section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-
-  <div class="timeline">
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Freelance</h2>
-        </div>
-        <div class="desc">
-            <h3>IT Thesis Assist</h3>
-            <p>Jan 2019 - present</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Freelance</h2>
-        </div>
-        <div class="desc">
-            <h3>UML & Wireframe designer</h3>
-            <p>Jan 2019 - present</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Self Employed</h2>
-        </div>
-        <div class="desc">
-            <h3>Front-End Developer</h3>
-            <p>Mar 2019 - present</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Self Employed</h2>
-        </div>
-        <div class="desc">
-            <h3>Back-End Developer</h3>
-            <p>Sep 20219 - present</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Self Employed</h2>
-        </div>
-        <div class="desc">
-            <h3>Full-Stack Developer</h3>
-            <p>Jun 2020 - present</p>
-        </div>
-      </div>
-    </div>
-
-<!--   <div class="morebtn">
-    <a href="/experience" class="btn"><span>View All</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div> -->
-
-</div>
-
-</section>
-<!-- experience section ends -->
-
-<!-- contact section starts -->
-<section class="contact" id="contact">
-  
-  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
-  <div class="container">
-    <div class="content">
-      <div class="image-box">
-        <img draggable="false" src="./assets/images/contact1.png" alt="">
-      </div>
-    <form id="contact-form">
-      
-      <div class="form-group">
-        <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
-          <i class='fas fa-user'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
-          <i class='fas fa-envelope'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
-          <i class='fas fa-phone-alt'></i>
-        </div>
-        <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
-        </div>
-        </div>
-      <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
-      </div>
-    </form>
-  </div>
   </div>
 </section>
-<!-- contact section ends -->
 
-
-<!-- footer section starts -->
-<section class="footer">
-
-  <div class="box-container">
-
-      <div class="box">
-          <h3>Zaki's Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
-      </div>
-
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-<!--           <a href="#education"><i class="fas fa-chevron-circle-right"></i> tesimonial</a> -->
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+62 857-5204-0156</p>
-          <p> <i class="fas fa-envelope"></i>zakiassegafu@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Borneo South, Indonesia</p>
-          <div class="share">
-
-              <a href="https://www.linkedin.com/in/zakiassegafu" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a href="https://github.com/zakinajwahabsyi" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:zakiassegafu@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
-              <a href="https://instagram.com/najwachauro" class="fab fa-instagram" aria-label="Instagram" target="_blank"></a>
-              <a href="https://t.me/zakiassegafu" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
-              <a href="https://wa.me/6285752040156" class="fab fa-whatsapp" aria-label="Whatsapp" target="_blank"></a>
-          </div>
-      </div>
+<!-- CLIENTS -->
+<section id="clients" style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="kicker">Clients</div>
+    <h2 class="heading">Klien</h2>
+    <p class="body-text" style="font-family:var(--serif); font-style:italic; font-size:18px; margin-bottom:0;">Beberapa brand dan bisnis yang pernah saya bantu berkembang lewat konten.</p>
+    <div class="client-list" style="margin-top:20px;">
+      <div class="client-row"><span class="c-name">Alfaplast</span><span class="c-tag">Kandang plastik / poultry equipment</span></div>
+      <div class="client-row"><span class="c-name">Rezky Abadi Karoseri</span><span class="c-tag">Karoseri trailer & transport equipment</span></div>
+      <div class="client-row"><span class="c-name">Daster Bariyah Homeware</span><span class="c-tag">Fashion / homewear</span></div>
+      <div class="client-row"><span class="c-name">Syntif</span><span class="c-tag">Perfume / fragrance</span></div>
+    </div>
   </div>
-
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/zakiassegafu"> Zaki Bagier</a></h1>
-
 </section>
-<!-- footer section ends -->
 
+<!-- PROOF -->
+<section id="proof">
+  <div class="wrap">
+    <div class="kicker">Proof</div>
+    <h2 class="heading">Performa & Kenapa Saya</h2>
+    <div class="proof-body">
+      <div class="proof-left">
+        <div class="stat-num">10K–100K+</div>
+        <div class="stat-label">Views per video</div>
+        <div class="platform-row">
+          <span class="chip">TikTok</span><span class="chip">Instagram</span><span class="chip">Facebook</span><span class="chip">YouTube</span>
+        </div>
+        <p class="body-text" style="margin-top:18px;">Saya memahami pola short-form content: hook, retention, pacing, visual clarity, dan CTA yang disesuaikan untuk tiap platform.</p>
+      </div>
+      <div class="proof-right">
+        <div class="why-item"><div class="why-title">Brief-to-Final</div><div class="why-desc">Mengolah brief sampai menjadi video final, tidak berhenti di prompting.</div></div>
+        <div class="why-item"><div class="why-title">AI + Editing</div><div class="why-desc">AI mempercepat produksi, hasil tetap dipilih dan diedit dengan teliti.</div></div>
+        <div class="why-item"><div class="why-title">Revision-Friendly</div><div class="why-desc">Terbiasa bekerja mengikuti request dan revisi client.</div></div>
+        <div class="why-item"><div class="why-title">Volume Ready</div><div class="why-desc">Paket 30 video cocok untuk kebutuhan konten rutin.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
-
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- typed.js cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
-
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-
-<script type="text/javascript">
-  emailjs.init('Fi0AoqsGgz8JGe9Gb')
-</script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./assets/js/script.js"></script>
-<script src="./skills.json"></script>>
-
-
+<!-- CONTACT -->
+<section class="contact">
+  <div class="wrap" style="padding-top:20px;">
+    <div class="kicker">Let's Talk</div>
+    <h2 class="contact-heading">Mari Bekerja Sama</h2>
+    <p class="contact-lead">Punya produk? Kirim brief, referensi, dan request Anda. Saya bantu ubah jadi video pemasaran yang siap dipakai di social media.</p>
+    <div class="contact-cta">
+      <a class="btn btn-primary" href="https://wa.me/6285752040156" target="_blank" rel="noopener">Chat di WhatsApp</a>
+      <a class="btn btn-ghost" href="https://instagram.com/zakibagier" target="_blank" rel="noopener">Instagram / TikTok</a>
+    </div>
+    <div class="contact-grid">
+      <div class="item"><div class="label">WhatsApp</div><div class="value">0857 5204 0156</div></div>
+      <div class="item"><div class="label">Email</div><div class="value">zakiassegafu@gmail.com</div></div>
+      <div class="item"><div class="label">Instagram / TikTok</div><div class="value">@zakibagier</div></div>
+    </div>
+  </div>
+  <footer class="sitefoot">© 2026 Zaki Assegaf — AI Content Creator / Video Editor / Sosmed Manager</footer>
+</section>
 
 </body>
 </html>

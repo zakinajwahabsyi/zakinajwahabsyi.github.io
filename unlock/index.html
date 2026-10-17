@@ -19,9 +19,14 @@
   --text:#18222d; --muted:#6a7684; --line:#e3e7ec;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:#000;overflow:hidden;overscroll-behavior:none}
+html{height:100%;background:#000;overscroll-behavior:none}
+/* iOS 26 home-screen bug: the viewport is short by the status-bar height (black band at the
+   bottom) while the page is shorter than the screen. Making <html> screen-tall fixes it. */
+@media (display-mode: standalone){
+  html{min-height:min(100lvh, calc(100% + env(safe-area-inset-top)))}
+}
 body{
-  position:fixed;inset:0;
+  position:fixed;inset:0;overflow:hidden;background:#000;overscroll-behavior:none;
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
   -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;
   -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
@@ -37,7 +42,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .top-in{height:48px;display:flex;align-items:center;justify-content:center;position:relative}
 .top h1{font-size:17px;font-weight:600}
 .top small{position:absolute;right:0;font-size:11px;opacity:.55}
-main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:18px 16px 32px}
+main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:18px 16px 32px}
 .view>h2{font-size:30px;font-weight:700;color:var(--navy);margin:2px 4px 6px;letter-spacing:-.5px}
 .view>p.lead{color:var(--muted);font-size:14px;margin:0 4px 6px;line-height:1.4}
 .sec{font-size:12.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:24px 6px 8px}
@@ -181,7 +186,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 
 <!-- ===================== MENU ===================== -->
 <section id="menu">
-  <header class="top"><div class="top-in"><h1 id="topTitle">Unlock</h1><small>v1.0</small></div></header>
+  <header class="top"><div class="top-in"><h1 id="topTitle">Unlock</h1><small>v1.1</small></div></header>
   <main id="main">
 
     <!-- UNLOCK / choose -->
@@ -505,12 +510,34 @@ KEYS.forEach(([d, l], i) => {
   $('#pad').appendChild(b);
 });
 
+const isStandalone = () => navigator.standalone === true || matchMedia('(display-mode: standalone)').matches;
+
+// iOS 26 workaround (JS half): if the page is laid out shorter than the screen while it
+// draws under the status bar, make the document screen-tall and nudge the viewport.
+function fixViewport() {
+  if (!isStandalone()) return;
+  const gap = screen.height - innerHeight;
+  if (innerHeight > innerWidth && gap > 15 && gap < 130 && safeTop() > 15) {
+    document.documentElement.style.minHeight = screen.height + 'px';
+    scrollTo(0, 1); setTimeout(() => scrollTo(0, 0), 30);
+  }
+}
+// Some iOS versions instead paint an opaque status-bar strip and start the page below it.
+// Returns how many CSS px of the screen are hidden above the page in that case.
+function hiddenTop() {
+  if (!isStandalone() || safeTop() > 5 || innerHeight < innerWidth) return 0;
+  const gap = screen.height - innerHeight;
+  return gap > 15 && gap < 130 ? gap : 0;
+}
+
 function layout() {
-  const W = innerWidth, H = innerHeight, u = Math.min(W, 480) / 390;
+  const W = innerWidth, H = lock.clientHeight || innerHeight, u = Math.min(W, 480) / 390;
   lock.style.setProperty('--u', u + 'px');
   lock.style.setProperty('--kt', Math.round(H * 0.563 - 182 * u) + 'px');
 }
 addEventListener('resize', () => { layout(); if (P && !desk.classList.contains('hidden')) renderDesk(); });
+['pageshow', 'orientationchange'].forEach(t => addEventListener(t, () => setTimeout(() => { fixViewport(); layout(); }, 60)));
+fixViewport();
 layout();
 
 function buildDots() {
@@ -577,17 +604,18 @@ function coverStatus(cv, st, dpr) {
 }
 
 function drawPage(cv, img) {
-  const dpr = Math.min(window.devicePixelRatio || 1, 3), W = innerWidth, H = innerHeight;
+  const dpr = Math.min(window.devicePixelRatio || 1, 3);
+  const W = desk.clientWidth || innerWidth, H = desk.clientHeight || innerHeight;
   cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
   const ctx = cv.getContext('2d');
   ctx.fillStyle = '#000'; ctx.fillRect(0, 0, cv.width, cv.height);
   if (!img) return;
-  const iw = img.naturalWidth, ih = img.naturalHeight, r = cv.width / cv.height, ir = iw / ih;
-  let sw, sh, sx, sy;
-  if (ir > r) { sh = ih; sw = ih * r; sx = (iw - sw) / 2; sy = 0; }
-  else { sw = iw; sh = iw / r; sx = 0; sy = (ih - sh) / 2; }
+  // Fit the screenshot to the whole physical screen, anchored at the top (like the real
+  // home screen), then shift it up by any part of the screen hidden above the page.
+  const off = hiddenTop(), FH = H + off, iw = img.naturalWidth, ih = img.naturalHeight;
+  const s = Math.max(W / iw, FH / ih), dw = iw * s, dh = ih * s;
   ctx.imageSmoothingQuality = 'high';
-  ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cv.width, cv.height);
+  ctx.drawImage(img, ((W - dw) / 2) * dpr, -off * dpr, dw * dpr, dh * dpr);
   const st = safeTop();
   if (S.hideStatus && st > 20) coverStatus(cv, st, dpr);
 }
@@ -627,7 +655,7 @@ async function startShow(digits) {
   lock.style.setProperty('--lfg', S.lockFg);
   $('#lockImg').style.backgroundImage = urls.lockbg ? `url("${urls.lockbg}")` : 'none';
   $('#lockDim').style.opacity = S.dim / 100;
-  buildDots(); paintDots(); layout();
+  buildDots(); paintDots();
 
   peekEl.classList.add('hidden');
   Object.assign(peekEl.style, {
@@ -636,6 +664,7 @@ async function startShow(digits) {
   });
 
   lock.classList.remove('hidden', 'fade');
+  fixViewport(); layout();
   $('#menu').classList.add('hidden');
   desk.classList.add('hidden');
   wake();
@@ -684,7 +713,7 @@ desk.addEventListener('pointermove', e => {
 });
 function endG(e) {
   if (!g || e.pointerId !== g.id) return;
-  const W = innerWidth, H = innerHeight, dt = Date.now() - g.t;
+  const W = desk.clientWidth || innerWidth, H = desk.clientHeight || innerHeight, dt = Date.now() - g.t;
   if (g.drag) {
     const v = g.dx / Math.max(dt, 1);
     let p = P.page;
@@ -724,6 +753,9 @@ document.addEventListener('dblclick', e => e.preventDefault());
 })();
 
 if ('serviceWorker' in navigator) {
+  // when a new version is installed, reload once so the update shows right away (not mid-show)
+  const hadSW = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadSW && !P) location.reload(); });
   addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
 }
 

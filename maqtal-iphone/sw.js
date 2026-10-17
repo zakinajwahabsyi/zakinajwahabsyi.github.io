@@ -6,16 +6,16 @@
  *   membutuhkan ini untuk memutar dan menggeser posisi musik.
  * Naikkan VERSION setiap kali file aplikasi diganti.
  */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = 'maqtal-shell-' + VERSION;
 const MEDIA = 'maqtal-media-v1';
 const SHELL_FILES = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './icons/apple-touch-icon.png',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
+  './icons/apple-touch-icon-v2.png',
+  './icons/icon-192-v2.png',
+  './icons/icon-512-v2.png',
   './lib/pdf.min.mjs',
   './lib/pdf.worker.min.mjs',
   './fonts/Literata.ttf',

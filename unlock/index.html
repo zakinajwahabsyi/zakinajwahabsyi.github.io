@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover, shrink-to-fit=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -191,7 +191,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 
 <!-- ===================== MENU ===================== -->
 <section id="menu">
-  <header class="top"><div class="top-in"><h1 id="topTitle">Unlock</h1><small>v1.2</small></div></header>
+  <header class="top"><div class="top-in"><h1 id="topTitle">Unlock</h1><small>v1.3</small></div></header>
   <main id="main">
 
     <!-- UNLOCK / choose -->
@@ -204,6 +204,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
       </div>
       <div class="note" id="sum"></div>
       <div class="note warn hidden" id="warnImg">Belum ada gambar desktop. Upload screenshot layar utama di tab <b>Setup</b> supaya setelah terbuka langsung tampil desktop.</div>
+      <div class="note warn hidden" id="warnZoom">Zoom halaman Safari sedang <b id="zoomPct"></b>, jadi tampilan lebih kecil dari iPhone asli. Ubah ke 100%: <b>Pengaturan → App → Safari → Zoom Halaman</b>, set situs <b>zakinajwahabsyi.github.io</b> dan <b>Situs Web Lain</b> ke <b>100%</b>. Lalu tutup app ini sepenuhnya dan buka lagi.</div>
       <div class="note warn hidden" id="warnPwa">Buka lewat ikon di Layar Utama agar tampil layar penuh: di Safari ketuk <b>Bagikan</b> → <b>Tambahkan ke Layar Utama</b>.</div>
     </div>
 
@@ -435,7 +436,11 @@ function refreshSummary() {
   $('#warnImg').classList.toggle('hidden', !!(urls.desk1 || urls.desk2));
   const standalone = navigator.standalone || matchMedia('(display-mode: standalone)').matches;
   $('#warnPwa').classList.toggle('hidden', !!standalone);
+  const z = pageZoom();
+  $('#zoomPct').textContent = Math.round(z * 100) + '%';
+  $('#warnZoom').classList.toggle('hidden', z === 1);
 }
+addEventListener('resize', () => { if (!$('#menu').classList.contains('hidden')) refreshSummary(); });
 
 /* ---------- setup controls ---------- */
 const FMT = { dim: v => v + '%', peekSize: v => v + ' px', peekOpacity: v => v + '%', peekBottom: v => v + ' px' };
@@ -517,13 +522,21 @@ KEYS.forEach(([d, l], i) => {
 
 const isStandalone = () => navigator.standalone === true || matchMedia('(display-mode: standalone)').matches;
 
+// Safari "Page Zoom" (e.g. 75%) makes 1 CSS px != 1 screen point. screen.* stays in points,
+// so on a phone in portrait the ratio tells us the zoom. 1 = normal.
+function pageZoom() {
+  if (innerHeight < innerWidth || !screen.width || screen.width > 500) return 1;
+  const z = screen.width / innerWidth;
+  return Math.abs(z - 1) < 0.03 ? 1 : z;
+}
+
 // iOS 26 workaround: in the home-screen app the page draws under the status bar but iOS
 // reports a viewport shorter than the screen. Pin everything to the real screen height.
 function fixViewport() {
-  const el = document.documentElement;
-  const gap = screen.height - innerHeight;
-  const on = isStandalone() && innerHeight > innerWidth && safeTop() > 15 && gap >= 0 && gap < 130;
-  if (on) el.style.setProperty('--sh', screen.height + 'px');
+  const el = document.documentElement, z = pageZoom();
+  const gapPt = screen.height - innerHeight * z;          // missing height, in screen points
+  const on = isStandalone() && innerHeight > innerWidth && safeTop() > 15 && gapPt > -3 && gapPt < 130;
+  if (on) el.style.setProperty('--sh', (screen.height / z).toFixed(2) + 'px');
   el.classList.toggle('sa', on);
   if (scrollY) scrollTo(0, 0);
 }
@@ -532,12 +545,14 @@ addEventListener('scroll', () => { if (scrollY && document.documentElement.class
 // Returns how many CSS px of the screen are hidden above the page in that case.
 function hiddenTop() {
   if (!isStandalone() || safeTop() > 5 || innerHeight < innerWidth) return 0;
-  const gap = screen.height - innerHeight;
-  return gap > 15 && gap < 130 ? gap : 0;
+  const z = pageZoom(), gapPt = screen.height - innerHeight * z;
+  return gapPt > 15 && gapPt < 130 ? gapPt / z : 0;
 }
 
 function layout() {
-  const W = innerWidth, H = lock.clientHeight || innerHeight, u = Math.min(W, 480) / 390;
+  // --u = CSS px per iPhone point, so the fake keypad keeps its real size even under page zoom
+  const z = pageZoom(), W = innerWidth, H = lock.clientHeight || innerHeight;
+  const u = Math.min(W * z, 480) / 390 / z;
   lock.style.setProperty('--u', u + 'px');
   lock.style.setProperty('--kt', Math.round(H * 0.563 - 182 * u) + 'px');
 }
@@ -622,7 +637,8 @@ function drawPage(cv, img) {
   const s = Math.max(W / iw, FH / ih), dw = iw * s, dh = ih * s;
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(img, ((W - dw) / 2) * dpr, -off * dpr, dw * dpr, dh * dpr);
-  const st = safeTop();
+  // iOS reports the status-bar inset in points even under page zoom; convert to CSS px
+  const z = pageZoom(), st = z < 0.97 ? safeTop() / z : safeTop();
   if (S.hideStatus && st > 20) coverStatus(cv, st, dpr);
 }
 

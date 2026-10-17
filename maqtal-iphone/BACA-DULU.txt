@@ -1,0 +1,42 @@
+MAQTAL READER UNTUK IPHONE
+==========================
+
+iPhone tidak bisa memasang file aplikasi seperti APK. Versi iPhone ini adalah
+aplikasi web: dibuka sekali lewat Safari, lalu dipasang ke Layar Utama. Setelah itu
+tampil layar penuh seperti aplikasi biasa, bisa dipakai tanpa internet, dan musik/efek/
+PDF yang kamu tambahkan tetap tersimpan.
+
+LANGKAH 1 - Lengkapi folder ini dengan musik
+  Salin ke-27 file MP3 dari maqtal_1.zip (ada di folder maqtal/maqtal) ke folder ini,
+  sejajar dengan index.html. Contoh: alur.mp3, safarah.mp3, tangis.mp3, dst.
+  Jangan salin index.html yang lama (pakai index.html dari folder ini).
+
+LANGKAH 2 - Unggah folder ini ke hosting gratis (butuh alamat https)
+  Pilihan A: Cloudflare Pages
+    1. Daftar akun gratis di dash.cloudflare.com
+    2. Workers & Pages > Create > Pages > Upload assets (drag & drop)
+    3. Beri nama proyek (misal: maqtal), lalu seret folder ini (atau file zip-nya)
+    4. Deploy. Alamatnya seperti https://maqtal.pages.dev
+  Pilihan B: GitHub Pages
+    1. Buat repository baru (public), misal "maqtal"
+    2. Add file > Upload files > seret SEMUA isi folder ini (termasuk folder lib, fonts, icons)
+       (maksimal 100 file sekali unggah; kalau lebih, unggah dua kali)
+    3. Settings > Pages > Source: Deploy from a branch > main / (root) > Save
+    4. Alamatnya seperti https://namaakun.github.io/maqtal/
+
+LANGKAH 3 - Pasang di iPhone
+  1. Buka alamat tadi di Safari (harus Safari).
+  2. Ketuk tombol Bagikan (di iOS 26: ketuk ... lalu Bagikan).
+  3. Pilih "Tambah ke Layar Utama", lalu Tambah.
+  4. Buka Maqtal dari ikon di Layar Utama, saat masih ada internet.
+     Aplikasi otomatis menyimpan semua naskah, musik, dan efek ke iPhone.
+     Cek di menu Aa > Tanpa internet: "Siap: 41 file tersimpan".
+
+CATATAN
+  - Jangan hapus ikon Maqtal dari Layar Utama: musik/efek/PDF tambahan dan nama yang
+    sudah diatur ikut terhapus.
+  - Di iPhone, Safari tidak mengizinkan aplikasi web mengatur volume. Atur volume dengan
+    tombol volume iPhone; perpindahan antar musik langsung (tanpa memudar).
+  - Alamat web ini bisa dibuka siapa saja yang tahu alamatnya.
+  - Kalau index.html diperbarui nanti, unggah ulang folder ini; aplikasi di iPhone ikut
+    terbarui saat dibuka dengan internet.

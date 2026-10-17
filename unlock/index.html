@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Unlock">
+<meta name="theme-color" content="#22405f">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Unlock</title>
+<style>
+:root{
+  --navy:#22405f; --accent:#2d6cb0; --bg:#eef1f5; --card:#fff;
+  --text:#18222d; --muted:#6a7684; --line:#e3e7ec;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000;overflow:hidden;overscroll-behavior:none}
+body{
+  position:fixed;inset:0;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.hidden{display:none!important}
+.vh{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}
+
+/* ================= MENU ================= */
+#menu{position:fixed;inset:0;display:flex;flex-direction:column;background:var(--bg);color:var(--text)}
+.top{background:var(--navy);color:#fff;padding:env(safe-area-inset-top) 16px 0;flex:none}
+.top-in{height:48px;display:flex;align-items:center;justify-content:center;position:relative}
+.top h1{font-size:17px;font-weight:600}
+.top small{position:absolute;right:0;font-size:11px;opacity:.55}
+main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:18px 16px 32px}
+.view>h2{font-size:30px;font-weight:700;color:var(--navy);margin:2px 4px 6px;letter-spacing:-.5px}
+.view>p.lead{color:var(--muted);font-size:14px;margin:0 4px 6px;line-height:1.4}
+.sec{font-size:12.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:24px 6px 8px}
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(20,40,70,.06)}
+.row{display:flex;align-items:center;gap:12px;padding:13px 16px;min-height:62px}
+.row+.row{border-top:1px solid var(--line)}
+.row.col{flex-direction:column;align-items:stretch;gap:10px}
+.rt{flex:1;min-width:0}
+.rt b{display:block;font-size:16px;font-weight:500}
+.rt span{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.3}
+.rt-line{display:flex;justify-content:space-between;align-items:baseline}
+.rt-line output{font-size:14px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+
+.stepper{display:flex;align-items:center;background:var(--bg);border-radius:11px;flex:none}
+.stepper button{width:42px;height:42px;font-size:24px;color:var(--accent);line-height:1}
+.stepper button:active{opacity:.4}
+.stepper output{min-width:26px;text-align:center;font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+
+.sw{-webkit-appearance:none;appearance:none;width:51px;height:31px;border-radius:16px;background:#d9dde3;position:relative;flex:none;transition:background .2s;outline:none}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.2);transition:transform .2s}
+.sw:checked{background:#34c759}
+.sw:checked::after{transform:translateX(20px)}
+
+.swatch{flex:none;width:46px;height:46px;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px var(--line) inset;position:relative}
+.swatch input{-webkit-appearance:none;appearance:none;position:absolute;inset:-6px;width:calc(100% + 12px);height:calc(100% + 12px);border:0;padding:0;background:none}
+.swatch input::-webkit-color-swatch-wrapper{padding:0}
+.swatch input::-webkit-color-swatch{border:0}
+.swatch::after{content:"";position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1.5px rgba(24,34,45,.16);pointer-events:none}
+
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:none}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:#d9dde3}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:-11px}
+
+.tiles{display:flex;gap:12px}
+.tile{flex:1;background:var(--card);border-radius:14px;padding:14px 10px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;box-shadow:0 1px 2px rgba(20,40,70,.06)}
+.thumb{width:86px;height:186px;border-radius:14px;background:#e9edf2 center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#9aa5b1;font-size:30px;font-weight:300;position:relative;overflow:hidden;border:1.5px dashed #c5ced8}
+.thumb.has{border:0;color:transparent}
+.tile b{font-size:14px;font-weight:600}
+.tile span{font-size:12px;color:var(--muted);margin-top:-6px}
+.tile span.ok{color:#2a9d55}
+.rm{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:rgba(24,34,45,.08);font-size:17px;line-height:28px;color:var(--muted)}
+
+.pv{width:86px;height:186px;border-radius:14px;position:relative;overflow:hidden;background:#000}
+.pv i{position:absolute;inset:0;background:center/cover no-repeat}
+.pv .pv-dim{background:#000}
+.pv .pv-t{position:absolute;left:0;right:0;top:44px;text-align:center;font-size:7px}
+.pv .pv-d{position:absolute;left:0;right:0;top:56px;display:flex;justify-content:center;gap:5px}
+.pv .pv-d u{width:4px;height:4px;border-radius:50%;border:.7px solid currentColor}
+.pv .pv-k{position:absolute;left:14px;right:14px;top:74px;display:grid;grid-template-columns:repeat(3,1fr);gap:5px 6px}
+.pv .pv-k u{aspect-ratio:1;border-radius:50%;border:.7px solid currentColor;opacity:.55}
+.pv .pv-k u:nth-child(10){grid-column:2}
+
+.peekpv{height:64px;border-radius:12px;background:linear-gradient(135deg,#2b3846,#11161c);position:relative;overflow:hidden}
+.peekpv span{position:absolute;left:16px;bottom:10px;font-variant-numeric:tabular-nums}
+
+.btn{display:block;width:100%;max-width:300px;margin:28px auto 6px;height:54px;border-radius:27px;background:var(--navy);color:#fff;font-size:18px;font-weight:600;letter-spacing:.2px;box-shadow:0 6px 18px rgba(34,64,95,.28)}
+.btn:active{transform:scale(.98);opacity:.9}
+
+/* choose */
+.picks{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.pick{background:var(--card);border-radius:18px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;box-shadow:0 1px 2px rgba(20,40,70,.06);border:1.5px solid transparent}
+.pick:active{border-color:var(--accent);transform:scale(.99)}
+.pick b{font-size:34px;font-weight:400;color:var(--navy);letter-spacing:-.5px}
+.dots{display:flex;gap:9px}
+.dots i{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--navy)}
+.dots i.f{background:var(--navy)}
+.note{margin-top:16px;padding:12px 14px;border-radius:12px;font-size:13.5px;line-height:1.4;background:#fff;color:var(--muted)}
+.note b{color:var(--text);font-weight:600}
+.note.warn{background:#fff6e6;color:#8a5a00}
+
+/* guide */
+.guide{background:var(--card);border-radius:14px;padding:6px 16px}
+.guide li{list-style:none;display:flex;gap:12px;padding:12px 0;font-size:15px;line-height:1.45}
+.guide li+li{border-top:1px solid var(--line)}
+.guide li em{flex:none;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-style:normal;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.guide li.tip em{background:#e6edf5;color:var(--navy)}
+
+/* tabbar */
+.tabs{flex:none;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tab{height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#8a95a2;font-size:11px;font-weight:500}
+.tab svg{width:25px;height:25px}
+.tab.on{color:var(--accent)}
+
+/* ================= FAKE LOCK SCREEN ================= */
+.stage{position:fixed;inset:0;overflow:hidden;touch-action:none}
+#lock{background:var(--lbg,#000);color:var(--lfg,#fff);z-index:20;transition:opacity .32s ease}
+#lock.fade{opacity:0}
+#lockImg{position:absolute;inset:0;background:center/cover no-repeat}
+#lockDim{position:absolute;inset:0;background:#000}
+.l-title{position:absolute;left:0;right:0;top:calc(var(--kt) - 128 * var(--u));transform:translateY(-50%);text-align:center;font-family:-apple-system,"SF Pro Display",BlinkMacSystemFont,sans-serif;font-size:calc(22 * var(--u));font-weight:400;letter-spacing:.1px}
+.l-dots{position:absolute;left:0;right:0;top:calc(var(--kt) - 91 * var(--u));transform:translateY(-50%);display:flex;justify-content:center}
+.l-dots-in{display:flex;gap:calc(25 * var(--u))}
+.l-dots-in i{width:calc(12 * var(--u));height:calc(12 * var(--u));border-radius:50%;border:calc(1.3 * var(--u)) solid currentColor;transition:background .06s}
+.l-dots-in i.f{background:currentColor}
+.shake{animation:shake .5s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  12%{transform:translateX(calc(-22 * var(--u)))}
+  27%{transform:translateX(calc(18 * var(--u)))}
+  42%{transform:translateX(calc(-13 * var(--u)))}
+  57%{transform:translateX(calc(9 * var(--u)))}
+  72%{transform:translateX(calc(-5 * var(--u)))}
+  86%{transform:translateX(calc(2 * var(--u)))}
+}
+.pad{position:absolute;top:var(--kt);left:50%;width:calc(280 * var(--u));height:calc(364 * var(--u));margin-left:calc(-140 * var(--u))}
+.key{
+  position:absolute;width:calc(76 * var(--u));height:calc(76 * var(--u));border-radius:50%;
+  left:calc(var(--c) * 102 * var(--u));top:calc(var(--r) * 96 * var(--u));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.14);
+  -webkit-backdrop-filter:blur(calc(9 * var(--u))) saturate(170%);backdrop-filter:blur(calc(9 * var(--u))) saturate(170%);
+  border:1px solid color-mix(in srgb,var(--lfg,#fff) 32%,transparent);
+  box-shadow:inset 0 calc(1.4 * var(--u)) calc(1 * var(--u)) color-mix(in srgb,var(--lfg,#fff) 28%,transparent),
+             inset 0 calc(-1 * var(--u)) calc(1.4 * var(--u)) color-mix(in srgb,var(--lfg,#fff) 12%,transparent);
+  transition:background .45s ease-out;
+}
+.key.on{background:color-mix(in srgb,var(--lfg,#fff) 42%,transparent);transition:none}
+.key b{font-family:-apple-system,"SF Pro Display",BlinkMacSystemFont,sans-serif;font-size:calc(36 * var(--u));font-weight:400;line-height:1;margin-top:calc(-5 * var(--u))}
+.key small{font-family:-apple-system,"SF Pro Text",BlinkMacSystemFont,sans-serif;font-size:calc(10.5 * var(--u));font-weight:700;letter-spacing:calc(2.2 * var(--u));line-height:1;margin-top:calc(4 * var(--u));margin-right:calc(-2.2 * var(--u));height:calc(10.5 * var(--u))}
+.key.z b{margin-top:0}
+.key.z small{display:none}
+.l-btn{position:absolute;bottom:calc(60 * var(--u));transform:translate(-50%,50%);font-size:calc(17 * var(--u));padding:calc(10 * var(--u)) calc(14 * var(--u));white-space:nowrap}
+.l-btn:active{opacity:.45}
+#lEmg{left:calc(50% - 102 * var(--u))}
+#lCancel{left:calc(50% + 102 * var(--u))}
+
+/* ================= FAKE DESKTOP ================= */
+#desk{background:#000;z-index:10;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .4s ease}
+#desk.enter{transform:scale(1.1);opacity:0;transition:none}
+.track{position:absolute;inset:0;display:flex;will-change:transform}
+.page{flex:0 0 100%;height:100%;position:relative;overflow:hidden}
+.page canvas{display:block;width:100%;height:100%}
+#peek{position:absolute;z-index:3;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-variant-numeric:tabular-nums;font-weight:500;pointer-events:none;letter-spacing:.5px}
+#probe{position:fixed;top:0;left:0;width:1px;height:env(safe-area-inset-top);visibility:hidden;pointer-events:none}
+</style>
+</head>
+<body>
+
+<div id="probe"></div>
+<label id="hap" class="vh" aria-hidden="true"><input type="checkbox" switch tabindex="-1"></label>
+
+<!-- ===================== MENU ===================== -->
+<section id="menu">
+  <header class="top"><div class="top-in"><h1 id="topTitle">Unlock</h1><small>v1.0</small></div></header>
+  <main id="main">
+
+    <!-- UNLOCK / choose -->
+    <div class="view" id="v-unlock">
+      <h2>Pilih layar kunci</h2>
+      <p class="lead">Pilih jumlah digit, lalu serahkan HP ke penonton.</p>
+      <div class="picks">
+        <button class="pick" data-digits="4"><b>4 Digit</b><span class="dots"><i class="f"></i><i class="f"></i><i></i><i></i></span></button>
+        <button class="pick" data-digits="6"><b>6 Digit</b><span class="dots"><i class="f"></i><i class="f"></i><i></i><i></i><i></i><i></i></span></button>
+      </div>
+      <div class="note" id="sum"></div>
+      <div class="note warn hidden" id="warnImg">Belum ada gambar desktop. Upload screenshot layar utama di tab <b>Setup</b> supaya setelah terbuka langsung tampil desktop.</div>
+      <div class="note warn hidden" id="warnPwa">Buka lewat ikon di Layar Utama agar tampil layar penuh: di Safari ketuk <b>Bagikan</b> → <b>Tambahkan ke Layar Utama</b>.</div>
+    </div>
+
+    <!-- SETUP -->
+    <div class="view hidden" id="v-setup">
+      <h2>Setup UNLOCK</h2>
+
+      <div class="sec">Percobaan</div>
+      <div class="card">
+        <div class="row">
+          <div class="rt"><b>Layar terbuka</b><span>Kode ke berapa yang membuka layar kunci</span></div>
+          <div class="stepper" data-k="unlockAt"><button data-d="-1">−</button><output></output><button data-d="1">+</button></div>
+        </div>
+        <div class="row">
+          <div class="rt"><b>PEEK – nomor disimpan</b><span>Kode dari percobaan ke berapa yang ditampilkan diam-diam</span></div>
+          <div class="stepper" data-k="peekAt"><button data-d="-1">−</button><output></output><button data-d="1">+</button></div>
+        </div>
+      </div>
+
+      <div class="sec">Gambar desktop</div>
+      <div class="tiles">
+        <label class="tile" data-slot="desk1">
+          <input type="file" accept="image/*" class="vh">
+          <div class="thumb">+</div><b>Gambar 1</b><span>Belum ada</span>
+          <button class="rm hidden" type="button" aria-label="Hapus">×</button>
+        </label>
+        <label class="tile" data-slot="desk2">
+          <input type="file" accept="image/*" class="vh">
+          <div class="thumb">+</div><b>Gambar 2</b><span>Opsional · geser</span>
+          <button class="rm hidden" type="button" aria-label="Hapus">×</button>
+        </label>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <label class="row">
+          <div class="rt"><b>Samarkan status bar gambar</b><span>Supaya jam lama di screenshot tidak menumpuk dengan jam asli</span></div>
+          <input type="checkbox" class="sw" data-k="hideStatus">
+        </label>
+      </div>
+
+      <div class="sec">Layar kunci</div>
+      <div class="tiles">
+        <label class="tile" data-slot="lockbg">
+          <input type="file" accept="image/*" class="vh">
+          <div class="thumb">+</div><b>Background</b><span>Belum ada</span>
+          <button class="rm hidden" type="button" aria-label="Hapus">×</button>
+        </label>
+        <div class="tile">
+          <div class="pv" id="pv"><i class="pv-img"></i><i class="pv-dim"></i>
+            <div class="pv-t">Masukkan Kode Sandi</div>
+            <div class="pv-d"><u></u><u></u><u></u><u></u><u></u><u></u></div>
+            <div class="pv-k"><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u></div>
+          </div>
+          <b>Pratinjau</b><span>&nbsp;</span>
+        </div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <label class="row">
+          <div class="rt"><b>Warna background</b><span>Dipakai jika tidak ada gambar</span></div>
+          <span class="swatch"><input type="color" data-k="lockBg"></span>
+        </label>
+        <label class="row">
+          <div class="rt"><b>Warna huruf</b><span>Teks, titik, dan tombol angka</span></div>
+          <span class="swatch"><input type="color" data-k="lockFg"></span>
+        </label>
+        <div class="row col">
+          <div class="rt rt-line"><b>Gelapkan background</b><output data-o="dim"></output></div>
+          <input type="range" min="0" max="70" step="1" data-k="dim">
+        </div>
+      </div>
+
+      <div class="sec">Angka rahasia (kiri bawah)</div>
+      <div class="card">
+        <div class="row col">
+          <div class="peekpv"><span id="peekPv">1234</span></div>
+        </div>
+        <label class="row">
+          <div class="rt"><b>Warna angka</b></div>
+          <span class="swatch"><input type="color" data-k="peekColor"></span>
+        </label>
+        <div class="row col">
+          <div class="rt rt-line"><b>Ukuran</b><output data-o="peekSize"></output></div>
+          <input type="range" min="9" max="30" step="1" data-k="peekSize">
+        </div>
+        <div class="row col">
+          <div class="rt rt-line"><b>Kejelasan</b><output data-o="peekOpacity"></output></div>
+          <input type="range" min="15" max="100" step="5" data-k="peekOpacity">
+        </div>
+        <div class="row col">
+          <div class="rt rt-line"><b>Jarak dari bawah</b><output data-o="peekBottom"></output></div>
+          <input type="range" min="4" max="220" step="2" data-k="peekBottom">
+        </div>
+      </div>
+
+      <button class="btn" id="goUnlock">Mulai UNLOCK</button>
+    </div>
+
+    <!-- GUIDE -->
+    <div class="view hidden" id="v-guide">
+      <h2>Petunjuk</h2>
+      <div class="sec">Persiapan</div>
+      <ul class="guide">
+        <li><em>1</em><div>Ambil screenshot Layar Utama iPhone kamu, lalu upload sebagai <b>Gambar 1</b>. Gambar 2 opsional (halaman kedua, bisa digeser).</div></li>
+        <li><em>2</em><div>Upload wallpaper layar kunci kamu sebagai <b>Background</b>.</div></li>
+        <li><em>3</em><div>Atur <b>Layar terbuka</b> (misal 3) dan <b>PEEK</b> (misal 1 = kode pertama yang disimpan).</div></li>
+      </ul>
+      <div class="sec">Cara main</div>
+      <ul class="guide">
+        <li><em>1</em><div>Buka tab <b>Unlock</b>, pilih 4 atau 6 digit. Layar kunci palsu muncul.</div></li>
+        <li><em>2</em><div>Minta penonton memikirkan angka lalu mengetiknya. Kode yang salah akan bergetar seperti iPhone asli.</div></li>
+        <li><em>3</em><div>Di percobaan yang ditentukan, kunci "terbuka" dan masuk ke desktop.</div></li>
+        <li><em>4</em><div>Ketuk <b>pojok kanan bawah</b> layar → angka yang disimpan muncul kecil di <b>kiri bawah</b>. Ketuk lagi untuk menyembunyikan.</div></li>
+        <li><em>5</em><div>Keluar: <b>tekan lama pojok kiri atas</b> sekitar 1,5 detik.</div></li>
+      </ul>
+      <div class="sec">Tips</div>
+      <ul class="guide">
+        <li class="tip"><em>✓</em><div>Nyalakan Mode Pesawat atau Fokus supaya tidak ada notifikasi yang membongkar trik.</div></li>
+        <li class="tip"><em>✓</em><div>Setelah dipasang di Layar Utama, buka sekali saat online. Sesudahnya app jalan offline.</div></li>
+        <li class="tip"><em>✓</em><div>Pakai wallpaper dan screenshot asli dari HP yang sama supaya meyakinkan.</div></li>
+      </ul>
+    </div>
+  </main>
+
+  <nav class="tabs">
+    <button class="tab on" data-tab="unlock">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="5" cy="5" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>Unlock</button>
+    <button class="tab" data-tab="setup">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg>Setup</button>
+    <button class="tab" data-tab="guide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg>Petunjuk</button>
+  </nav>
+</section>
+
+<!-- ===================== FAKE LOCK SCREEN ===================== -->
+<section id="lock" class="stage hidden">
+  <div id="lockImg"></div><div id="lockDim"></div>
+  <div class="l-title">Masukkan Kode Sandi</div>
+  <div class="l-dots"><div class="l-dots-in" id="ldots"></div></div>
+  <div class="pad" id="pad"></div>
+  <button class="l-btn" id="lEmg">Darurat</button>
+  <button class="l-btn" id="lCancel">Batalkan</button>
+</section>
+
+<!-- ===================== FAKE DESKTOP ===================== -->
+<section id="desk" class="stage hidden">
+  <div class="track" id="track"></div>
+  <div id="peek" class="hidden"></div>
+</section>
+
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+/* ---------- settings ---------- */
+const KEY = 'unlock.settings.v1';
+const DEF = { unlockAt:3, peekAt:1, digits:4, lockBg:'#000000', lockFg:'#ffffff', dim:20,
+              hideStatus:true, peekColor:'#ffffff', peekSize:14, peekOpacity:75, peekBottom:12 };
+const S = Object.assign({}, DEF);
+try { Object.assign(S, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+/* ---------- image storage (IndexedDB) ---------- */
+const DB = {
+  p: null,
+  open() {
+    return this.p || (this.p = new Promise((res, rej) => {
+      const r = indexedDB.open('unlock-db', 1);
+      r.onupgradeneeded = () => r.result.createObjectStore('img');
+      r.onsuccess = () => res(r.result);
+      r.onerror = () => rej(r.error);
+    }));
+  },
+  async run(mode, fn) {
+    const db = await this.open();
+    return new Promise((res, rej) => {
+      const t = db.transaction('img', mode), req = fn(t.objectStore('img'));
+      t.oncomplete = () => res(req && req.result);
+      t.onerror = () => rej(t.error);
+    });
+  },
+  get(k) { return this.run('readonly', s => s.get(k)); },
+  set(k, v) { return this.run('readwrite', s => s.put(v, k)); },
+  del(k) { return this.run('readwrite', s => s.delete(k)); }
+};
+const SLOTS = ['desk1', 'desk2', 'lockbg'];
+const urls = {};   // slot -> object URL
+
+async function loadSlot(k) {
+  if (urls[k]) { URL.revokeObjectURL(urls[k]); delete urls[k]; }
+  try {
+    const rec = await DB.get(k);
+    if (rec && rec.buf) urls[k] = URL.createObjectURL(new Blob([rec.buf], { type: rec.type || 'image/jpeg' }));
+  } catch (e) {}
+  return urls[k] || null;
+}
+
+async function processFile(file) {
+  const src = URL.createObjectURL(file);
+  try {
+    const img = new Image(); img.src = src; await img.decode();
+    const w = img.naturalWidth, h = img.naturalHeight, max = 2800;
+    let blob = file;
+    if (Math.max(w, h) > max || !/^image\/(jpeg|png|webp|gif)$/.test(file.type)) {
+      const s = Math.min(1, max / Math.max(w, h)), c = document.createElement('canvas');
+      c.width = Math.round(w * s); c.height = Math.round(h * s);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      blob = await new Promise(r => c.toBlob(r, 'image/jpeg', 0.92));
+    }
+    return { type: blob.type, buf: await blob.arrayBuffer() };
+  } finally { URL.revokeObjectURL(src); }
+}
+
+/* ---------- menu / tabs ---------- */
+const TITLES = { unlock: 'Unlock', setup: 'Setup', guide: 'Petunjuk' };
+function showTab(t) {
+  $$('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
+  $$('.view').forEach(v => v.classList.toggle('hidden', v.id !== 'v-' + t));
+  $('#topTitle').textContent = TITLES[t];
+  $('#main').scrollTop = 0;
+  if (t === 'unlock') refreshSummary();
+}
+$$('.tab').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+$('#goUnlock').addEventListener('click', () => showTab('unlock'));
+
+function refreshSummary() {
+  $('#sum').innerHTML = `Terbuka di percobaan ke-<b>${S.unlockAt}</b> · Nomor yang disimpan: percobaan ke-<b>${S.peekAt}</b>`;
+  $('#warnImg').classList.toggle('hidden', !!(urls.desk1 || urls.desk2));
+  const standalone = navigator.standalone || matchMedia('(display-mode: standalone)').matches;
+  $('#warnPwa').classList.toggle('hidden', !!standalone);
+}
+
+/* ---------- setup controls ---------- */
+const FMT = { dim: v => v + '%', peekSize: v => v + ' px', peekOpacity: v => v + '%', peekBottom: v => v + ' px' };
+function renderSetup() {
+  $$('.stepper').forEach(st => st.querySelector('output').textContent = S[st.dataset.k]);
+  $$('input[data-k]').forEach(i => { if (i.type === 'checkbox') i.checked = !!S[i.dataset.k]; else i.value = S[i.dataset.k]; });
+  $$('output[data-o]').forEach(o => o.textContent = FMT[o.dataset.o](S[o.dataset.o]));
+  const pv = $('#pv');
+  pv.style.background = S.lockBg; pv.style.color = S.lockFg;
+  pv.querySelector('.pv-img').style.backgroundImage = urls.lockbg ? `url("${urls.lockbg}")` : 'none';
+  pv.querySelector('.pv-dim').style.opacity = S.dim / 100;
+  const pp = $('#peekPv');
+  pp.style.color = S.peekColor; pp.style.fontSize = S.peekSize + 'px'; pp.style.opacity = S.peekOpacity / 100;
+}
+$$('.stepper').forEach(st => st.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const d = +b.dataset.d;
+  if (st.dataset.k === 'unlockAt') { S.unlockAt = clamp(S.unlockAt + d, 1, 10); S.peekAt = Math.min(S.peekAt, S.unlockAt); }
+  else S.peekAt = clamp(S.peekAt + d, 1, S.unlockAt);
+  save(); renderSetup();
+}));
+$$('input[data-k]').forEach(i => i.addEventListener('input', () => {
+  const k = i.dataset.k;
+  S[k] = i.type === 'checkbox' ? i.checked : i.type === 'range' ? +i.value : i.value;
+  save(); renderSetup();
+}));
+
+function renderTile(tile) {
+  const k = tile.dataset.slot, u = urls[k], th = tile.querySelector('.thumb'), sp = tile.querySelector('span');
+  th.classList.toggle('has', !!u);
+  th.style.backgroundImage = u ? `url("${u}")` : 'none';
+  tile.querySelector('.rm').classList.toggle('hidden', !u);
+  sp.classList.toggle('ok', !!u);
+  sp.textContent = u ? 'Terpasang' : (k === 'desk2' ? 'Opsional · geser' : 'Belum ada');
+}
+$$('.tile[data-slot]').forEach(tile => {
+  const k = tile.dataset.slot, inp = tile.querySelector('input[type=file]');
+  inp.addEventListener('change', async () => {
+    const f = inp.files && inp.files[0]; inp.value = '';
+    if (!f) return;
+    tile.querySelector('span').textContent = 'Memproses…';
+    try { await DB.set(k, await processFile(f)); await loadSlot(k); }
+    catch (e) { alert('Gambar gagal disimpan. Coba gambar lain.'); }
+    renderTile(tile); renderSetup();
+  });
+  tile.querySelector('.rm').addEventListener('click', async e => {
+    e.preventDefault(); e.stopPropagation();
+    try { await DB.del(k); } catch (er) {}
+    await loadSlot(k); renderTile(tile); renderSetup();
+  });
+});
+
+/* ---------- haptics (iOS 18+ switch trick) ---------- */
+const hap = $('#hap');
+function haptic(n = 1) { for (let i = 0; i < n; i++) setTimeout(() => { try { hap.click(); } catch (e) {} }, i * 85); }
+
+/* ---------- wake lock ---------- */
+let wl = null;
+async function wake() { try { if (navigator.wakeLock) wl = await navigator.wakeLock.request('screen'); } catch (e) {} }
+function sleep() { try { wl && wl.release(); } catch (e) {} wl = null; }
+document.addEventListener('visibilitychange', () => { if (P && document.visibilityState === 'visible') wake(); });
+
+/* ================= PERFORMANCE ================= */
+const lock = $('#lock'), desk = $('#desk'), track = $('#track'), peekEl = $('#peek'), ldots = $('#ldots');
+let P = null;
+
+const KEYS = [['1',''],['2','ABC'],['3','DEF'],['4','GHI'],['5','JKL'],['6','MNO'],['7','PQRS'],['8','TUV'],['9','WXYZ'],['0','']];
+KEYS.forEach(([d, l], i) => {
+  const b = document.createElement('div');
+  b.className = 'key' + (d === '0' ? ' z' : '');
+  const c = d === '0' ? 1 : i % 3, r = d === '0' ? 3 : Math.floor(i / 3);
+  b.style.setProperty('--c', c); b.style.setProperty('--r', r);
+  b.innerHTML = `<b>${d}</b><small>${l}</small>`;
+  b.addEventListener('pointerdown', e => { e.preventDefault(); b.classList.add('on'); press(d); });
+  const off = () => b.classList.remove('on');
+  b.addEventListener('pointerup', off); b.addEventListener('pointercancel', off); b.addEventListener('pointerleave', off);
+  $('#pad').appendChild(b);
+});
+
+function layout() {
+  const W = innerWidth, H = innerHeight, u = Math.min(W, 480) / 390;
+  lock.style.setProperty('--u', u + 'px');
+  lock.style.setProperty('--kt', Math.round(H * 0.563 - 182 * u) + 'px');
+}
+addEventListener('resize', () => { layout(); if (P && !desk.classList.contains('hidden')) renderDesk(); });
+layout();
+
+function buildDots() {
+  ldots.innerHTML = '<i></i>'.repeat(P.digits);
+}
+function paintDots() {
+  [...ldots.children].forEach((d, i) => d.classList.toggle('f', i < P.entry.length));
+  $('#lCancel').textContent = P.entry.length ? 'Hapus' : 'Batalkan';
+}
+
+function press(d) {
+  if (!P || P.busy || P.entry.length >= P.digits) return;
+  P.entry += d; paintDots();
+  if (P.entry.length < P.digits) return;
+  P.busy = true; P.attempt++;
+  if (P.attempt === S.peekAt) P.peek = P.entry;
+  P.log.push(P.entry);
+  if (P.attempt >= S.unlockAt) setTimeout(unlock, 160);
+  else setTimeout(fail, 120);
+}
+function fail() {
+  haptic(2);
+  ldots.classList.remove('shake'); void ldots.offsetWidth; ldots.classList.add('shake');
+  setTimeout(() => { ldots.classList.remove('shake'); P.entry = ''; paintDots(); P.busy = false; }, 520);
+}
+$('#lCancel').addEventListener('click', () => {
+  if (!P || P.busy || !P.entry) return;
+  P.entry = P.entry.slice(0, -1); paintDots();
+});
+
+/* desktop rendering */
+function safeTop() { return $('#probe').getBoundingClientRect().height || 0; }
+
+// average a region of a canvas down to tw x th pixels (progressive halving = true area average)
+function shrink(src, sx, sy, sw, sh, tw, th) {
+  let c = document.createElement('canvas'); c.width = sw; c.height = sh;
+  c.getContext('2d').drawImage(src, sx, sy, sw, sh, 0, 0, sw, sh);
+  while (c.width > tw || c.height > th) {
+    const n = document.createElement('canvas');
+    n.width = Math.max(tw, Math.ceil(c.width / 2)); n.height = Math.max(th, Math.ceil(c.height / 2));
+    const x = n.getContext('2d'); x.imageSmoothingEnabled = true; x.imageSmoothingQuality = 'high';
+    x.drawImage(c, 0, 0, n.width, n.height); c = n;
+  }
+  return c;
+}
+
+// Paint over the screenshot's old status bar (clock/battery) with a smooth fill made from
+// the clean wallpaper strips just above and just below the status-bar text.
+function coverStatus(cv, st, dpr) {
+  const W = cv.width, full = Math.round((st - 6) * dpr), fade = Math.round(8 * dpr);
+  const cols = Math.max(8, Math.round(W / 36));
+  const top = shrink(cv, 0, 0, W, Math.round(9 * dpr), cols, 1);
+  const bot = shrink(cv, 0, Math.round((st - 12) * dpr), W, Math.round(6 * dpr), cols, 1);
+  const tiny = document.createElement('canvas'); tiny.width = cols; tiny.height = 2;
+  const tx = tiny.getContext('2d'); tx.drawImage(top, 0, 0); tx.drawImage(bot, 0, 1);
+  const p = document.createElement('canvas'); p.width = W; p.height = full + fade;
+  const px = p.getContext('2d'); px.imageSmoothingEnabled = true; px.imageSmoothingQuality = 'high';
+  px.drawImage(tiny, 0, 0, W, full + fade);
+  px.globalCompositeOperation = 'destination-in';
+  const g = px.createLinearGradient(0, 0, 0, full + fade);
+  g.addColorStop(0, '#000'); g.addColorStop(full / (full + fade), '#000'); g.addColorStop(1, 'rgba(0,0,0,0)');
+  px.fillStyle = g; px.fillRect(0, 0, W, full + fade);
+  cv.getContext('2d').drawImage(p, 0, 0);
+}
+
+function drawPage(cv, img) {
+  const dpr = Math.min(window.devicePixelRatio || 1, 3), W = innerWidth, H = innerHeight;
+  cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = '#000'; ctx.fillRect(0, 0, cv.width, cv.height);
+  if (!img) return;
+  const iw = img.naturalWidth, ih = img.naturalHeight, r = cv.width / cv.height, ir = iw / ih;
+  let sw, sh, sx, sy;
+  if (ir > r) { sh = ih; sw = ih * r; sx = (iw - sw) / 2; sy = 0; }
+  else { sw = iw; sh = iw / r; sx = 0; sy = (ih - sh) / 2; }
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cv.width, cv.height);
+  const st = safeTop();
+  if (S.hideStatus && st > 20) coverStatus(cv, st, dpr);
+}
+
+function renderDesk() {
+  track.innerHTML = '';
+  const imgs = P.imgs.length ? P.imgs : [null];
+  imgs.forEach(img => {
+    const pg = document.createElement('div'); pg.className = 'page';
+    const cv = document.createElement('canvas'); pg.appendChild(cv); track.appendChild(pg);
+    drawPage(cv, img);
+  });
+  setPage(P.page, false);
+}
+function setPage(i, anim) {
+  P.page = clamp(i, 0, Math.max(0, track.children.length - 1));
+  track.style.transition = anim ? 'transform .38s cubic-bezier(.25,.8,.25,1)' : 'none';
+  track.style.transform = `translateX(${-P.page * innerWidth}px)`;
+}
+
+function loadImg(u) {
+  if (!u) return Promise.resolve(null);
+  return new Promise(res => {
+    const im = new Image();
+    im.onload = () => (im.decode ? im.decode().catch(() => {}) : Promise.resolve()).then(() => res(im));
+    im.onerror = () => res(null);
+    im.src = u;
+  });
+}
+
+async function startShow(digits) {
+  S.digits = digits; save();
+  const [d1, d2] = await Promise.all([loadImg(urls.desk1), loadImg(urls.desk2)]);
+  P = { digits, attempt: 0, entry: '', peek: null, log: [], busy: false, page: 0, peekOn: false, imgs: [d1, d2].filter(Boolean) };
+
+  lock.style.setProperty('--lbg', S.lockBg);
+  lock.style.setProperty('--lfg', S.lockFg);
+  $('#lockImg').style.backgroundImage = urls.lockbg ? `url("${urls.lockbg}")` : 'none';
+  $('#lockDim').style.opacity = S.dim / 100;
+  buildDots(); paintDots(); layout();
+
+  peekEl.classList.add('hidden');
+  Object.assign(peekEl.style, {
+    color: S.peekColor, fontSize: S.peekSize + 'px', opacity: S.peekOpacity / 100,
+    left: 'calc(34px + env(safe-area-inset-left))', bottom: S.peekBottom + 'px'
+  });
+
+  lock.classList.remove('hidden', 'fade');
+  $('#menu').classList.add('hidden');
+  desk.classList.add('hidden');
+  wake();
+  // pre-render desktop behind the lock screen so unlocking is instant
+  requestAnimationFrame(() => { desk.classList.remove('hidden'); desk.classList.add('enter'); renderDesk(); desk.style.visibility = 'hidden'; });
+}
+
+function unlock() {
+  peekEl.textContent = P.peek == null ? '' : P.peek;
+  desk.style.visibility = '';
+  desk.classList.remove('hidden');
+  desk.classList.add('enter');
+  void desk.offsetWidth;
+  desk.classList.remove('enter');
+  lock.classList.add('fade');
+  setTimeout(() => { lock.classList.add('hidden'); lock.classList.remove('fade'); }, 340);
+}
+
+function exitShow() {
+  P = null; sleep();
+  lock.classList.add('hidden'); desk.classList.add('hidden'); desk.style.visibility = '';
+  $('#menu').classList.remove('hidden');
+  showTab('unlock');
+}
+
+$$('.pick').forEach(b => b.addEventListener('click', () => startShow(+b.dataset.digits)));
+
+/* desktop gestures: swipe pages, tap bottom-right = toggle peek */
+let g = null;
+desk.addEventListener('pointerdown', e => {
+  if (!P) return;
+  g = { x: e.clientX, y: e.clientY, t: Date.now(), dx: 0, drag: false, id: e.pointerId };
+  try { desk.setPointerCapture(e.pointerId); } catch (er) {}
+});
+desk.addEventListener('pointermove', e => {
+  if (!g || e.pointerId !== g.id) return;
+  g.dx = e.clientX - g.x;
+  const n = track.children.length;
+  if (n > 1 && !g.drag && Math.abs(g.dx) > 8 && Math.abs(g.dx) > Math.abs(e.clientY - g.y)) g.drag = true;
+  if (g.drag) {
+    let dx = g.dx;
+    if ((P.page === 0 && dx > 0) || (P.page === n - 1 && dx < 0)) dx *= 0.3;
+    track.style.transition = 'none';
+    track.style.transform = `translateX(${-P.page * innerWidth + dx}px)`;
+  }
+});
+function endG(e) {
+  if (!g || e.pointerId !== g.id) return;
+  const W = innerWidth, H = innerHeight, dt = Date.now() - g.t;
+  if (g.drag) {
+    const v = g.dx / Math.max(dt, 1);
+    let p = P.page;
+    if (g.dx < -W * 0.22 || v < -0.45) p++;
+    else if (g.dx > W * 0.22 || v > 0.45) p--;
+    setPage(p, true);
+  } else if (e.type === 'pointerup' && Math.abs(g.dx) < 12 && Math.abs(e.clientY - g.y) < 12 && dt < 700) {
+    if (g.x > W - 110 && g.y > H - 130) {
+      P.peekOn = !P.peekOn;
+      peekEl.classList.toggle('hidden', !P.peekOn);
+    }
+  }
+  g = null;
+}
+desk.addEventListener('pointerup', endG);
+desk.addEventListener('pointercancel', endG);
+
+/* secret exit: long-press top-left corner */
+let lp = null, lpx = 0, lpy = 0;
+document.addEventListener('pointerdown', e => {
+  if (!P || e.clientX > 90 || e.clientY > 110) return;
+  lpx = e.clientX; lpy = e.clientY;
+  clearTimeout(lp); lp = setTimeout(() => { lp = null; exitShow(); }, 1400);
+}, true);
+document.addEventListener('pointermove', e => { if (lp && Math.hypot(e.clientX - lpx, e.clientY - lpy) > 18) { clearTimeout(lp); lp = null; } }, true);
+['pointerup', 'pointercancel'].forEach(t => document.addEventListener(t, () => { clearTimeout(lp); lp = null; }, true));
+
+/* block pinch / double-tap zoom */
+['gesturestart', 'gesturechange'].forEach(t => document.addEventListener(t, e => e.preventDefault()));
+document.addEventListener('dblclick', e => e.preventDefault());
+
+/* ---------- boot ---------- */
+(async () => {
+  await Promise.all(SLOTS.map(loadSlot));
+  $$('.tile[data-slot]').forEach(renderTile);
+  renderSetup(); refreshSummary();
+})();
+
+if ('serviceWorker' in navigator) {
+  addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
+
+window.__unlock = { S, get P() { return P; } };
+})();
+</script>
+</body>
+</html>

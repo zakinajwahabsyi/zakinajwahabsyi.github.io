@@ -1,0 +1,63 @@
+name: Buat APK Jalan Muntazhir
+
+on:
+  push:
+    branches: [main, master, jalan-muntazhir]
+    paths:
+      - "muntazhir/**"
+      - "android/**"
+      - ".github/workflows/apk.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apk
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      - name: Salin aplikasi web ke dalam APK
+        run: |
+          mkdir -p android/app/src/main/assets
+          cp muntazhir/index.html android/app/src/main/assets/index.html
+
+      - name: Siapkan kunci tanda tangan
+        env:
+          KEYSTORE_B64: ${{ secrets.KEYSTORE_B64 }}
+        run: |
+          if [ -n "$KEYSTORE_B64" ]; then echo "$KEYSTORE_B64" | base64 -d > android/app/release.keystore; fi
+          test -f android/app/release.keystore
+
+      - name: Bangun APK
+        working-directory: android
+        env:
+          VERSION_CODE: ${{ github.run_number }}
+          KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
+        run: gradle assembleRelease --no-daemon --stacktrace
+
+      - name: Terbitkan APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp android/app/build/outputs/apk/release/app-release.apk jalan-muntazhir.apk
+          gh release delete apk-latest --yes --cleanup-tag || true
+          gh release create apk-latest jalan-muntazhir.apk \
+            --target "${{ github.sha }}" \
+            --title "Jalan Muntazhir — APK terbaru" \
+            --notes "Unduh jalan-muntazhir.apk, buka di HP Android, lalu izinkan pemasangan dari sumber ini. Versi build ${{ github.run_number }}." \
+            --latest

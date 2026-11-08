@@ -1,0 +1,64 @@
+name: Buat IPA Jalan Muntazhir
+
+on:
+  push:
+    branches: [main, master, jalan-muntazhir]
+    paths:
+      - "muntazhir/**"
+      - "ios/**"
+      - ".github/workflows/ipa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ipa
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pasang XcodeGen
+        run: brew install xcodegen
+
+      - name: Salin aplikasi web ke dalam app
+        run: cp muntazhir/index.html ios/Resources/index.html
+
+      - name: Buat proyek Xcode
+        working-directory: ios
+        run: xcodegen generate
+
+      - name: Bangun app (tanpa tanda tangan)
+        working-directory: ios
+        run: |
+          xcodebuild -version
+          xcodebuild -project JalanMuntazhir.xcodeproj -target JalanMuntazhir \
+            -configuration Release -sdk iphoneos \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            CURRENT_PROJECT_VERSION=${{ github.run_number }} \
+            build
+
+      - name: Kemas IPA
+        run: |
+          APP=$(find ios/build -type d -name "JalanMuntazhir.app" -path "*Release-iphoneos*" | head -1)
+          echo "App: $APP"
+          test -n "$APP"
+          mkdir -p Payload
+          cp -R "$APP" Payload/
+          zip -qry jalan-muntazhir.ipa Payload
+          ls -la jalan-muntazhir.ipa
+
+      - name: Terbitkan IPA
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete ipa-latest --yes --cleanup-tag || true
+          gh release create ipa-latest jalan-muntazhir.ipa \
+            --target "${{ github.sha }}" \
+            --title "Jalan Muntazhir — IPA terbaru (tanpa tanda tangan)" \
+            --notes "IPA tanpa tanda tangan untuk dipasang lewat alat sideload. Versi build ${{ github.run_number }}." \
+            --latest=false

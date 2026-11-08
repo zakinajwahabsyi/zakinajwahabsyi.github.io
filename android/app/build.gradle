@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Kata sandi kunci tanda tangan: dari secret GitHub (KEYSTORE_PASS) atau dari keystore.properties
+def signingProps = new Properties()
+def signingFile = rootProject.file("keystore.properties")
+if (signingFile.exists()) { signingFile.withInputStream { signingProps.load(it) } }
+def keystorePass = System.getenv("KEYSTORE_PASS") ?: signingProps.getProperty("password")
+
+android {
+    namespace 'io.github.zakinajwahabsyi.muntazhir'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'io.github.zakinajwahabsyi.muntazhir'
+        minSdk 24
+        targetSdk 34
+        versionCode((System.getenv("VERSION_CODE") ?: "1") as Integer)
+        versionName "1." + (System.getenv("VERSION_CODE") ?: "0")
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("release.keystore")
+            storeType "pkcs12"
+            storePassword keystorePass
+            keyAlias "muntazhir"
+            keyPassword keystorePass
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

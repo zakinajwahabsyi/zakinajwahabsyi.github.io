@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0D5A62">
+<meta name="description" content="Panduan amalan harian, pekanan, bulanan dan tahunan Syiah Imamiyah: shalat, Qur'an, doa, ziarah dan kalender Ahlulbait.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Muntazhir">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Jalan Muntazhir</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Scheherazade+New:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: satu kolom selebar ponsel; pita kepala bermotif ubin bintang delapan (turquoise makam), kartu amalan dikelompokkan per waktu, bilah tab tetap di bawah */
+:root{
+  --paper:#EDF3F2; --surface:#FFFFFF; --ink:#13262B; --muted:#5A6D71; --line:#D3DFDD;
+  --tile:#0E6B74; --tile-ink:#FFFFFF; --tile-soft:#DCEDEC;
+  --gold:#946813; --gold-soft:#F3E8CF;
+  --mourn:#8A2B36; --mourn-soft:#F6E2E4;
+  --band:#0D5A62; --on-band:#F1FAF9; --band-muted:#B5DAD8; --band-gold:#EBC774;
+  --scrim:rgba(8,28,32,.5);
+  --font-display:"Reem Kufi","Segoe UI",system-ui,sans-serif;
+  --font-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-ar:"Scheherazade New","Amiri","Noto Naskh Arabic","Traditional Arabic",serif;
+  --nav-h:62px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0B1517; --surface:#122225; --ink:#E4EEEC; --muted:#93A8A9; --line:#22393C;
+  --tile:#47B6BD; --tile-ink:#05292C; --tile-soft:#163A3E;
+  --gold:#D9AE55; --gold-soft:#2F2815;
+  --mourn:#E27C88; --mourn-soft:#3A1C21;
+  --band:#0F3237; --on-band:#EAF6F5; --band-muted:#9CC5C3; --band-gold:#E3BE63;
+  --scrim:rgba(2,8,9,.65); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0B1517; --surface:#122225; --ink:#E4EEEC; --muted:#93A8A9; --line:#22393C;
+  --tile:#47B6BD; --tile-ink:#05292C; --tile-soft:#163A3E;
+  --gold:#D9AE55; --gold-soft:#2F2815;
+  --mourn:#E27C88; --mourn-soft:#3A1C21;
+  --band:#0F3237; --on-band:#EAF6F5; --band-muted:#9CC5C3; --band-gold:#E3BE63;
+  --scrim:rgba(2,8,9,.65); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+a{color:var(--tile)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:8px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;text-wrap:balance;margin:0}
+.wrap{max-width:560px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* pita kepala */
+.band{background-color:var(--band);color:var(--on-band);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.09'%3E%3Crect x='13' y='13' width='18' height='18'/%3E%3Crect x='13' y='13' width='18' height='18' transform='rotate(45 22 22)'/%3E%3C/g%3E%3C/svg%3E");}
+.band .wrap{padding-block:14px 18px;display:flex;flex-direction:column;gap:12px}
+.brand{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.brand-name{font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:.04em;color:var(--band-muted)}
+.brand-ar{font-family:var(--font-ar);font-size:22px;color:var(--band-gold);line-height:1}
+.today{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.today .tl{min-width:0}
+.greg{font-size:14px;color:var(--band-muted)}
+.hij{font-family:var(--font-display);font-weight:600;font-size:clamp(24px,7vw,30px);line-height:1.15;margin-top:2px}
+.hij span{color:var(--band-gold);font-weight:500}
+.imam{font-size:14px;margin-top:4px;color:var(--band-muted)}
+.imam b{color:var(--on-band);font-weight:600}
+.ring{flex:0 0 auto;width:76px;height:76px;position:relative}
+.ring svg{width:76px;height:76px;transform:rotate(-90deg)}
+.ring .trk{stroke:rgba(255,255,255,.16)}
+.ring .val{stroke:var(--band-gold);transition:stroke-dashoffset .5s ease}
+.ring .lbl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.ring .lbl b{font-family:var(--font-display);font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.ring .lbl small{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--band-muted);margin-top:3px}
+.next{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;font-size:14px}
+.next .when{flex:0 0 auto;font-family:var(--font-display);font-weight:600;color:var(--band-gold);font-variant-numeric:tabular-nums}
+.next .what{min-width:0}
+
+/* konten */
+main{padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 28px)}
+main .wrap{padding-block:18px 0;display:flex;flex-direction:column;gap:22px}
+.view{display:flex;flex-direction:column;gap:22px}
+.vhead{display:flex;flex-direction:column;gap:4px}
+.vhead h2{font-size:24px}
+.lede{color:var(--muted);font-size:15px;margin:0}
+.grp{display:flex;flex-direction:column;gap:10px}
+.glabel{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.glabel::before{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex:0 0 auto}
+.glabel .gl-note{font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--muted);margin-left:auto;font-size:13px}
+.glabel.is-now{color:var(--tile)}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:99px;background:var(--tile-soft);color:var(--tile);text-transform:none}
+.pill.gold{background:var(--gold-soft);color:var(--gold)}
+.pill.mourn{background:var(--mourn-soft);color:var(--mourn)}
+.pill.mute{background:transparent;color:var(--muted);border:1px solid var(--line)}
+
+.list{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.item{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:13px 14px;border-top:1px solid var(--line)}
+.item:first-child{border-top:0}
+.chk{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:transparent;display:grid;place-items:center;cursor:pointer;padding:0;margin-top:1px;transition:background .15s,border-color .15s}
+.chk svg{width:16px;height:16px;fill:none;stroke:transparent;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.chk[aria-checked="true"]{background:var(--tile);border-color:var(--tile)}
+.chk[aria-checked="true"] svg{stroke:var(--tile-ink)}
+.ititle{font-weight:600;line-height:1.3}
+.item.is-done .ititle{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line);text-decoration-thickness:2px}
+.isub{font-size:14px;color:var(--muted);line-height:1.4;margin-top:2px}
+.irow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px}
+.mini{border:1px solid var(--tile);color:var(--tile);background:transparent;border-radius:99px;padding:3px 12px;font-size:13px;font-weight:700;cursor:pointer}
+.mini.solid{background:var(--tile);color:var(--tile-ink)}
+a.mini{text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.panel.rd{align-items:stretch;max-height:92%}
+.rd .ar{font-size:28px;line-height:2.2;padding:12px 14px}
+.rd .when{font-size:14px;color:var(--muted);margin:0}
+.rd .irow{margin-top:4px}
+.gsec{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:1px solid var(--line)}
+.gsec h4{font-family:var(--font-display);font-weight:600;font-size:18px;margin:0}
+.gmeta{font-size:14px;color:var(--muted)}
+.gsec ul,.rd .det>ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.gsub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:4px!important}
+.rd .ar{font-size:26px}
+.dlib .item{grid-template-columns:minmax(0,1fr)}
+details{margin-top:6px}
+summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--tile);list-style:none;display:inline-flex;align-items:center;gap:4px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s}
+details[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
+.det{font-size:15px;line-height:1.55;margin-top:8px;display:flex;flex-direction:column;gap:8px;max-width:65ch}
+.det p{margin:0}
+.ar{font-family:var(--font-ar);font-size:24px;line-height:2;text-align:right;margin:0;color:var(--ink);background:var(--gold-soft);border-radius:10px;padding:8px 12px}
+.lat{font-style:italic;color:var(--ink);font-size:14px}
+.mean{color:var(--muted);font-size:14px}
+.src{font-size:13px;color:var(--muted)}
+
+/* kartu shalat */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.chead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.chead h3{font-size:17px}
+.count{font-family:var(--font-display);font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:99px;padding:6px 12px 6px 10px;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background .15s,border-color .15s}
+.chip::before{content:"";width:14px;height:14px;border-radius:50%;border:2px solid var(--line);box-sizing:border-box}
+.chip[aria-checked="true"]{background:var(--tile-soft);border-color:var(--tile);color:var(--tile)}
+.chip[aria-checked="true"]::before{border-color:var(--tile);background:var(--tile);box-shadow:inset 0 0 0 2px var(--tile-soft)}
+.hint{font-size:13px;color:var(--muted);margin:-4px 0 0}
+.sep{height:1px;background:var(--line);margin:4px 0}
+.stats{display:flex;gap:10px;flex-wrap:wrap}
+.stat{flex:1 1 90px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.stat b{display:block;font-family:var(--font-display);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* pekan */
+.week{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.wrow{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:9px 14px;border-top:1px solid var(--line);font-size:15px;align-items:baseline}
+.wrow:first-child{border-top:0}
+.wrow .wd{font-weight:700;color:var(--muted);font-size:14px}
+.wlink{font-size:13px;font-weight:700;white-space:nowrap;text-decoration:none}
+.wrow.is-today{background:var(--tile-soft)}
+.wrow.is-today .wd{color:var(--tile)}
+
+/* kalender bulan */
+.cal{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px}
+.cgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cdh{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center;padding:4px 0}
+.cd{border-radius:9px;min-height:52px;padding:5px 2px 4px;display:flex;flex-direction:column;align-items:center;gap:1px;border:1px solid transparent}
+.cd .hd{font-family:var(--font-display);font-weight:600;font-size:16px;line-height:1.1;font-variant-numeric:tabular-nums}
+.cd .gd{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cd .mk{display:flex;gap:3px;height:7px;margin-top:2px}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.dot.fast{background:var(--gold)}
+.dot.bidh{border:1.5px solid var(--gold)}
+.dot.syahadah{background:var(--mourn)}
+.dot.wiladah,.dot.id{background:var(--tile)}
+.dot.amal{background:var(--muted)}
+.cd.is-past .hd{color:var(--muted)}
+.cd.is-today{border-color:var(--tile);background:var(--tile-soft)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);padding:8px 4px 2px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+textarea{width:100%;min-height:92px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 12px;font:inherit;font-size:15px;resize:vertical}
+label.fl{font-size:14px;font-weight:700}
+
+/* hari penting */
+.ev{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;padding:11px 14px;border-top:1px solid var(--line);align-items:start}
+.ev:first-child{border-top:0}
+.ev .eday{font-family:var(--font-display);font-weight:600;text-align:center;line-height:1.1;font-variant-numeric:tabular-nums;padding-top:2px}
+.ev .eday b{display:block;font-size:20px}
+.ev .eday small{display:block;font-size:11px;line-height:1.2;overflow-wrap:anywhere;color:var(--muted);font-family:var(--font-body);font-weight:600}
+.ev .et{font-weight:600;line-height:1.35}
+.ev .em{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:4px;font-size:13px;color:var(--muted)}
+.ev.is-past .et{color:var(--muted)}
+.months details{margin:0;border-top:1px solid var(--line)}
+.months details:first-child{border-top:0}
+.months summary{display:flex;width:100%;justify-content:space-between;padding:12px 14px;color:var(--ink);font-size:16px;font-family:var(--font-display);font-weight:600}
+.months summary .mc{font-family:var(--font-body);font-size:13px;color:var(--muted);font-weight:600;margin-left:auto;margin-right:10px}
+.months summary::after{color:var(--muted);margin-top:6px}
+.months details[open] summary{background:var(--paper)}
+.months .evs{border-top:1px solid var(--line)}
+.months .cur summary{color:var(--tile)}
+
+/* quran */
+.qhero{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.qtop{display:flex;align-items:center;gap:16px}
+.qnum{flex:0 0 auto;width:78px;height:78px;display:grid;place-items:center;position:relative}
+.qnum svg{position:absolute;inset:0;width:78px;height:78px}
+.qnum svg path{fill:var(--gold-soft);stroke:var(--gold);stroke-width:1.5}
+.qnum b{position:relative;font-family:var(--font-display);font-size:30px;font-weight:600;color:var(--gold);font-variant-numeric:tabular-nums}
+.qinfo{min-width:0}
+.qinfo .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.qinfo h3{font-size:22px;margin-top:2px}
+.qinfo p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.qact{display:flex;flex-wrap:wrap;gap:8px}
+.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;justify-content:center}
+.btn.primary{background:var(--tile);color:var(--tile-ink)}
+.btn.ghost{background:transparent;color:var(--tile);border:1px solid var(--line)}
+.jgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.juz{aspect-ratio:1;max-width:100%;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-family:var(--font-display);font-weight:600;font-size:17px;cursor:pointer;font-variant-numeric:tabular-nums;padding:0}
+.juz[aria-pressed="true"]{background:var(--tile);border-color:var(--tile);color:var(--tile-ink)}
+.juz.is-next{border:2px solid var(--gold);color:var(--gold)}
+.days14{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:4px}
+.d14{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
+.d14 i{width:100%;max-width:18px;aspect-ratio:1;border-radius:5px;background:var(--line);display:block}
+.d14 i.on{background:var(--tile)}
+.d14 i.two{background:var(--gold)}
+.khatam{background:var(--gold-soft);border:1px solid var(--gold);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.khatam h3{color:var(--gold)}
+.khatam p{margin:0}
+
+/* pedoman */
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.pcard h3{font-size:18px;display:flex;gap:10px;align-items:baseline}
+.pcard h3 .pn{font-size:13px;color:var(--gold);font-variant-numeric:tabular-nums;flex:0 0 auto}
+.pcard .q{margin:0;font-size:16px;line-height:1.55;max-width:65ch}
+.pcard ul{margin:0;padding-left:18px;color:var(--ink);font-size:15px;display:flex;flex-direction:column;gap:2px}
+.intro{background:var(--band);color:var(--on-band);border-radius:16px;padding:16px}
+.intro p{margin:6px 0 0;color:var(--band-muted);max-width:65ch}
+.intro .ar{background:rgba(255,255,255,.08);color:var(--on-band);margin-top:10px}
+.set{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.step{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.step button{width:42px;height:38px;border:0;background:var(--paper);cursor:pointer;font-size:20px;font-weight:700}
+.step output{min-width:44px;text-align:center;font-family:var(--font-display);font-weight:600;font-variant-numeric:tabular-nums}
+.sync{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.sync::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--muted);flex:0 0 auto}
+.sync[data-s="ok"]::before{background:var(--tile)}
+.sync[data-s="slow"]::before,.sync[data-s="full"]::before{background:var(--gold)}
+.note{font-size:14px;color:var(--muted);margin:0;max-width:65ch}
+
+/* bangun malam */
+.night{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.nrow{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.nrow>div{min-width:0}
+.nk{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.nwake{font-family:var(--font-display);font-size:46px;font-weight:600;line-height:1.05;color:var(--tile);font-variant-numeric:tabular-nums;margin-top:4px}
+.nwake small{font-size:15px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.nstat{font-size:15px;font-weight:600;margin-top:2px}
+.ncity{display:flex;flex-direction:column;gap:4px}
+select.city{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:10px;padding:7px 8px;font:inherit;font-size:14px;max-width:100%}
+.nl{position:relative;height:42px;margin:0 3px}
+.nbar{position:absolute;left:0;right:0;bottom:6px;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.nbar .seg{position:absolute;top:0;bottom:0;right:0;background:var(--tile);opacity:.45}
+.nbar .tk{position:absolute;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--muted)}
+.nwd{position:absolute;bottom:1px;width:4px;height:20px;margin-left:-2px;border-radius:2px;background:var(--gold)}
+.nwk{position:absolute;top:0;font-size:12px;font-weight:700;color:var(--gold);white-space:nowrap;margin-right:-2px}
+.nnow{position:absolute;bottom:4px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--surface);border:3px solid var(--ink)}
+.nleg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.nleg div{min-width:0;display:flex;flex-direction:column;justify-content:flex-end}
+.nleg small{font-size:11px;color:var(--muted);line-height:1.25}
+.nleg b{font-family:var(--font-display);font-weight:600;font-size:17px;font-variant-numeric:tabular-nums}
+.nhint{font-size:13px;color:var(--muted);margin:0}
+.lvls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.lvl{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:9px 11px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:1px;min-width:0}
+.lvl b{font-size:14px;line-height:1.3}
+.lvl span{font-size:12px;color:var(--muted)}
+.lvl[aria-checked="true"]{border-color:var(--tile);background:var(--tile-soft)}
+.lvl[aria-checked="true"] b{color:var(--tile)}
+.lvup{background:var(--gold-soft);border-radius:12px;padding:10px 12px;font-size:14px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.motiv{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:8px}
+.motiv .mq{margin:0;font-size:17px;line-height:1.5;font-weight:600;max-width:65ch}
+.motiv .ma{margin:0;font-size:15px;max-width:65ch}
+.motiv .ar{font-size:23px}
+
+/* bilah tab bawah */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+nav.tabs .in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));height:var(--nav-h)}
+nav.tabs button{border:0;background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;padding:0 2px;position:relative}
+nav.tabs svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav.tabs button[aria-current="page"]{color:var(--tile)}
+nav.tabs button[aria-current="page"]::before{content:"";position:absolute;top:0;left:28%;right:28%;height:3px;border-radius:0 0 3px 3px;background:var(--tile)}
+
+/* penghitung dzikir */
+.sheet{position:fixed;inset:0;z-index:40;background:var(--scrim);display:flex;align-items:flex-end;justify-content:center}
+.panel{background:var(--surface);width:100%;max-width:560px;border-radius:20px 20px 0 0;padding:18px max(16px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;align-items:center;gap:12px;max-height:100%;overflow:auto}
+.panel .ph{display:flex;width:100%;justify-content:space-between;align-items:center}
+.panel h3{font-size:18px}
+.xbtn{border:1px solid var(--line);background:transparent;border-radius:99px;padding:5px 14px;font-weight:700;cursor:pointer}
+.cnt-ar{font-family:var(--font-ar);font-size:30px;line-height:1.7;text-align:center;margin:0}
+.cnt-lat{font-style:italic;color:var(--muted);text-align:center;margin:0;font-size:15px}
+.tap{width:min(64vw,230px);aspect-ratio:1;max-width:100%;border-radius:50%;border:0;background:var(--tile-soft);position:relative;cursor:pointer;display:grid;place-items:center;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.tap:active{transform:scale(.98)}
+.tap svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.tap .tr{stroke:var(--line)}
+.tap .tv{stroke:var(--tile);transition:stroke-dashoffset .12s linear}
+.tap .tn{position:relative;display:flex;flex-direction:column;align-items:center;line-height:1}
+.tap .tn b{font-family:var(--font-display);font-size:54px;font-weight:600;color:var(--tile);font-variant-numeric:tabular-nums}
+.tap .tn small{font-size:14px;color:var(--muted);margin-top:6px}
+.phases{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.phases span{font-size:13px;font-weight:700;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.phases span.on{border-color:var(--tile);color:var(--tile);background:var(--tile-soft)}
+.phases span.ok{color:var(--tile)}
+.cdone{color:var(--tile);font-weight:700;text-align:center;margin:0}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} }
+</style>
+</head>
+<body>
+<header class="band">
+  <div class="wrap">
+    <div class="brand"><span class="brand-name">JALAN MUNTAZHIR</span><span class="brand-ar" lang="ar" dir="rtl">مُنْتَظِر</span></div>
+    <div class="today">
+      <div class="tl">
+        <div class="greg" id="hGreg">Jumat, 6 November 2026</div>
+        <div class="hij" id="hHij">26 Jumadil Awal <span>1448 H</span></div>
+        <div class="imam" id="hImam">Hari ziarah <b>Imam Zaman (ajtf)</b></div>
+      </div>
+      <div class="ring" aria-label="Progres amalan hari ini" role="img" id="hRingWrap">
+        <svg viewBox="0 0 76 76"><circle class="trk" cx="38" cy="38" r="32" fill="none" stroke-width="6"/><circle class="val" id="hRing" cx="38" cy="38" r="32" fill="none" stroke-width="6" stroke-linecap="round" stroke-dasharray="201.06" stroke-dashoffset="201.06"/></svg>
+        <div class="lbl"><b id="hPct">0%</b><small>hari ini</small></div>
+      </div>
+    </div>
+    <div class="next" id="hNext"><span class="when">7 hari</span><span class="what">Syahadah Sayyidah Fatimah az-Zahra sa</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="view" id="v-harian" aria-label="Amalan harian"></section>
+    <section class="view" id="v-pekan" aria-label="Amalan pekanan" hidden></section>
+    <section class="view" id="v-bulan" aria-label="Amalan bulanan" hidden></section>
+    <section class="view" id="v-tahun" aria-label="Amalan tahunan" hidden></section>
+    <section class="view" id="v-quran" aria-label="One Day One Juz" hidden></section>
+    <section class="view" id="v-pedoman" aria-label="Pedoman" hidden></section>
+  </div>
+</main>
+
+<nav class="tabs" aria-label="Menu">
+  <div class="in">
+    <button type="button" data-act="tab" data-tab="harian"><svg viewBox="0 0 24 24"><path d="M3 18h18M7 15a5 5 0 0 1 10 0M12 4v3M5.2 8.2l1.6 1.6M18.8 8.2l-1.6 1.6M7 21h10"/></svg>Harian</button>
+    <button type="button" data-act="tab" data-tab="pekan"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Pekan</button>
+    <button type="button" data-act="tab" data-tab="bulan"><svg viewBox="0 0 24 24"><path d="M16 3.8A8.5 8.5 0 1 0 20.2 15 7 7 0 0 1 16 3.8z"/></svg>Bulan</button>
+    <button type="button" data-act="tab" data-tab="tahun"><svg viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11"/><rect x="6.5" y="6.5" width="11" height="11" transform="rotate(45 12 12)"/></svg>Tahun</button>
+    <button type="button" data-act="tab" data-tab="quran"><svg viewBox="0 0 24 24"><path d="M3 6.5c3-1.6 6-1.6 9 0V20c-3-1.6-6-1.6-9 0zM21 6.5c-3-1.6-6-1.6-9 0V20c3-1.6 6-1.6 9 0z"/></svg>Qur’an</button>
+    <button type="button" data-act="tab" data-tab="pedoman"><svg viewBox="0 0 24 24"><path d="M6 21V11a6 6 0 0 1 12 0v10M3.5 21h17M12 5V2.5M10 16h4"/></svg>Pedoman</button>
+  </div>
+</nav>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="cTitle">
+    <div class="ph"><h3 id="cTitle">Tasbih Fatimah az-Zahra</h3><button type="button" class="xbtn" data-act="cclose">Tutup</button></div>
+    <p class="cnt-ar" id="cAr" lang="ar" dir="rtl"></p>
+    <p class="cnt-lat" id="cLat"></p>
+    <button type="button" class="tap" id="cTap" data-act="ctap" aria-label="Tambah hitungan">
+      <svg viewBox="0 0 100 100"><circle class="tr" cx="50" cy="50" r="46" fill="none" stroke-width="4"/><circle class="tv" id="cRing" cx="50" cy="50" r="46" fill="none" stroke-width="4" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"/></svg>
+      <span class="tn"><b id="cNum">0</b><small id="cOf">dari 34</small></span>
+    </button>
+    <div class="phases" id="cPhases"></div>
+    <p class="cdone" id="cDone" hidden></p>
+    <button type="button" class="btn ghost" data-act="creset">Ulangi dari awal</button>
+  </div>
+</div>
+
+<div class="sheet" id="reader" hidden>
+  <div class="panel rd" role="dialog" aria-modal="true" aria-labelledby="rTitle">
+    <div class="ph"><h3 id="rTitle">Teks doa</h3><button type="button" class="xbtn" data-act="rclose">Tutup</button></div>
+    <div class="det" id="rBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- utilitas tanggal ---------- */
+const pad=n=>String(n).padStart(2,"0");
+const ymd=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const addDays=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n,12);
+const today0=()=>{const n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate(),12);};
+const HARI=["Ahad","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+const BLN=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+const BLS=["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];
+const HBS=["","Muharram","Safar","R. Awal","R. Akhir","J. Awal","J. Akhir","Rajab","Sya’ban","Ramadhan","Syawal","Dzulqa’dah","Dzulhijjah"];
+const HBLN=["","Muharram","Safar","Rabiul Awal","Rabiul Akhir","Jumadil Awal","Jumadil Akhir","Rajab","Sya’ban","Ramadhan","Syawal","Dzulqa’dah","Dzulhijjah"];
+const fmtLong=d=>HARI[d.getDay()]+", "+d.getDate()+" "+BLN[d.getMonth()]+" "+d.getFullYear();
+const fmtShort=d=>HARI[d.getDay()]+", "+d.getDate()+" "+BLS[d.getMonth()];
+const fmtDM=d=>d.getDate()+" "+BLS[d.getMonth()];
+
+let HF=null;
+for(const cal of ["islamic-umalqura","islamic-civil","islamic"]){
+  try{ const f=new Intl.DateTimeFormat("en-u-ca-"+cal+"-nu-latn",{day:"numeric",month:"numeric",year:"numeric"});
+    if(/islamic/.test(f.resolvedOptions().calendar)){HF=f;break;} }catch(e){}
+}
+function jdn(y,m,d){const a=Math.floor((14-m)/12),yy=y+4800-a,mm=m+12*a-3;return d+Math.floor((153*mm+2)/5)+365*yy+Math.floor(yy/4)-Math.floor(yy/100)+Math.floor(yy/400)-32045;}
+function tabular(date){
+  let l=jdn(date.getFullYear(),date.getMonth()+1,date.getDate())-1948440+10632;
+  const n=Math.floor((l-1)/10631); l=l-10631*n+354;
+  const j=Math.floor((10985-l)/5316)*Math.floor((50*l)/17719)+Math.floor(l/5670)*Math.floor((43*l)/15238);
+  l=l-Math.floor((30-j)/15)*Math.floor((17719*j)/50)-Math.floor(j/16)*Math.floor((15238*j)/43)+29;
+  const m=Math.floor((24*l)/709), d=l-Math.floor((709*m)/24), y=30*n+j-30;
+  return {d,m,y};
+}
+const hcache=new Map();
+function hijriRaw(date){
+  const k=ymd(date); if(hcache.has(k)) return hcache.get(k);
+  let r=null;
+  if(HF){ try{ const p=HF.formatToParts(date); const g=t=>{const x=p.find(q=>q.type===t);return x?parseInt(x.value,10):NaN;};
+    r={d:g("day"),m:g("month"),y:g("year")}; if(isNaN(r.y)) r.y=g("relatedYear"); if(isNaN(r.d)||isNaN(r.m)||isNaN(r.y)) r=null; }catch(e){r=null} }
+  if(!r) r=tabular(date);
+  hcache.set(k,r); return r;
+}
+const offset=()=>{const o=(M().settings||{}).offset;return typeof o==="number"?o:0;};
+const hijri=date=>hijriRaw(addDays(date,offset()));
+
+/* ---------- data ---------- */
+const IMAM_HARI=[
+  "Amirul Mukminin Ali as & Sayyidah Fatimah az-Zahra sa",
+  "Imam Hasan al-Mujtaba as & Imam Husain as",
+  "Imam Ali Zainal Abidin, Imam Muhammad al-Baqir & Imam Ja’far ash-Shadiq as",
+  "Imam Musa al-Kazim, Imam Ali ar-Ridha, Imam Muhammad al-Jawad & Imam Ali al-Hadi as",
+  "Imam Hasan al-Askari as",
+  "Imam Muhammad al-Mahdi (ajtf), Shahibuz Zaman",
+  "Rasulullah Muhammad saw"
+];
+const IMAM_SINGKAT=["Imam Ali & Sayyidah Fatimah","Imam Hasan & Imam Husain","Imam Sajjad, Baqir & Shadiq","Imam Kazim, Ridha, Jawad & Hadi","Imam Hasan al-Askari","Imam Zaman (ajtf)","Rasulullah saw"];
+
+const AR={
+  shalawat:"اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ وَعَجِّلْ فَرَجَهُمْ",
+  istighfar:"أَسْتَغْفِرُ اللهَ رَبِّي وَأَتُوبُ إِلَيْهِ",
+  husain:"السَّلَامُ عَلَى الْحُسَيْنِ، وَعَلَى عَلِيِّ بْنِ الْحُسَيْنِ، وَعَلَى أَوْلَادِ الْحُسَيْنِ، وَعَلَى أَصْحَابِ الْحُسَيْنِ",
+  faraj:"اللَّهُمَّ كُنْ لِوَلِيِّكَ الْحُجَّةِ بْنِ الْحَسَنِ، صَلَوَاتُكَ عَلَيْهِ وَعَلَى آبَائِهِ، فِي هٰذِهِ السَّاعَةِ وَفِي كُلِّ سَاعَةٍ، وَلِيًّا وَحَافِظًا، وَقَائِدًا وَنَاصِرًا، وَدَلِيلًا وَعَيْنًا، حَتَّى تُسْكِنَهُ أَرْضَكَ طَوْعًا، وَتُمَتِّعَهُ فِيهَا طَوِيلًا",
+  zain:"كُونُوا لَنَا زَيْنًا وَلَا تَكُونُوا عَلَيْنَا شَيْنًا"
+};
+
+const FARDHU=["Subuh","Zuhur","Asar","Maghrib","Isya"];
+const NAFILAH=["Subuh 2","Zuhur 8","Asar 8","Maghrib 4","Isya 2","Shalat Malam"];
+
+const DAILY=[
+ {label:"Setelah Subuh",items:[
+  {id:"ahd",t:"Doa Ahd",s:"Setiap pagi, janji setia kepada Imam Zaman (ajtf)",
+   d:["Riwayat dari Imam Ja’far ash-Shadiq as menyebutkan bahwa siapa yang membaca doa ini selama 40 pagi akan termasuk penolong Imam Mahdi (ajtf). Teks lengkapnya ada di Mafatih al-Jinan."]},
+  {id:"asyura",t:"Ziarah Asyura",s:"Atau minimal salam kepada Imam Husain as",
+   d:["Para ulama sangat menganjurkan Ziarah Asyura setiap hari. Jika waktu sempit, sampaikan salam singkat ini sambil menghadap ke arah Karbala:"],
+   ar:AR.husain,lat:"Assalâmu ‘alal Husain, wa ‘alâ ‘Aliyyibnil Husain, wa ‘alâ awlâdil Husain, wa ‘alâ ash-hâbil Husain.",
+   mean:"Salam atas al-Husain, atas Ali putra al-Husain, atas anak-anak al-Husain, dan atas para sahabat al-Husain."},
+  {id:"quran",t:"Tilawah 1 juz",special:"quran"}
+ ]},
+ {label:"Sepanjang hari",items:[
+  {id:"zaman",t:"Doa keselamatan Imam Zaman (ajtf)",s:"Allâhumma kun li waliyyik…",
+   d:["Dibaca kapan saja, terutama setelah shalat. Doa ini juga diamalkan khusus pada malam ke-23 Ramadhan."],
+   ar:AR.faraj,lat:"Allâhumma kun li waliyyikal Hujjatibnil Hasan, shalawâtuka ‘alaihi wa ‘alâ âbâ’ih, fî hâdzihis sâ‘ati wa fî kulli sâ‘ah, waliyyan wa hâfizhâ, wa qâ’idan wa nâshirâ, wa dalîlan wa ‘ainâ, hattâ tuskinahu ardhaka thau‘â, wa tumatti‘ahu fîhâ thawîlâ.",
+   mean:"Ya Allah, jadilah bagi wali-Mu al-Hujjah putra al-Hasan, salawat-Mu atasnya dan atas para leluhurnya, pada saat ini dan setiap saat: pelindung, penjaga, pemimpin, penolong, penunjuk, dan pengawas, hingga Engkau tempatkan ia di bumi-Mu dengan ketaatan dan Engkau panjangkan masanya di sana."},
+  {id:"ziarahHari",t:"Ziarah hari ini",special:"ziarah",
+   d:["Mafatih al-Jinan mengkhususkan setiap hari dalam sepekan untuk ziarah kepada Ma’shum tertentu. Bacalah ziarahnya, atau sampaikan salam kepada beliau."]},
+  {id:"shalawat",t:"Shalawat 100×",s:"Dengan doa penyegeraan faraj",counter:"shalawat",
+   ar:AR.shalawat,lat:"Allâhumma shalli ‘alâ Muhammad wa âli Muhammad wa ‘ajjil farajahum.",mean:"Ya Allah, limpahkan salawat atas Muhammad dan keluarga Muhammad, dan segerakan kelapangan mereka."},
+  {id:"istighfar",t:"Istighfar 70×",s:"Astaghfirullâha rabbî wa atûbu ilaih",counter:"istighfar",
+   ar:AR.istighfar,mean:"Aku memohon ampun kepada Allah, Tuhanku, dan aku bertaubat kepada-Nya."},
+  {id:"sedekah",t:"Sedekah harian",s:"Walau sedikit",
+   d:["Sedekah menolak bala. Banyak orang meniatkan sedekah hariannya untuk keselamatan Imam Zaman (ajtf)."]},
+  {id:"ilmu",t:"Belajar agama 15 menit",s:"Hadis, Nahjul Balaghah, doa, atau fiqih",
+   d:["Satu hadis, satu khutbah atau hikmah Nahjul Balaghah, satu doa Shahifah Sajjadiyah, atau satu masalah fiqih dari risalah amaliyah marja’ Anda."]}
+ ]},
+ {label:"Akhlak",items:[
+  {id:"lisan",t:"Menjaga lisan",s:"Tanpa ghibah, dusta, dan kata kasar",
+   d:["Imam Ja’far ash-Shadiq as meminta Syiahnya menjadi hiasan bagi Ahlulbait, bukan aib. Lisan yang terjaga adalah tanda paling nyata."]},
+  {id:"birr",t:"Berbakti & menolong",s:"Orang tua, keluarga, atau seorang mukmin",
+   d:["Menyenangkan hati orang tua dan memenuhi hajat seorang mukmin termasuk amal yang paling dicintai Ahlulbait as."]}
+ ]},
+ {label:"Sebelum tidur",items:[
+  {id:"muhasabah",t:"Muhasabah",s:"Hitung amal hari ini",
+   d:["Imam Musa al-Kazim as bersabda bahwa bukan dari golongan kami orang yang tidak menghisab dirinya setiap hari. Jika ia berbuat baik, ia memohon tambahan kepada Allah. Jika berbuat buruk, ia beristighfar dan bertaubat. (al-Kafi)"]},
+  {id:"wudhu",t:"Tidur dalam keadaan suci",s:"Berwudhu, Tasbih Fatimah, niat jam bangun",
+   d:["Dianjurkan tidur dalam keadaan berwudhu, membaca Tasbih Fatimah az-Zahra, Ayat Kursi, dan Al-Ikhlas, lalu berniat bangun untuk Shalat Malam."]}
+ ]}
+];
+const DAY_IDS=[...FARDHU.map((_,i)=>"f"+i),...FARDHU.map((_,i)=>"t"+i),...NAFILAH.map((_,i)=>"n"+i),"g0",...DAILY.flatMap(g=>g.items.map(i=>i.id))];
+
+const WEEKLY=[
+ {id:"kamis",label:"Malam Jumat",note:"Kamis setelah Maghrib",day:4,items:[
+  {id:"kumayl",t:"Doa Kumayl",s:"Diajarkan Imam Ali as kepada Kumayl bin Ziyad",d:["Dibaca malam Jumat, sendiri maupun berjamaah. Teksnya ada di Mafatih al-Jinan."]},
+  {id:"ziarahHusain",t:"Ziarah Imam Husain as",s:"Sangat dianjurkan pada malam Jumat",d:["Banyak riwayat menyebut keutamaan menziarahi Imam Husain as pada malam Jumat, meski dari kejauhan."]},
+  {id:"surah",t:"Surah-surah malam Jumat",s:"Misalnya Al-Kahfi, Yasin, Al-Waqi’ah",d:["Mafatih al-Jinan menyebut sejumlah surah yang dianjurkan pada malam dan hari Jumat. Pilih yang Anda mampu."]}
+ ]},
+ {id:"jumat",label:"Hari Jumat",note:"Hari raya pekanan kaum mukmin",day:5,items:[
+  {id:"ghusl",t:"Mandi sunnah Jumat",s:"Antara Subuh dan Zuhur",d:["Termasuk sunnah yang sangat ditekankan. Rinciannya ikuti risalah marja’ Anda."]},
+  {id:"nudbah",t:"Doa Nudbah",s:"Pagi Jumat, ungkapan rindu kepada Imam Zaman",d:["Dibaca pada pagi Jumat, juga pada Idul Fitri, Idul Adha, dan Idul Ghadir."]},
+  {id:"ziarahZaman",t:"Ziarah Imam Zaman (ajtf)",s:"Jumat adalah hari beliau",d:["Bacalah ziarah hari Jumat untuk Imam Zaman atau Ziarah Aali Yasin, lalu perbarui janji setia kepada beliau."]},
+  {id:"jumatShalat",t:"Shalat Jumat atau Zuhur berjamaah",s:"Bila Shalat Jumat diselenggarakan",d:["Hukum Shalat Jumat di masa ghaibah mengikuti fatwa marja’ masing-masing."]},
+  {id:"shalawatJumat",t:"Perbanyak shalawat",s:"Amalan paling utama hari Jumat",d:["Riwayat Ahlulbait as menyebut shalawat sebagai amalan terbaik pada hari Jumat. Gunakan penghitung di tab Harian."]},
+  {id:"rapih",t:"Potong kuku & berwangi-wangian",s:"Berpakaian bersih",d:["Termasuk adab hari Jumat yang diajarkan Rasulullah saw dan Ahlulbait."]},
+  {id:"sedekahJumat",t:"Sedekah Jumat",s:"Pahala sedekah berlipat pada hari ini"}
+ ]},
+ {id:"pekan",label:"Sepanjang pekan",items:[
+  {id:"tawassul",t:"Doa Tawassul",s:"Banyak komunitas membacanya malam Rabu",d:["Bertawassul kepada 14 Ma’shum as. Bisa dibaca kapan saja, sendiri atau berjamaah."]},
+  {id:"majelis",t:"Hadir majelis Ahlulbait",s:"Kajian, doa bersama, atau majelis duka",d:["Imam Ja’far ash-Shadiq as bersabda: hidupkanlah urusan kami, semoga Allah merahmati orang yang menghidupkan urusan kami."]},
+  {id:"silaturahmi",t:"Silaturahmi",s:"Kunjungi atau hubungi orang tua & kerabat",d:["Banyak riwayat menyebut silaturahmi memanjangkan umur dan meluaskan rezeki."]}
+ ]}
+];
+
+const YEARLY=[
+ {id:"khumus",t:"Hitung & tunaikan khumus",s:"Pada tanggal tahun khumus Anda",d:["Tetapkan satu tanggal sebagai awal tahun khumus. Setiap tahun pada tanggal itu, hitung kelebihan penghasilan sesuai fatwa marja’ Anda dan tunaikan melalui wakil resminya."]},
+ {id:"muharram",t:"Majelis duka Muharram & Safar",s:"Asyura 10 Muharram, Arbain 20 Safar"},
+ {id:"arbain",t:"Ziarah Arbain",s:"Ke Karbala jika mampu, atau ziarah dari jauh"},
+ {id:"rajab",t:"Amalan Rajab",s:"Istighfar, puasa, i’tikaf 13–15 Rajab"},
+ {id:"syaban",t:"Ihya malam Nisfu Sya’ban",s:"Malam kelahiran Imam Mahdi (ajtf)"},
+ {id:"ramadhan",t:"Puasa Ramadhan penuh",s:"Doa Iftitah tiap malam, Doa Abu Hamzah saat sahur"},
+ {id:"qadar",t:"Ihya Malam Qadar",s:"Malam ke-19, 21, dan 23 Ramadhan"},
+ {id:"fitrah",t:"Zakat fitrah",s:"Sebelum shalat Idul Fitri"},
+ {id:"arafah",t:"Doa Arafah Imam Husain as",s:"9 Dzulhijjah"},
+ {id:"ghadir",t:"Rayakan Idul Ghadir",s:"18 Dzulhijjah, perbarui janji wilayah"},
+ {id:"haji",t:"Haji, atau menabung untuk haji",s:"Wajib sekali seumur hidup bila mampu"},
+ {id:"fiqih",t:"Pelajari satu bab fiqih",s:"Dari risalah amaliyah marja’ Anda"}
+];
+
+/* [bulan, hari ("L" = hari terakhir), jenis, judul, malam?] */
+const EVENTS=[
+ [1,1,"amal","Tahun Baru Hijriah, awal majelis duka Muharram"],
+ [1,10,"syahadah","Asyura, syahadah Imam Husain as di Karbala"],
+ [1,25,"syahadah","Syahadah Imam Ali Zainal Abidin as"],
+ [2,7,"wiladah","Kelahiran Imam Musa al-Kazim as"],
+ [2,20,"amal","Arbain Imam Husain as"],
+ [2,28,"syahadah","Wafat Rasulullah saw & syahadah Imam Hasan al-Mujtaba as"],
+ [2,"L","syahadah","Syahadah Imam Ali ar-Ridha as (akhir Safar)"],
+ [3,8,"syahadah","Syahadah Imam Hasan al-Askari as"],
+ [3,9,"id","Awal imamah Imam Mahdi (ajtf)"],
+ [3,17,"wiladah","Maulid Nabi Muhammad saw & kelahiran Imam Ja’far ash-Shadiq as"],
+ [4,8,"wiladah","Kelahiran Imam Hasan al-Askari as"],
+ [5,5,"wiladah","Kelahiran Sayyidah Zainab sa"],
+ [5,13,"syahadah","Syahadah Sayyidah Fatimah az-Zahra sa (riwayat 75 hari)"],
+ [6,3,"syahadah","Syahadah Sayyidah Fatimah az-Zahra sa (riwayat 95 hari)"],
+ [6,20,"wiladah","Kelahiran Sayyidah Fatimah az-Zahra sa"],
+ [7,1,"wiladah","Kelahiran Imam Muhammad al-Baqir as, awal bulan Rajab"],
+ [7,3,"syahadah","Syahadah Imam Ali al-Hadi as"],
+ [7,10,"wiladah","Kelahiran Imam Muhammad al-Jawad as"],
+ [7,13,"wiladah","Kelahiran Imam Ali bin Abi Thalib as, awal i’tikaf"],
+ [7,15,"amal","Amalan Ummu Dawud, wafat Sayyidah Zainab sa"],
+ [7,25,"syahadah","Syahadah Imam Musa al-Kazim as"],
+ [7,27,"id","Mab’ats, pengangkatan Nabi Muhammad saw"],
+ [8,3,"wiladah","Kelahiran Imam Husain as"],
+ [8,4,"wiladah","Kelahiran Abul Fadhl al-Abbas as"],
+ [8,5,"wiladah","Kelahiran Imam Ali Zainal Abidin as"],
+ [8,15,"id","Nisfu Sya’ban, kelahiran Imam Mahdi (ajtf)",1],
+ [9,1,"amal","Awal puasa Ramadhan"],
+ [9,10,"syahadah","Wafat Sayyidah Khadijah al-Kubra sa"],
+ [9,15,"wiladah","Kelahiran Imam Hasan al-Mujtaba as"],
+ [9,19,"amal","Malam Qadar pertama, Imam Ali as terluka",1],
+ [9,21,"syahadah","Syahadah Imam Ali as, Malam Qadar",1],
+ [9,23,"amal","Malam Qadar",1],
+ [10,1,"id","Idul Fitri"],
+ [10,25,"syahadah","Syahadah Imam Ja’far ash-Shadiq as"],
+ [11,1,"wiladah","Kelahiran Sayyidah Fatimah al-Ma’shumah sa"],
+ [11,11,"wiladah","Kelahiran Imam Ali ar-Ridha as"],
+ [11,25,"amal","Dahwul Ardh, hari terhamparnya bumi"],
+ [11,"L","syahadah","Syahadah Imam Muhammad al-Jawad as (akhir Dzulqa’dah)"],
+ [12,7,"syahadah","Syahadah Imam Muhammad al-Baqir as"],
+ [12,9,"amal","Hari Arafah, Doa Arafah Imam Husain as"],
+ [12,10,"id","Idul Adha"],
+ [12,15,"wiladah","Kelahiran Imam Ali al-Hadi as"],
+ [12,18,"id","Idul Ghadir"],
+ [12,24,"id","Hari Mubahalah"]
+];
+const EVTYPE={wiladah:["Kelahiran","pill"],syahadah:["Duka","pill mourn"],amal:["Amalan","pill mute"],id:["Hari raya","pill gold"]};
+const EVMAP={}; EVENTS.forEach(e=>{const k=e[0]+"-"+e[1];(EVMAP[k]=EVMAP[k]||[]).push({m:e[0],d:e[1],type:e[2],t:e[3],night:!!e[4]});});
+
+const quranUrl=n=>"https://qourraan2.blogspot.com/2000/01/"+n+".html?m=1";
+const JUZ=["","Al-Fatihah 1","Al-Baqarah 142","Al-Baqarah 253","Ali ‘Imran 93","An-Nisa’ 24","An-Nisa’ 148","Al-Ma’idah 82","Al-An’am 111","Al-A’raf 88","Al-Anfal 41","At-Taubah 93","Hud 6","Yusuf 53","Al-Hijr 1","Al-Isra’ 1","Al-Kahfi 75","Al-Anbiya’ 1","Al-Mu’minun 1","Al-Furqan 21","An-Naml 56","Al-‘Ankabut 46","Al-Ahzab 31","Yasin 28","Az-Zumar 32","Fushshilat 47","Al-Ahqaf 1","Adz-Dzariyat 31","Al-Mujadilah 1","Al-Mulk 1","An-Naba’ 1"];
+
+const DS="https://www.duas.org", WS="https://id.wikishia.net/view/";
+/* teks ziarah khusus tiap hari, indeks = getDay() (0 = Ahad) */
+const ZDAY=[36,37,38,39,40,41,35].map(n=>"https://hmomen.com/content/days_zyarat/"+n);
+const DUA={
+ ahd:{t:"Doa Ahd",w:"Setiap pagi setelah Subuh, selama 40 hari",links:[[DS+"/mobile/dua-ahad.html","Buka teks doa"],[WS+"Doa_%27Ahad","Penjelasan (Indonesia)"]]},
+ asyura:{t:"Ziarah Asyura",w:"Setiap hari, terutama 10 Muharram",inapp:1,links:[[DS+"/mobile/ziyarat-imam-hussain-ashura.html","Buka teks ziarah"],[WS+"Teks:Doa_Ziarah_Asyura","Teks & terjemahan Indonesia"]]},
+ zaman:{t:"Doa keselamatan Imam Zaman (ajtf)",w:"Kapan saja, terutama setelah shalat",inapp:1},
+ shalawat:{t:"Shalawat dengan doa faraj",w:"100× setiap hari, lebih banyak pada hari Jumat",inapp:1},
+ istighfar:{t:"Istighfar",w:"70× setiap hari",inapp:1},
+ ziarahHari:{t:"Ziarah hari-hari dalam sepekan",w:"Satu ziarah untuk setiap hari",links:[[DS+"/mobile/days-week-duas.html","Buka teks ziarah"]]},
+ kumayl:{t:"Doa Kumayl",w:"Malam Jumat",links:[[DS+"/mobile/dua-kumayl.html","Buka teks doa"],[WS+"Teks:Doa_Kumail","Teks & terjemahan Indonesia"]]},
+ ziarahHusain:{t:"Ziarah Warits untuk Imam Husain as",w:"Malam Jumat dan kapan saja",links:[[DS+"/mobile/ziyarat-imam-hussain-waritha.html","Buka teks ziarah"],[WS+"Ziarah_Imam_Husain_as","Penjelasan (Indonesia)"]]},
+ nudbah:{t:"Doa Nudbah",w:"Pagi Jumat dan hari raya",links:[[DS+"/mobile/dua-nudba.html","Buka teks doa"],[WS+"Doa_Nudbah","Penjelasan (Indonesia)"]]},
+ ziarahZaman:{t:"Ziarah Imam Zaman (ajtf)",w:"Hari Jumat dan kapan saja",links:[[DS+"/mobile/ziarat-aleyasin.html","Ziarah Aali Yasin"],["https://hmomen.com/content/days_zyarat/41","Ziarah hari Jumat"]]},
+ tawassul:{t:"Doa Tawassul",w:"Kapan saja, banyak dibaca malam Rabu",links:[[DS+"/mobile/dua-tawassul.html","Buka teks doa"],[WS+"Doa_Tawasul","Penjelasan (Indonesia)"]]},
+ muharram:{t:"Amalan hari Asyura",w:"10 Muharram",links:[[DS+"/pdfs/amaal%20of%20ashura.pdf","Buka amalan (PDF)"]]},
+ arbain:{t:"Ziarah Arbain",w:"20 Safar",links:[[DS+"/safar/arbaeen.htm","Buka teks ziarah"]]},
+ rajab:{t:"Amalan Ummu Dawud",w:"15 Rajab, setelah puasa 13–15 Rajab",links:[[DS+"/ummedawood.htm","Buka teks amalan"]]},
+ syaban:{t:"Amalan Nisfu Sya’ban",w:"Malam dan hari 15 Sya’ban",links:[[DS+"/shaaban-15.html","Buka teks amalan"]]},
+ ramadhan:{t:"Doa Iftitah & Doa Abu Hamzah",w:"Setiap malam dan sahur Ramadhan",links:[[DS+"/ramadhanpdfs/Dua%20Iftitah%20-%20line%20by%20line%20-%20duas.org.pdf","Doa Iftitah (PDF)"],[DS+"/mobile/ramadan-suhoor-dua-abu-hamza-thumali.html","Doa Abu Hamzah"],[WS+"Doa_Iftitah","Penjelasan Iftitah (Indonesia)"]]},
+ qadar:{t:"Amalan Malam Qadar",w:"Malam ke-19, 21, dan 23 Ramadhan",links:[[DS+"/last10ramadhan.htm","Buka teks amalan"]]},
+ arafah:{t:"Doa Arafah Imam Husain as",w:"9 Dzulhijjah, sore hari",links:[[DS+"/mobile/dua-arafah-imam-husain.html","Buka teks doa"]]}
+};
+const PEDOMAN=[
+ {h:"Kenali Imam zamanmu",q:"Rasulullah saw bersabda: siapa yang mati tanpa mengenal imamnya, ia mati dalam keadaan jahiliyah.",src:"al-Kafi; juga dikenal dalam riwayat Ahlusunnah dengan redaksi berbeda",p:["Pelajari kehidupan 14 Ma’shum, terutama Imam Mahdi (ajtf).","Baca Doa Ahd dan doa keselamatan beliau setiap hari."]},
+ {h:"Takwa, bukan sekadar pengakuan",q:"Imam Muhammad al-Baqir as berkata kepada Jabir: tidak cukup seseorang mengaku Syiah hanya dengan mencintai kami. Syiah kami adalah orang yang bertakwa kepada Allah dan menaati-Nya.",src:"al-Kafi",p:["Kerjakan yang wajib, tinggalkan yang haram.","Riwayat yang sama menyebut tanda-tandanya: jujur, rendah hati, amanah, banyak berzikir, berbakti kepada orang tua, dan memperhatikan tetangga yang miskin."]},
+ {h:"Shalat di awal waktu",q:"Menjelang wafat, Imam Ja’far ash-Shadiq as berpesan bahwa syafaat Ahlulbait tidak akan sampai kepada orang yang meremehkan shalat.",src:"al-Kafi",p:["Tunaikan shalat di awal waktu, sebisa mungkin berjamaah.","Jaga Tasbih Fatimah az-Zahra setelah setiap shalat."]},
+ {h:"Lima tanda mukmin",q:"Imam Hasan al-Askari as menyebut lima tanda mukmin: shalat 51 rakaat sehari semalam, ziarah Arbain, memakai cincin di tangan kanan, meletakkan dahi di atas tanah saat sujud, dan mengeraskan bacaan Bismillah.",src:"Tahdzib al-Ahkam, Syekh ath-Thusi",p:["17 rakaat wajib + 34 rakaat nafilah = 51. Mulailah dari nafilah Subuh dan Shalat Malam."]},
+ {h:"Jujur dan amanah",q:"Imam Ja’far ash-Shadiq as berpesan agar kita tidak menilai seseorang dari panjang ruku’ dan sujudnya, karena itu bisa sekadar kebiasaan. Nilailah dari kejujuran ucapan dan penunaian amanahnya.",src:"al-Kafi",p:["Tepati janji, bayar utang tepat waktu, jangan curang dalam pekerjaan."]},
+ {h:"Jadilah hiasan, bukan aib",q:"Imam Ja’far ash-Shadiq as berpesan kepada para pengikutnya:",ar:AR.zain,mean:"Jadilah kalian hiasan bagi kami, dan janganlah menjadi aib atas kami.",src:"al-Amali, Syekh ash-Shaduq",p:["Tunjukkan akhlak terbaik di keluarga, tempat kerja, dan lingkungan.","Hindari debat kasar di media sosial."]},
+ {h:"Bergaul baik dengan sesama Muslim",q:"Imam Ja’far ash-Shadiq as menganjurkan para pengikutnya shalat di masjid saudara Muslim lain, menjenguk yang sakit, dan menghadiri jenazah mereka. Imam Ali as di Shiffin juga tidak suka sahabatnya menjadi pencaci.",src:"al-Kafi; Nahjul Balaghah",p:["Jaga persatuan umat. Jangan mencela apa yang dihormati saudara Muslim lain."]},
+ {h:"Menanti dengan amal",q:"Imam Ja’far ash-Shadiq as bersabda: siapa yang ingin termasuk sahabat al-Qa’im, hendaklah ia menanti, dan sambil menanti ia beramal dengan wara’ dan akhlak yang baik.",src:"al-Ghaybah, an-Nu’mani",p:["Intizhar berarti memperbaiki diri setiap hari, bukan hanya menunggu."]},
+ {h:"Dosa kitalah penghalangnya",q:"Dalam surat Imam Mahdi (ajtf) kepada Syekh al-Mufid disebutkan bahwa yang menahan beliau dari para pengikutnya adalah perbuatan mereka yang sampai kepada beliau dan tidak beliau sukai.",src:"al-Ihtijaj, ath-Thabarsi",p:["Pilih satu dosa yang paling sering Anda lakukan dan tinggalkan bulan ini.","Amal kita diperlihatkan kepada Imam; jadikan beliau gembira."]},
+ {h:"Ilmu dan taqlid",q:"Dalam tauqi’ kepada Ishaq bin Ya’qub, Imam Mahdi (ajtf) memerintahkan agar dalam peristiwa yang terjadi kita merujuk kepada para perawi hadis Ahlulbait.",src:"Kamal ad-Din, Syekh ash-Shaduq",p:["Pastikan Anda bertaqlid kepada marja’ yang memenuhi syarat.","Pelajari risalah amaliyahnya: thaharah, shalat, puasa, khumus."]},
+ {h:"Menghidupkan urusan Ahlulbait",q:"Imam Ja’far ash-Shadiq as bersabda: hidupkanlah urusan kami, semoga Allah merahmati orang yang menghidupkan urusan kami.",src:"Wasa’il asy-Syi’ah",p:["Hadiri dan selenggarakan majelis.","Ajarkan apa yang Anda ketahui kepada keluarga."]}
+];
+
+/* ---------- jadwal shalat (metode Ja'fari, Leva Qum: Subuh 16°, Maghrib 4°, Isya 14°) ---------- */
+const CITIES=[
+ ["Surakarta (Solo)",-7.5755,110.8243,7],["Yogyakarta",-7.7956,110.3695,7],["Semarang",-6.9667,110.4167,7],
+ ["Jakarta",-6.2088,106.8456,7],["Bogor",-6.5950,106.8167,7],["Bandung",-6.9175,107.6191,7],
+ ["Pekalongan",-6.8886,109.6753,7],["Jepara",-6.5886,110.6681,7],["Surabaya",-7.2575,112.7521,7],
+ ["Malang",-7.9666,112.6326,7],["Bangil (Pasuruan)",-7.5994,112.7783,7],["Banda Aceh",5.5483,95.3238,7],
+ ["Medan",3.5952,98.6722,7],["Padang",-0.9471,100.4172,7],["Pekanbaru",0.5071,101.4478,7],
+ ["Palembang",-2.9761,104.7754,7],["Bandar Lampung",-5.3971,105.2668,7],["Pontianak",-0.0263,109.3425,7],
+ ["Denpasar",-8.6500,115.2167,8],["Mataram",-8.5833,116.1167,8],["Banjarmasin",-3.3194,114.5908,8],
+ ["Balikpapan",-1.2379,116.8529,8],["Makassar",-5.1477,119.4327,8],["Manado",1.4748,124.8421,8],
+ ["Ambon",-3.6954,128.1814,9],["Jayapura",-2.5337,140.7181,9]
+];
+const city=()=>{const n=(M().settings||{}).city;return CITIES.find(c=>c[0]===n)||CITIES[0];};
+const PT=(function(){
+  const r=d=>d*Math.PI/180, g=x=>x*180/Math.PI;
+  const sn=d=>Math.sin(r(d)), cs=d=>Math.cos(r(d)), tn=d=>Math.tan(r(d));
+  const fix=(a,b)=>{a=a-b*Math.floor(a/b);return a<0?a+b:a;};
+  function julian(y,m,d){ if(m<=2){y-=1;m+=12;} const A=Math.floor(y/100),B=2-A+Math.floor(A/4); return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+d+B-1524.5; }
+  function sun(jd){ const D=jd-2451545, G=fix(357.529+0.98560028*D,360), q=fix(280.459+0.98564736*D,360), L=fix(q+1.915*sn(G)+0.020*sn(2*G),360), e=23.439-0.00000036*D;
+    const RA=fix(g(Math.atan2(cs(e)*sn(L),cs(L)))/15,24); return {dec:g(Math.asin(sn(e)*sn(L))),eqt:q/15-RA}; }
+  return function(y,m,d,c){
+    const lat=c[1], lng=c[2], jd=julian(y,m,d)-lng/(15*24);
+    const mid=t=>fix(12-sun(jd+t).eqt,24);
+    const ang=(a,t,ccw)=>{ const dec=sun(jd+t).dec, x=(-sn(a)-sn(dec)*sn(lat))/(cs(dec)*cs(lat)); const h=g(Math.acos(Math.max(-1,Math.min(1,x))))/15; return mid(t)+(ccw?-h:h); };
+    const asr=t=>{ const dec=sun(jd+t).dec; return ang(-g(Math.atan(1/(1+tn(Math.abs(lat-dec))))),t); };
+    let T={fajr:5,sunrise:6,dhuhr:12,asr:13,sunset:18,maghrib:18,isha:18};
+    for(let i=0;i<2;i++){ const p={}; for(const k in T) p[k]=T[k]/24;
+      T={fajr:ang(16,p.fajr,true),sunrise:ang(0.833,p.sunrise,true),dhuhr:mid(p.dhuhr),asr:asr(p.asr),sunset:ang(0.833,p.sunset),maghrib:ang(4,p.maghrib),isha:ang(14,p.isha)}; }
+    const base=Date.UTC(y,m-1,d), out={};
+    for(const k in T){ const ms=base+(T[k]-lng/15)*3600000; out[k]=k==="sunrise"?Math.floor(ms/60000)*60000:Math.ceil(ms/60000)*60000; }
+    return out;
+  };
+})();
+const cDate=(ms,tz)=>{const x=new Date(ms+tz*3600000);return {y:x.getUTCFullYear(),m:x.getUTCMonth()+1,d:x.getUTCDate()};};
+const hm=(ms,tz)=>{const x=new Date(ms+tz*3600000);return pad(x.getUTCHours())+":"+pad(x.getUTCMinutes());};
+const tzName=tz=>tz===7?"WIB":tz===8?"WITA":"WIT";
+function nightPlan(){
+  const c=city(), tz=c[3], now=Date.now(), at=ms=>{const q=cDate(ms,tz);return PT(q.y,q.m,q.d,c);};
+  const T0=at(now); let sunset,fajr;
+  if(now<T0.fajr){ sunset=at(now-86400000).sunset; fajr=T0.fajr; } else { sunset=T0.sunset; fajr=at(now+86400000).fajr; }
+  const len=fajr-sunset;
+  return {c,tz,now,T0,sunset,fajr,midnight:sunset+len/2,third:sunset+len*2/3};
+}
+const dur=ms=>{const t=Math.max(0,Math.round(ms/60000)),h=Math.floor(t/60),m=t%60;return (h?h+" jam ":"")+m+" menit";};
+const LV=[
+ {t:"Subuh tepat waktu",s:"Bangun 5 menit sebelum Subuh",m:5,rk:"Wudhu, lalu Subuh di awal waktu."},
+ {t:"Witir",s:"1 rakaat · 15 menit",m:15,rk:"Witir 1 rakaat dengan qunut dan istighfar, lalu Subuh."},
+ {t:"Syaf’ + Witir",s:"3 rakaat · 25 menit",m:25,rk:"2 rakaat Syaf’, 1 rakaat Witir, lalu Subuh."},
+ {t:"11 rakaat penuh",s:"Shalat Malam · 45 menit",m:45,rk:"8 rakaat Lail, 2 rakaat Syaf’, 1 rakaat Witir, lalu Subuh."}
+];
+const lvl=()=>{const l=(M().settings||{}).lvl;return typeof l==="number"&&LV[l]?l:1;};
+const MOTIV=[
+ {ar:"تَتَجَافَىٰ جُنُوبُهُمْ عَنِ الْمَضَاجِعِ يَدْعُونَ رَبَّهُمْ خَوْفًا وَطَمَعًا",q:"Lambung mereka jauh dari tempat tidur. Mereka berdoa kepada Tuhannya dengan takut dan penuh harap.",src:"QS As-Sajdah: 16",a:"Ayat berikutnya: tak seorang pun tahu kebahagiaan yang disembunyikan untuk mereka. Allah sendiri yang menyiapkan hadiahnya."},
+ {q:"Kemuliaan seorang mukmin ada pada shalat malamnya.",src:"Imam Ja’far ash-Shadiq as, al-Kafi 3:488",a:"Orang mencari kemuliaan lewat jabatan dan harta. Imam menunjukkan jalan yang gratis dan terbuka setiap malam."},
+ {ar:"وَمِنَ اللَّيْلِ فَتَهَجَّدْ بِهِ نَافِلَةً لَكَ عَسَىٰ أَنْ يَبْعَثَكَ رَبُّكَ مَقَامًا مَحْمُودًا",q:"Dan pada sebagian malam, bertahajudlah sebagai ibadah tambahan bagimu, semoga Tuhanmu mengangkatmu ke tempat yang terpuji.",src:"QS Al-Isra’: 79",a:"Tempat yang terpuji tidak dibangun di siang hari yang ramai. Ia dibangun diam-diam di sepertiga malam."},
+ {q:"Shalat malam mencerahkan wajah dan mendatangkan rezeki.",src:"Imam Ja’far ash-Shadiq as, ‘Ilal asy-Syara’i",a:"Lima belas menit sebelum Subuh tidak membuat Anda rugi tidur. Justru itu yang membuka keberkahan seharian."},
+ {q:"Kepada seseorang yang mengeluh tidak bisa shalat malam, Imam Ali as berkata: engkau orang yang dipenjara oleh dosa-dosanya.",src:"al-Kafi 3:450",a:"Kabar baiknya: penjara ini punya kunci. Istighfar 70× hari ini dan tinggalkan satu dosa yang paling sering Anda ulangi. Lihat bagaimana malam Anda berubah."},
+ {q:"Siapa yang berniat bangun malam lalu tertidur, tidurnya dihitung sedekah dari Allah, dan pahala niatnya tetap dicatat.",src:"Rasulullah saw, Kanz al-‘Ummal 21475, dinukil dalam Mizan al-Hikmah",a:"Jangan pernah tidur tanpa niat bangun. Bahkan kegagalan Anda pun dicatat sebagai kebaikan selama niatnya jujur."},
+ {ar:"كَانُوا قَلِيلًا مِنَ اللَّيْلِ مَا يَهْجَعُونَ ۝ وَبِالْأَسْحَارِ هُمْ يَسْتَغْفِرُونَ",q:"Mereka sedikit sekali tidur di waktu malam, dan di waktu sahur mereka memohon ampun.",src:"QS Adz-Dzariyat: 17–18",a:"Mulailah dari istighfar di waktu sahur, walau hanya 3 rakaat. Allah melihat langkah kecil Anda."},
+ {ar:"وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ وَرَسُولُهُ وَالْمُؤْمِنُونَ",q:"Bekerjalah, maka Allah, Rasul-Nya, dan orang-orang mukmin akan melihat amalmu.",src:"QS At-Taubah: 105; dalam riwayat Ahlulbait, ‘orang-orang mukmin’ di sini adalah para Imam (al-Kafi, bab ‘Ardh al-A‘mal)",a:"Bayangkan catatan amal Anda sampai kepada Imam Zaman (ajtf) dan tertulis: ia bangun sebelum Subuh dan mendoakan faraj-ku."},
+ {q:"Imam itu teman yang lembut, ayah yang penyayang, saudara kandung, dan ibu yang berbakti kepada anaknya yang kecil.",src:"Imam Ali ar-Ridha as, al-Kafi 1",a:"Imam tidak menunggu Anda sempurna. Setiap kali Anda gagal lalu bangkit lagi, Anda sedang kembali kepada ayah yang penyayang."}
+];
+let motivIdx=null;
+function nightHTML(){
+  const P=nightPlan(), tz=P.tz, lv=lvl(), L=LV[lv], s=D(today0()), now=P.now;
+  const wake=P.fajr-L.m*60000;
+  let status;
+  if(now>=P.T0.fajr&&now<P.T0.sunrise) status="Sekarang waktu Subuh, sampai terbit "+hm(P.T0.sunrise,tz);
+  else if(now<wake-6*3600000) status="Tidur paling lambat pukul "+hm(wake-6*3600000,tz)+" agar cukup 6 jam";
+  else if(now<wake) status="Bangun dalam "+dur(wake-now);
+  else status="Sudah waktunya bangun. Subuh "+(P.fajr>now?"dalam "+dur(P.fajr-now):"sudah masuk");
+  const pos=x=>Math.max(0,Math.min(100,(x-P.sunset)/(P.fajr-P.sunset)*100)).toFixed(2);
+  const sub=k=>{let c=0,d=today0(); if(!(M().stats[ymd(d)]||{})[k]) d=addDays(d,-1); while((M().stats[ymd(d)]||{})[k]&&c<3000){c++;d=addDays(d,-1);} return c;};
+  const sS=sub("s"), nS=sub("n"), run=lv===0?sS:nS;
+  if(motivIdx===null){ const t=today0(); motivIdx=Math.floor((t-new Date(t.getFullYear(),0,1))/86400000)%MOTIV.length; }
+  const mv=MOTIV[motivIdx%MOTIV.length];
+  let h='<div class="night">';
+  h+='<div class="nrow"><div><div class="nk">Rencana bangun · '+L.t+'</div><div class="nwake">'+hm(wake,tz)+' <small>'+tzName(tz)+'</small></div><div class="nstat" id="nStatus">'+status+'</div></div>';
+  h+='<label class="ncity"><span class="nk">Kota</span><select id="citySel" class="city">'+CITIES.map(c=>'<option'+(c[0]===P.c[0]?" selected":"")+">"+c[0]+"</option>").join("")+"</select></label></div>";
+  h+='<div class="nl" aria-hidden="true"><span class="nwk" style="right:'+(100-pos(wake))+'%">Bangun</span><div class="nbar"><i class="seg" style="left:'+pos(P.third)+'%"></i><i class="tk" style="left:'+pos(P.midnight)+'%"></i></div><i class="nwd" style="left:'+pos(wake)+'%"></i>'+(now>P.sunset&&now<P.fajr?'<i class="nnow" style="left:'+pos(now)+'%" title="Sekarang"></i>':"")+"</div>";
+  h+='<div class="nleg"><div><small>Terbenam</small><b>'+hm(P.sunset,tz)+'</b></div><div><small>Tengah malam, mulai Shalat Malam</small><b>'+hm(P.midnight,tz)+'</b></div><div><small>Sepertiga akhir</small><b>'+hm(P.third,tz)+'</b></div><div><small>Subuh</small><b>'+hm(P.fajr,tz)+"</b></div></div>";
+  h+='<p class="nhint">'+L.rk+" Satu kali bangun untuk dua shalat.</p>";
+  h+='<div class="lvls" role="radiogroup" aria-label="Target bangun">'+LV.map((x,i)=>'<button type="button" class="lvl" role="radio" aria-checked="'+(i===lv)+'" data-act="lvl" data-l="'+i+'"><b>'+x.t+"</b><span>"+x.s+"</span></button>").join("")+"</div>";
+  if(run>=7&&lv<3) h+='<div class="lvup"><span>'+run+" hari berturut-turut. Siap naik ke target "+LV[lv+1].t+'?</span><button type="button" class="mini solid" data-act="lvl" data-l="'+(lv+1)+'">Naikkan target</button></div>';
+  h+='<div class="chips">'+chips("day","n",["","","","","","Shalat Malam"],s).split("</button>").filter(x=>x.includes('data-id="n5"')).map(x=>x+"</button>").join("")+chips("day","f",["Subuh"],s)+"</div>";
+  h+='<div class="stats"><div class="stat"><b>'+sS+'</b><span>hari Subuh berturut-turut</span></div><div class="stat"><b>'+nS+'</b><span>malam Shalat Malam berturut-turut</span></div></div>';
+  h+='<div class="motiv"><div class="nk">Pesan untuk Anda</div>'+(mv.ar?'<p class="ar" lang="ar" dir="rtl">'+mv.ar+"</p>":"")+'<p class="mq">'+mv.q+'</p><div class="src">'+mv.src+'</div><p class="ma">'+mv.a+'</p><div><button type="button" class="mini" data-act="motiv">Pesan lain</button></div></div>';
+  h+=detHTML("night:kiat",{d:[
+    "<b>Tidur lebih awal.</b> Usahakan tidur 1 sampai 1,5 jam setelah Isya. Matikan layar HP 30 menit sebelum tidur, karena cahaya layar membuat kantuk datang terlambat.",
+    "<b>Tidur siang sebentar.</b> Qailulah 15 sampai 20 menit di siang hari membuat bangun malam jauh lebih ringan.",
+    "<b>Makan malam ringan</b> dan jangan terlalu dekat dengan jam tidur. Perut penuh membuat tidur berat.",
+    "<b>Tidur dengan niat.</b> Berwudhu, baca Tasbih Fatimah az-Zahra, lalu niatkan dengan sungguh-sungguh jam bangun Anda kepada Allah.",
+    "<b>Letakkan alarm jauh dari kasur</b> agar Anda harus berdiri untuk mematikannya. Pasang alarm kedua 5 menit kemudian.",
+    "<b>Begitu bangun, langsung duduk.</b> Ucapkan alhamdulillah, basuh wajah, lalu berwudhu. Jangan kembali berbaring \"sebentar saja\".",
+    "<b>Jaga siang hari Anda.</b> Imam Ja’far ash-Shadiq as menyebut bahwa dusta bisa membuat seseorang terhalang dari shalat malam (‘Ilal asy-Syara’i).",
+    "<b>Cari teman bangun.</b> Minta keluarga atau sahabat saling membangunkan lewat telepon atau pesan.",
+    "<b>Kalau terlewat, jangan putus asa.</b> Qadha shalat malam di siang hari. Menurut banyak marja’, orang yang sulit bangun juga boleh mengerjakannya sebelum tengah malam. Pastikan rinciannya di risalah marja’ Anda."
+  ]}).replace("<summary>Keterangan</summary>","<summary>Kiat agar mudah bangun</summary>");
+  h+='<p class="nhint">Jadwal Ja’fari (Subuh 16°, Maghrib 4°, Isya 14°) untuk '+P.c[0]+". Jadwal komunitas Anda bisa berbeda beberapa menit.</p></div>";
+  return h;
+}
+function refreshNight(){
+  const box=document.getElementById("nightBox"); if(!box) return;
+  if(box.contains(document.activeElement)&&document.activeElement.id==="citySel") return;
+  box.innerHTML=nightHTML();
+}
+
+/* ---------- penyimpanan ---------- */
+const IN_APP=/JalanMuntazhirApp/.test(navigator.userAgent||"");
+const APK_URL="https://github.com/zakinajwahabsyi/zakinajwahabsyi.github.io/releases/download/apk-latest/jalan-muntazhir.apk";
+const LS="jalan-muntazhir-v1";
+let docs={};
+try{ const raw=localStorage.getItem(LS); if(raw) docs=JSON.parse(raw)||{}; }catch(e){ docs={}; }
+function M(){
+  const m=docs.main=docs.main||{};
+  m.weeks=m.weeks||{}; m.months=m.months||{}; m.years=m.years||{};
+  m.quran=m.quran||{}; m.quran.done=m.quran.done||[]; m.quran.log=m.quran.log||{}; m.quran.khatam=m.quran.khatam||0;
+  m.settings=m.settings||{offset:0}; m.stats=m.stats||{}; m.ahd=m.ahd||[];
+  return m;
+}
+const dayDocName=d=>"d-"+ymd(d).slice(0,7);
+function D(date){
+  const n=dayDocName(date); const doc=docs[n]=docs[n]||{}; doc.days=doc.days||{};
+  const k=ymd(date); return doc.days[k]=doc.days[k]||{};
+}
+function saveLocal(){ try{ localStorage.setItem(LS,JSON.stringify(docs)); }catch(e){} }
+function touch(n){ if(!docs[n]) return; docs[n].u=Date.now(); saveLocal(); queueRemote(n); }
+function pruneMain(){
+  const m=M(), cut=ymd(addDays(today0(),-400)), cut60=ymd(addDays(today0(),-70));
+  for(const k of Object.keys(m.stats)) if(k<cut) delete m.stats[k];
+  for(const k of Object.keys(m.quran.log)) if(k<cut60) delete m.quran.log[k];
+  m.ahd=m.ahd.filter(k=>k>=cut60);
+  const keepLast=(o,n)=>{const ks=Object.keys(o).sort(); ks.slice(0,Math.max(0,ks.length-n)).forEach(k=>delete o[k]);};
+  keepLast(m.weeks,16); keepLast(m.months,24); keepLast(m.years,5);
+}
+/* buang salinan lokal harian yang lebih dari 6 bulan */
+(function(){ const cut="d-"+ymd(addDays(today0(),-190)).slice(0,7); for(const k of Object.keys(docs)) if(k.startsWith("d-")&&k<cut) delete docs[k]; })();
+
+/* sinkron akun (db pribadi per pengguna) */
+const R={db:null,uid:null,att:new Set()};
+const Q=new Set(); let qT=null; const busy={};
+const remotePath=n=>"data/users/"+R.uid+"/"+n;
+function queueRemote(n){ if(!R.db) return; Q.add(n); clearTimeout(qT); qT=setTimeout(flush,900); }
+async function flush(){
+  for(const n of [...Q]){
+    if(busy[n]||!R.db) continue;
+    Q.delete(n); busy[n]=true;
+    try{ await R.db.doc(remotePath(n)).set(JSON.parse(JSON.stringify(docs[n]))); setSync("ok"); }
+    catch(e){ const c=e&&e.code;
+      if(c==="unavailable") Q.add(n);
+      else if(c==="quota_exceeded") setSync("full");
+      else { R.db=null; setSync("local"); } }
+    finally{ busy[n]=false; }
+  }
+  if(Q.size&&R.db){ clearTimeout(qT); qT=setTimeout(flush,1500); }
+}
+function merge(n,snap,initial){
+  if(snap.metadata&&snap.metadata.hasPendingWrites) return;
+  const l=docs[n];
+  if(!snap.exists){ if(initial&&l&&l.u) queueRemote(n); return; }
+  const r=snap.data()||{};
+  if(!l||!l.u||(r.u||0)>(l.u||0)){ docs[n]=JSON.parse(JSON.stringify(r)); saveLocal(); render(); }
+  else if(initial&&(l.u||0)>(r.u||0)) queueRemote(n);
+}
+async function attach(n){
+  if(R.att.has(n)) return; R.att.add(n);
+  const ref=R.db.doc(remotePath(n));
+  const timer=setTimeout(()=>setSync("slow"),10000);
+  try{ const snap=await ref.get(); clearTimeout(timer); merge(n,snap,true); setSync("ok"); }
+  catch(e){ clearTimeout(timer); setSync("local"); return; }
+  ref.onSnapshot(s=>merge(n,s,false),()=>{});
+}
+let syncState="local";
+function setSync(s){ syncState=s; const el=document.getElementById("syncLine"); if(el){ el.dataset.s=s; el.textContent=SYNCTXT[s]; } }
+const SYNCTXT={
+  local:"Progres tersimpan di perangkat ini.",
+  loading:"Menghubungkan ke akun…",
+  ok:"Progres tersimpan di akun Anda dan ikut ke perangkat lain.",
+  slow:"Akun belum terjangkau. Progres tetap tersimpan di perangkat ini.",
+  full:"Penyimpanan akun penuh. Progres baru hanya tersimpan di perangkat ini."
+};
+(async function initRemote(){
+  try{
+    const c=window.claude; if(!c||typeof c.use!=="function") return;
+    const [db,user]=await Promise.all([c.use("db"),c.use("user")]);
+    if(!db||!user) return;
+    const uid=await user.id(); if(!uid) return;
+    R.db=db; R.uid=uid; setSync("loading");
+    await attach("main"); await attach(dayDocName(today0()));
+  }catch(e){ setSync("local"); }
+})();
+
+/* ---------- logika amalan ---------- */
+const weekStart=d=>addDays(d,-((d.getDay()+1)%7));
+const weekKey=()=>ymd(weekStart(today0()));
+function monthKey(){ const h=hijri(today0()); return h.y+"-"+pad(h.m); }
+function quranToday(){ return M().quran.log[ymd(today0())]||[]; }
+function nextJuz(){ const d=M().quran.done; for(let i=1;i<=30;i++) if(!d[i]) return i; return 0; }
+function dayProgress(){
+  const s=D(today0()); let done=0;
+  for(const id of DAY_IDS){ if(id==="quran"?quranToday().length>0:s[id]) done++; }
+  return {done,total:DAY_IDS.length,f:[0,1,2,3,4].filter(i=>s["f"+i]).length};
+}
+function updateStats(){ const p=dayProgress(), s=D(today0()); M().stats[ymd(today0())]={p:Math.round(100*p.done/p.total),f:p.f,n:s.n5?1:0,s:s.f0?1:0}; pruneMain(); }
+function streak(test){ let c=0,d=today0(); if(!test(ymd(d))) d=addDays(d,-1); while(test(ymd(d))&&c<3000){c++;d=addDays(d,-1);} return c; }
+const fardhuStreak=()=>streak(k=>(M().stats[k]||{}).f===5);
+const quranStreak=()=>streak(k=>(M().quran.log[k]||[]).length>0);
+const ahdStreak=()=>streak(k=>M().ahd.includes(k));
+
+function setJuz(n,on){
+  const q=M().quran, k=ymd(today0()); q.log[k]=q.log[k]||[];
+  if(on){ q.done[n]=1; if(!q.log[k].includes(n)) q.log[k].push(n); }
+  else { q.done[n]=0; q.log[k]=q.log[k].filter(x=>x!==n); if(!q.log[k].length) delete q.log[k]; }
+}
+function toggle(scope,id){
+  const t=today0();
+  if(scope==="day"){
+    if(id==="quran"){ const lg=quranToday(); if(lg.length) setJuz(lg[lg.length-1],false); else { const n=nextJuz(); if(n) setJuz(n,true); } }
+    else { const s=D(t); s[id]=!s[id];
+      if(id==="ahd"){ const k=ymd(t), a=M().ahd; if(s[id]){ if(!a.includes(k)) a.push(k);} else M().ahd=a.filter(x=>x!==k); } }
+    updateStats(); touch(dayDocName(t)); touch("main");
+  } else {
+    const m=M();
+    const bag = scope==="week" ? (m.weeks[weekKey()]=m.weeks[weekKey()]||{})
+              : scope==="month" ? (m.months[monthKey()]=m.months[monthKey()]||{})
+              : (m.years[hijri(t).y]=m.years[hijri(t).y]||{});
+    bag[id]=!bag[id]; touch("main");
+  }
+  render();
+}
+
+/* kalender: kejadian di sekitar hari ini */
+function occurrences(){
+  const t=today0(), out=[]; let h=hijri(addDays(t,-360));
+  for(let i=-360;i<=385;i++){
+    const day=addDays(t,i), nx=hijri(addDays(day,1));
+    const list=(EVMAP[h.m+"-"+h.d]||[]).slice(); if(nx.d===1) list.push(...(EVMAP[h.m+"-L"]||[]));
+    for(const e of list) out.push({e,date:day,h,i});
+    h=nx;
+  }
+  return out;
+}
+function monthDays(){
+  const t=today0(), h=hijri(t); let start=addDays(t,-(h.d-1)), g=0;
+  while(hijri(start).d!==1&&g<3){ start=addDays(start,hijri(start).d>15?1:-1); g++; }
+  const days=[]; for(let i=0;i<31;i++){ const d=addDays(start,i), hh=hijri(d); if(hh.m!==h.m||hh.y!==h.y) break; days.push({date:d,h:hh}); }
+  return {h,days};
+}
+const countdown=i=>i===0?"Hari ini":i===1?"Besok":i+" hari";
+
+/* ---------- render ---------- */
+const openSet=new Set(); let openInit=false;
+document.addEventListener("toggle",e=>{ const d=e.target; if(d.tagName==="DETAILS"&&d.dataset.key){ d.open?openSet.add(d.dataset.key):openSet.delete(d.dataset.key);} },true);
+const CHK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg>';
+function detHTML(key,it){
+  if(!it.d&&!it.ar) return "";
+  let b=(it.d||[]).map(p=>"<p>"+p+"</p>").join("");
+  if(it.ar) b+='<p class="ar" lang="ar" dir="rtl">'+it.ar+"</p>";
+  if(it.lat) b+='<p class="lat">'+it.lat+"</p>";
+  if(it.mean) b+='<p class="mean">'+it.mean+"</p>";
+  return '<details data-key="'+key+'"'+(openSet.has(key)?" open":"")+'><summary>Keterangan</summary><div class="det">'+b+"</div></details>";
+}
+function duaButtons(k,lib){
+  const d=DUA[k]; if(!d) return ""; let h="";
+  const ext=l=>'<a class="mini" href="'+l[0]+'" target="_blank" rel="noopener">'+l[1]+" ↗</a>";
+  const wd=today0().getDay();
+  const links=k==="ziarahHari"?(lib?[6,0,1,2,3,4,5].map(i=>[ZDAY[i],HARI[i]]):[[ZDAY[wd],"Buka ziarah hari "+HARI[wd]]]):(d.links||[]);
+  if(links.length) h+=ext(links[0]).replace('class="mini"','class="mini solid"');
+  if(d.inapp) h+='<button type="button" class="mini'+(links.length?"":" solid")+'" data-act="read" data-dua="'+k+'">'+(links.length?"Salam singkat":"Buka teks doa")+"</button>";
+  links.slice(1).forEach(l=>{h+=ext(l);});
+  return h;
+}
+const findItem=id=>DAILY.flatMap(g=>g.items).find(i=>i.id===id);
+const reader=document.getElementById("reader");
+function openReader(k){
+  const d=DUA[k], it=findItem(k); if(!d||!it) return;
+  document.getElementById("rTitle").textContent=k==="asyura"?"Salam kepada Imam Husain as":d.t;
+  let b=d.w?'<p class="when">'+d.w+"</p>":"";
+  b+='<p class="ar" lang="ar" dir="rtl">'+it.ar+"</p>";
+  b+='<p class="lat">'+(it.lat||it.s||"")+"</p>";
+  if(it.mean) b+='<p class="mean">'+it.mean+"</p>";
+  if(d.links) b+='<div class="irow">'+d.links.map(l=>'<a class="mini" href="'+l[0]+'" target="_blank" rel="noopener">'+l[1]+" ↗</a>").join("")+"</div>";
+  document.getElementById("rBody").innerHTML=b;
+  reader.hidden=false;
+  try{reader.querySelector('[data-act="rclose"]').focus({preventScroll:true});}catch(e){}
+}
+function closeReader(){ reader.hidden=true; }
+/* ---------- panduan nafilah & Ghufailah ---------- */
+const arb=(ar,lat,mean)=>'<p class="ar" lang="ar" dir="rtl">'+ar+"</p>"+(lat?'<p class="lat">'+lat+"</p>":"")+(mean?'<p class="mean">'+mean+"</p>":"");
+const gsec=(h,meta,body)=>'<section class="gsec"><h4>'+h+"</h4>"+(meta?'<div class="gmeta">'+meta+"</div>":"")+body+"</section>";
+const ul=a=>"<ul>"+a.map(x=>"<li>"+x+"</li>").join("")+"</ul>";
+const GTXT={
+  maghribSujud:["اللَّهُمَّ إِنِّي أَسْأَلُكَ بِوَجْهِكَ الْكَرِيمِ، وَاسْمِكَ الْعَظِيمِ، وَمُلْكِكَ الْقَدِيمِ، أَنْ تُصَلِّيَ عَلَىٰ مُحَمَّدٍ وَآلِ مُحَمَّدٍ، وَأَنْ تَغْفِرَ لِي ذَنْبِيَ الْعَظِيمَ، إِنَّهُ لَا يَغْفِرُ الْعَظِيمَ إِلَّا الْعَظِيمُ",
+    "Allâhumma innî as’aluka bi wajhikal-karîm, wasmikal-‘azhîm, wa mulkikal-qadîm, an tushalliya ‘alâ Muhammadin wa âli Muhammad, wa an taghfira lî dzanbiyal-‘azhîm, innahû lâ yaghfirul-‘azhîma illal-‘azhîm.",
+    "Ya Allah, aku memohon kepada-Mu dengan Wajah-Mu Yang Mulia, Nama-Mu Yang Agung, dan Kerajaan-Mu Yang Kekal, agar Engkau bersalawat atas Muhammad dan keluarga Muhammad, dan mengampuni dosaku yang besar. Sungguh, tidak ada yang mengampuni dosa besar selain Yang Mahaagung."],
+  maqam:["هٰذَا مَقَامُ الْعَائِذِ بِكَ مِنَ النَّارِ","Hâdzâ maqâmul-‘â’idzi bika minan-nâr.","Inilah tempat orang yang berlindung kepada-Mu dari api neraka."],
+  afw:["الْعَفْوَ","Al-‘afwa.","(Aku memohon) ampunan-Mu."],
+  mukmin:["اللَّهُمَّ اغْفِرْ لِـ …","Allâhummaghfir li … (sebut nama)","Ya Allah, ampunilah … "],
+  anbiya:["وَذَا النُّونِ إِذْ ذَهَبَ مُغَاضِبًا فَظَنَّ أَنْ لَنْ نَقْدِرَ عَلَيْهِ فَنَادَىٰ فِي الظُّلُمَاتِ أَنْ لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ ۝ فَاسْتَجَبْنَا لَهُ وَنَجَّيْنَاهُ مِنَ الْغَمِّ ۚ وَكَذَٰلِكَ نُنْجِي الْمُؤْمِنِينَ",
+    "Wa dzan-nûni idz dzahaba mughâdhiban fa zhanna al lan naqdira ‘alaihi fa nâdâ fizh-zhulumâti al lâ ilâha illâ anta subhânaka innî kuntu minazh-zhâlimîn. Fastajabnâ lahû wa najjainâhu minal-ghamm, wa kadzâlika nunjil-mu’minîn.",
+    "Dan (ingatlah) Dzun Nun (Nabi Yunus), ketika ia pergi dalam keadaan marah, lalu ia menyangka Kami tidak akan menyulitkannya. Maka ia berseru dalam kegelapan: tiada Tuhan selain Engkau, Mahasuci Engkau, sungguh aku termasuk orang-orang yang zalim. Maka Kami kabulkan doanya dan Kami selamatkan ia dari kesedihan. Demikianlah Kami menyelamatkan orang-orang yang beriman."],
+  anam:["وَعِنْدَهُ مَفَاتِحُ الْغَيْبِ لَا يَعْلَمُهَا إِلَّا هُوَ ۚ وَيَعْلَمُ مَا فِي الْبَرِّ وَالْبَحْرِ ۚ وَمَا تَسْقُطُ مِنْ وَرَقَةٍ إِلَّا يَعْلَمُهَا وَلَا حَبَّةٍ فِي ظُلُمَاتِ الْأَرْضِ وَلَا رَطْبٍ وَلَا يَابِسٍ إِلَّا فِي كِتَابٍ مُبِينٍ",
+    "Wa ‘indahû mafâtihul-ghaibi lâ ya‘lamuhâ illâ huw, wa ya‘lamu mâ fil-barri wal-bahr, wa mâ tasquthu min waraqatin illâ ya‘lamuhâ wa lâ habbatin fî zhulumâtil-ardhi wa lâ rathbin wa lâ yâbisin illâ fî kitâbim mubîn.",
+    "Dan pada sisi-Nya kunci-kunci segala yang gaib; tidak ada yang mengetahuinya selain Dia. Dia mengetahui apa yang ada di darat dan di laut. Tidak sehelai daun pun gugur melainkan Dia mengetahuinya, tidak ada sebutir biji pun dalam kegelapan bumi, dan tidak ada sesuatu yang basah atau kering, melainkan tertulis dalam Kitab yang nyata."],
+  qunut1:["اللَّهُمَّ إِنِّي أَسْأَلُكَ بِمَفَاتِحِ الْغَيْبِ الَّتِي لَا يَعْلَمُهَا إِلَّا أَنْتَ أَنْ تُصَلِّيَ عَلَىٰ مُحَمَّدٍ وَآلِهِ",
+    "Allâhumma innî as’aluka bi mafâtihil-ghaibil-latî lâ ya‘lamuhâ illâ anta an tushalliya ‘alâ Muhammadin wa âlih.",
+    "Ya Allah, aku memohon kepada-Mu dengan kunci-kunci kegaiban yang tidak diketahui siapa pun selain Engkau, agar Engkau bersalawat atas Muhammad dan keluarganya."],
+  qunut2:["اللَّهُمَّ أَنْتَ وَلِيُّ نِعْمَتِي وَالْقَادِرُ عَلَىٰ طَلِبَتِي تَعْلَمُ حَاجَتِي فَأَسْأَلُكَ بِحَقِّ مُحَمَّدٍ وَآلِهِ عَلَيْهِ وَعَلَيْهِمُ السَّلَامُ لَمَّا قَضَيْتَهَا لِي",
+    "Allâhumma anta waliyyu ni‘matî wal-qâdiru ‘alâ thalibatî, ta‘lamu hâjatî, fa as’aluka bi haqqi Muhammadin wa âlihî ‘alaihi wa ‘alaihimus-salâm lammâ qadhaitahâ lî.",
+    "Ya Allah, Engkaulah pemberi nikmatku dan Yang Mahakuasa atas permintaanku. Engkau mengetahui hajatku. Maka aku memohon kepada-Mu demi hak Muhammad dan keluarganya, salam atasnya dan atas mereka, agar Engkau memenuhinya untukku."]
+};
+const g=k=>arb(GTXT[k][0],GTXT[k][1],GTXT[k][2]);
+const GUIDES={
+ nafilah:{t:"Panduan nafilah harian",html:()=>
+  "<p>Nafilah harian berjumlah 34 rakaat. Bersama 17 rakaat wajib, totalnya 51 rakaat, salah satu tanda mukmin menurut Imam Hasan al-Askari as. Semuanya dikerjakan 2 rakaat sekali salam, kecuali Witir yang 1 rakaat.</p>"+
+  ul(["Dalam shalat sunnah, surah setelah Al-Fatihah tidak wajib. Jika waktu sempit, cukup Al-Fatihah saja.",
+      "Qunut dianjurkan di rakaat kedua sebelum ruku’, di shalat wajib maupun sunnah. Angkat kedua tangan di depan wajah. Dzikir apa pun cukup, bahkan satu kali <i>subhânallâh</i>.",
+      "Riwayat Ahlulbait menganjurkan Al-Ikhlas dan Al-Kafirun di tujuh tempat, di antaranya nafilah Subuh, dua rakaat pertama nafilah Zuhur, dua rakaat pertama nafilah Maghrib, dan dua rakaat pertama Shalat Malam."])+
+  gsec("Nafilah Subuh","2 rakaat · sebelum shalat Subuh",ul(["Rakaat 1: Al-Kafirun. Rakaat 2: Al-Ikhlas.","Boleh langsung disambung setelah Shalat Malam. Jika langit timur sudah memerah, dahulukan shalat Subuh."]))+
+  gsec("Nafilah Zuhur","8 rakaat · sebelum shalat Zuhur",ul(["Dua rakaat pertama: Al-Ikhlas dan Al-Kafirun.","Enam rakaat berikutnya bebas."]))+
+  gsec("Nafilah Asar","8 rakaat · sebelum shalat Asar",ul(["Surah bebas."]))+
+  gsec("Nafilah Maghrib","4 rakaat · setelah shalat Maghrib, sebelum mega merah di langit barat hilang",
+    ul(["Rakaat 1: Al-Kafirun. Rakaat 2: Al-Ikhlas.","Rakaat 3 dan 4 bebas. Dalam riwayat, Imam Ali al-Hadi as membaca awal Surah Al-Hadid (ayat 1–6) di rakaat 3 dan akhir Surah Al-Hasyr (ayat 21–24) di rakaat 4."])+
+    '<p class="gsub">Sujud terakhir</p><p>Pada sujud terakhir nafilah Maghrib, setiap malam dan terutama malam Jumat, baca 7×:</p>'+g("maghribSujud"))+
+  gsec("Nafilah Isya (Watirah)","2 rakaat sambil duduk · setelah shalat Isya",ul(["Dihitung sebagai 1 rakaat. Lebih utama dikerjakan langsung setelah Isya.","Dalam riwayat, Imam Muhammad al-Baqir as membaca Al-Waqi’ah dan Al-Ikhlas."]))+
+  gsec("Shalat Malam","11 rakaat · dari tengah malam sampai Subuh, paling utama menjelang Subuh",
+    ul(["<b>Shalat Lail, 8 rakaat</b> (4 × 2 rakaat): dua rakaat pertama Al-Ikhlas dan Al-Kafirun, atau Al-Ikhlas 30× di setiap rakaat bila sanggup. Rakaat berikutnya bebas, surah panjang lebih utama.",
+        "<b>Syaf’, 2 rakaat</b>: rakaat 1 An-Nas, rakaat 2 Al-Falaq. Qunut di Syaf’ dibaca dengan niat <i>raja’</i> (berharap pahala).",
+        "<b>Witir, 1 rakaat</b>: Al-Ikhlas 3×, Al-Falaq 1×, An-Nas 1×, lalu qunut sebelum ruku’."])+
+    '<p class="gsub">Qunut Witir</p>'+
+    "<p>1. Istighfar 70×, satu tangan memegang tasbih:</p>"+arb(AR.istighfar,"Astaghfirullâha rabbî wa atûbu ilaih.","Aku memohon ampun kepada Allah, Tuhanku, dan aku bertaubat kepada-Nya.")+
+    "<p>2. Mohonkan ampunan untuk 40 orang mukmin dengan menyebut namanya satu per satu: orang tua, keluarga, guru, sahabat.</p>"+g("mukmin")+
+    "<p>3. Baca 7×:</p>"+g("maqam")+
+    "<p>4. Baca 300×:</p>"+g("afw")+
+    "<p>Jika waktu sempit, cukup Syaf’ dan Witir dengan qunut singkat.</p>")+
+  '<p class="src">Sumber: Mafatih al-Jinan, Syekh Abbas al-Qummi; Islamic Laws Ayatullah Sistani no. 755–762 dan 1103–1107; panduan Shalat Malam di al-islam.org. Untuk rincian hukum, ikuti risalah marja’ Anda.</p>'},
+ ghufailah:{t:"Shalat Ghufailah",html:()=>
+  "<p>Shalat sunnah 2 rakaat di antara Maghrib dan Isya. Namanya berasal dari kata <i>ghaflah</i> (lalai). Rasulullah saw menyebut waktu antara Maghrib dan Isya sebagai saat banyak orang lalai (Tsawab al-A’mal, Syekh ash-Shaduq).</p>"+
+  "<p>Imam Ja’far ash-Shadiq as mengajarkan tata caranya kepada Hisyam bin Salim. Siapa yang mengerjakannya lalu memohon hajatnya, Allah memberinya apa yang ia minta (Wasa’il asy-Syi’ah 8:121).</p>"+
+  gsec("Waktu","Setelah shalat Maghrib, sebaiknya sebelum mega merah di langit barat hilang","")+
+  gsec("Rakaat pertama","Al-Fatihah, lalu QS Al-Anbiya’ 87–88 sebagai ganti surah",g("anbiya"))+
+  gsec("Rakaat kedua","Al-Fatihah, lalu QS Al-An’am 59",g("anam"))+
+  gsec("Qunut","Angkat tangan, lalu baca:",g("qunut1")+"<p>Sebutkan hajat Anda dalam bahasa apa pun, lalu baca:</p>"+g("qunut2")+"<p>Setelah itu ruku’, sujud, tasyahud, dan salam seperti biasa.</p>")+
+  gsec("Hubungan dengan nafilah Maghrib","",'<p>Sebagian fuqaha membolehkan 2 rakaat Ghufailah sekaligus diniatkan sebagai 2 rakaat dari nafilah Maghrib. Ikuti fatwa marja’ Anda.</p>')+
+  '<p class="src">Sumber: WikiShia, Ghufayla Prayer; Islamic Laws Ayatullah Sistani no. 762; Mafatih al-Jinan.</p>'}
+};
+function openGuide(k){
+  const G=GUIDES[k]; if(!G) return;
+  document.getElementById("rTitle").textContent=G.t;
+  document.getElementById("rBody").innerHTML=G.html();
+  reader.hidden=false;
+  try{ reader.querySelector(".panel").scrollTop=0; reader.querySelector('[data-act="rclose"]').focus({preventScroll:true}); }catch(e){}
+}
+
+function itemHTML(scope,it,checked,o){
+  o=o||{}; const key=scope+":"+it.id, title=o.t||it.t, sub=o.s!==undefined?o.s:(it.s||"");
+  let row=""; if(o.tag) row+=o.tag; if(DUA[it.id]) row+=duaButtons(it.id); if(it.counter) row+='<button type="button" class="mini" data-act="counter" data-preset="'+it.counter+'">Hitung</button>'; if(o.extra) row+=o.extra;
+  return '<div class="item'+(checked?" is-done":"")+'"><button type="button" class="chk" role="checkbox" aria-checked="'+(!!checked)+'" aria-label="'+title.replace(/"/g,"")+'" data-act="chk" data-scope="'+scope+'" data-id="'+it.id+'">'+CHK+'</button><div><div class="ititle">'+title+'</div>'+(sub?'<div class="isub">'+sub+"</div>":"")+(row?'<div class="irow">'+row+"</div>":"")+detHTML(key,it)+"</div></div>";
+}
+function chips(scope,prefix,labels,state){
+  return labels.map((l,i)=>'<button type="button" class="chip" role="checkbox" aria-checked="'+(!!state[prefix+i])+'" data-act="chk" data-scope="'+scope+'" data-id="'+prefix+i+'">'+l+"</button>").join("");
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+function renderHeader(occ){
+  const t=today0(), h=hijri(t);
+  document.getElementById("hGreg").textContent=fmtLong(t);
+  document.getElementById("hHij").innerHTML=h.d+" "+HBLN[h.m]+" <span>"+h.y+" H</span>";
+  document.getElementById("hImam").innerHTML="Hari ziarah <b>"+IMAM_SINGKAT[t.getDay()]+"</b>";
+  const p=dayProgress(), pct=Math.round(100*p.done/p.total);
+  document.getElementById("hRing").setAttribute("stroke-dashoffset",(201.06*(1-pct/100)).toFixed(2));
+  document.getElementById("hPct").textContent=pct+"%";
+  document.getElementById("hRingWrap").setAttribute("aria-label","Progres hari ini "+pct+" persen, "+p.done+" dari "+p.total+" amalan");
+  const up=occ.filter(o=>o.i>=0)[0], el=document.getElementById("hNext");
+  if(up){ el.hidden=false; el.innerHTML='<span class="when">'+countdown(up.i)+'</span><span class="what">'+up.e.t+(up.i>1?" · "+fmtShort(up.date):"")+"</span>"; }
+  else el.hidden=true;
+}
+
+function renderHarian(occ){
+  const t=today0(), s=D(t), p=dayProgress();
+  const PTd=nightPlan().T0;
+  const fd=[0,1,2,3,4].filter(i=>s["f"+i]).length, td=[0,1,2,3,4].filter(i=>s["t"+i]).length, nd=[0,1,2,3,4,5].filter(i=>s["n"+i]).length;
+  const todayEv=occ.filter(o=>o.i===0);
+  let html='<div class="vhead"><h2>Amalan harian</h2><p class="lede">'+p.done+" dari "+p.total+" amalan · rangkaian shalat 5 waktu lengkap: "+fardhuStreak()+" hari</p></div>";
+  if(todayEv.length) html+='<div class="list">'+todayEv.map(o=>evHTML(o,false)).join("")+"</div>";
+  html+='<div class="grp"><div class="glabel">Bangun malam & Subuh</div><div id="nightBox">'+nightHTML()+"</div></div>";
+  html+='<div class="grp"><div class="glabel">Shalat</div><div class="card">'+
+    '<div class="chead"><h3>Shalat wajib</h3><span class="count">'+fd+"/5</span></div>"+
+    '<div class="chips">'+chips("day","f",FARDHU.map((x,i)=>x+" · "+hm(PTd[["fajr","dhuhr","asr","maghrib","isha"][i]],city()[3])),s)+"</div>"+'<p class="hint">Terbit '+hm(PTd.sunrise,city()[3])+" · waktu "+tzName(city()[3])+", "+city()[0]+"</p><div class=\"sep\"></div>"+
+    '<div class="chead"><h3>Tasbih Fatimah az-Zahra</h3><button type="button" class="mini solid" data-act="counter" data-preset="tasbih">Hitung</button></div>'+
+    '<p class="hint">Setelah setiap shalat: 34× Allâhu Akbar, 33× Alhamdulillâh, 33× Subhânallâh · '+td+"/5</p>"+
+    '<div class="chips">'+chips("day","t",FARDHU,s)+"</div><div class=\"sep\"></div>"+
+    '<div class="chead"><h3>Nafilah harian</h3><span class="count">'+nd+"/6</span></div>"+
+    '<div class="chips">'+chips("day","n",NAFILAH,s)+"</div>"+
+    '<div class="irow"><button type="button" class="mini solid" data-act="guide" data-g="nafilah">Panduan nafilah</button><span class="isub">Surah, qunut, dan doa sujud terakhir</span></div><div class="sep"></div>'+
+    '<div class="chead"><h3>Shalat Ghufailah</h3><button type="button" class="mini solid" data-act="guide" data-g="ghufailah">Panduan</button></div>'+
+    '<p class="hint">2 rakaat antara Maghrib dan Isya, dengan doa hajat di qunut</p>'+
+    '<div class="chips">'+chips("day","g",["Ghufailah"],s)+"</div>"+
+    "</div></div>";
+  for(const g of DAILY){
+    html+='<div class="grp"><div class="glabel">'+g.label+'</div><div class="list">';
+    for(const it of g.items){
+      if(it.special==="quran"){
+        const lg=quranToday(), n=nextJuz();
+        const sub=lg.length?"Selesai hari ini: juz "+lg.join(", "):(n?"Berikutnya juz "+n+", mulai "+JUZ[n]:"Khatam! Mulai putaran baru di tab Qur’an");
+        html+=itemHTML("day",it,lg.length>0,{s:sub,extra:(n?'<a class="mini solid" href="'+quranUrl(n)+'" target="_blank" rel="noopener">Baca juz '+n+' ↗</a>':'')+'<button type="button" class="mini" data-act="tab" data-tab="quran">Buka tracker</button>'});
+      } else if(it.special==="ziarah"){
+        html+=itemHTML("day",it,s[it.id],{t:"Ziarah hari "+HARI[t.getDay()],s:IMAM_HARI[t.getDay()]});
+      } else if(it.id==="ahd"){
+        const st=ahdStreak(); html+=itemHTML("day",it,s[it.id],{tag:'<span class="pill gold">'+Math.min(st,40)+"/40 pagi berturut-turut</span>"});
+      } else html+=itemHTML("day",it,s[it.id]);
+    }
+    html+="</div></div>";
+  }
+  html+='<p class="note">Daftar ini direset setiap tengah malam. Untuk hukum fiqih, ikuti risalah amaliyah marja’ taqlid Anda.</p>';
+  document.getElementById("v-harian").innerHTML=html;
+}
+
+function renderPekan(){
+  const t=today0(), ws=weekStart(t), we=addDays(ws,6), w=M().weeks[weekKey()]||{};
+  const total=WEEKLY.reduce((a,g)=>a+g.items.length,0), done=WEEKLY.reduce((a,g)=>a+g.items.filter(i=>w[i.id]).length,0);
+  let html='<div class="vhead"><h2>Amalan pekanan</h2><p class="lede">Pekan '+fmtDM(ws)+" – "+fmtDM(we)+" · "+done+" dari "+total+" selesai</p></div>";
+  html+='<div class="grp"><div class="glabel">Ziarah harian para Ma’shum</div><div class="week">';
+  for(let i=0;i<7;i++){ const d=addDays(ws,i), wd=d.getDay();
+    html+='<div class="wrow'+(i===((t.getDay()+1)%7)?" is-today":"")+'"><span class="wd">'+HARI[wd]+"</span><span>"+IMAM_HARI[wd]+' <a class="wlink" href="'+ZDAY[wd]+'" target="_blank" rel="noopener">Buka ziarah ↗</a></span></div>'; }
+  html+="</div></div>";
+  for(const g of WEEKLY){
+    const now=g.day!==undefined&&t.getDay()===g.day;
+    html+='<div class="grp"><div class="glabel'+(now?" is-now":"")+'">'+g.label+(now?' <span class="pill">Hari ini</span>':"")+(g.note?'<span class="gl-note">'+g.note+"</span>":"")+'</div><div class="list">';
+    for(const it of g.items) html+=itemHTML("week",it,w[it.id]);
+    html+="</div></div>";
+  }
+  html+='<p class="note">Daftar pekanan dimulai setiap Sabtu dan memuncak pada hari Jumat.</p>';
+  document.getElementById("v-pekan").innerHTML=html;
+}
+
+function evHTML(o,showDate){
+  const ty=EVTYPE[o.e.type], past=o.i<0;
+  const dayLbl=o.e.d==="L"?o.h.d:o.e.d;
+  let meta='<span class="'+ty[1]+'">'+ty[0]+"</span>";
+  if(showDate!==false) meta+="<span>"+fmtShort(o.date)+" "+o.date.getFullYear()+"</span>";
+  if(o.i>=0) meta+='<span class="pill mute">'+countdown(o.i)+(o.i>1?" lagi":"")+"</span>";
+  if(o.e.night) meta+="<span>Malamnya dimulai petang sebelumnya</span>";
+  return '<div class="ev'+(past?" is-past":"")+'"><div class="eday"><b>'+dayLbl+"</b><small>"+HBS[o.h.m]+'</small></div><div><div class="et">'+o.e.t+'</div><div class="em">'+meta+"</div></div></div>";
+}
+
+function renderBulan(occ){
+  const t=today0(), {h,days}=monthDays(), mk=monthKey(), st=M().months[mk]||{};
+  const thursdays=days.filter(x=>x.date.getDay()===4), weds=days.filter(x=>x.date.getDay()===3&&x.h.d>=11&&x.h.d<=20);
+  const k1=thursdays[0], k2=thursdays[thursdays.length-1], rb=weds[0];
+  const forb=x=>x&&((x.h.m===10&&x.h.d===1)||(x.h.m===12&&x.h.d===10));
+  const fastSet=new Set([k1,rb,k2].filter(x=>x&&!forb(x)).map(x=>x.h.d));
+  const evs=occ.filter(o=>o.h.y===h.y&&o.h.m===h.m);
+  const evByDay={}; evs.forEach(o=>{(evByDay[o.h.d]=evByDay[o.h.d]||[]).push(o.e.type);});
+  const first=days[0], last=days[days.length-1], tk=ymd(t);
+  let html='<div class="vhead"><h2>'+HBLN[h.m]+" "+h.y+' H</h2><p class="lede">'+fmtDM(first.date)+" – "+fmtDM(last.date)+" "+last.date.getFullYear()+" · hari ke-"+h.d+" dari "+days.length+"</p></div>";
+  html+='<div class="cal"><div class="cgrid">'+["Ahd","Sen","Sel","Rab","Kam","Jum","Sab"].map(x=>'<div class="cdh">'+x+"</div>").join("");
+  for(let i=0;i<first.date.getDay();i++) html+="<div></div>";
+  for(const x of days){
+    const k=ymd(x.date); let mk2="";
+    if(fastSet.has(x.h.d)) mk2+='<i class="dot fast"></i>'; else if(x.h.d>=13&&x.h.d<=15) mk2+='<i class="dot bidh"></i>';
+    (evByDay[x.h.d]||[]).slice(0,2).forEach(ty=>{mk2+='<i class="dot '+ty+'"></i>';});
+    html+='<div class="cd'+(k===tk?" is-today":"")+(k<tk?" is-past":"")+'"><span class="hd">'+x.h.d+'</span><span class="gd">'+fmtDM(x.date)+'</span><span class="mk">'+mk2+"</span></div>";
+  }
+  html+='</div><div class="legend"><span><i class="dot fast"></i>Puasa sunnah</span><span><i class="dot bidh"></i>Ayyamul Bidh</span><span><i class="dot wiladah"></i>Kelahiran / hari raya</span><span><i class="dot syahadah"></i>Duka</span></div></div>';
+  const dl=(x,extra)=>{ if(!x) return "Tidak ada bulan ini"; if(forb(x)) return fmtShort(x.date)+" · hari raya, jangan berpuasa"; return fmtShort(x.date)+(extra||""); };
+  const when=x=>{ if(!x) return ""; const k=ymd(x.date); return k===tk?'<span class="pill">Hari ini</span>':k<tk?'<span class="pill mute">Sudah lewat</span>':""; };
+  const bidh=days.filter(x=>x.h.d>=13&&x.h.d<=15);
+  const MONTHLY=[
+    {id:"awal",t:"Shalat awal bulan & sedekah",s:dl(first),tag:when(first),d:["Hari pertama bulan Hijriah: shalat 2 rakaat. Rakaat pertama Al-Fatihah lalu Al-Ikhlas 30×, rakaat kedua Al-Fatihah lalu Al-Qadr 30×. Setelah itu bersedekah untuk keselamatan sebulan penuh. (Mafatih al-Jinan)"]},
+    {id:"k1",t:"Puasa Kamis pertama",s:dl(k1),tag:when(k1),d:["Menurut riwayat Ahlulbait, Rasulullah saw berpuasa tiga hari setiap bulan: Kamis pertama, Rabu pertengahan, dan Kamis terakhir. Pahalanya seperti berpuasa sepanjang masa."]},
+    {id:"rb",t:"Puasa Rabu pertengahan",s:dl(rb),tag:when(rb),d:["Rabu pertama pada sepuluh hari kedua bulan Hijriah."]},
+    {id:"k2",t:"Puasa Kamis terakhir",s:dl(k2),tag:when(k2)},
+    {id:"bidh",t:"Ayyamul Bidh",s:bidh.length?fmtDM(bidh[0].date)+" – "+fmtDM(bidh[bidh.length-1].date)+" (13–15 "+HBLN[h.m]+")":"",d:["Puasa dan amalan malam purnama, terutama ditekankan di bulan Rajab, Sya’ban, dan Ramadhan."]},
+    {id:"khatam",t:"Khatam Al-Qur’an",s:"Target One Day One Juz: "+(M().quran.done.filter(Boolean).length)+"/30 juz"},
+    {id:"kubur",t:"Ziarah kubur",s:"Orang tua, kerabat, para syuhada & ulama"},
+    {id:"yatim",t:"Santuni yatim & fakir",s:"Imam Ali as dikenal sebagai ayah bagi para yatim"},
+    {id:"buku",t:"Tuntaskan satu bacaan",s:"Tentang Imam Mahdi atau sirah Ahlulbait"}
+  ];
+  const md=MONTHLY.filter(i=>st[i.id]).length;
+  html+='<div class="grp"><div class="glabel">Amalan bulan ini<span class="gl-note">'+md+"/"+MONTHLY.length+'</span></div><div class="list">'+MONTHLY.map(i=>itemHTML("month",i,st[i.id],{tag:i.tag})).join("")+"</div></div>";
+  html+='<div class="grp"><label class="fl" for="monthNote">Niat & target bulan ini</label><textarea id="monthNote" placeholder="Contoh: meninggalkan ghibah, Shalat Malam minimal 3× sepekan, membaca 1 buku tentang Imam Mahdi.">'+esc(st._note||"")+"</textarea></div>";
+  if(evs.length) html+='<div class="grp"><div class="glabel">Hari penting bulan ini</div><div class="list">'+evs.map(o=>evHTML(o)).join("")+"</div></div>";
+  document.getElementById("v-bulan").innerHTML=html;
+}
+
+function renderTahun(occ){
+  const t=today0(), h=hijri(t), st=M().years[h.y]||{};
+  const up=occ.filter(o=>o.i>=0).slice(0,6);
+  const yd=YEARLY.filter(i=>st[i.id]).length;
+  let html='<div class="vhead"><h2>Tahun '+h.y+' H</h2><p class="lede">Kalender Ahlulbait dan target tahunan · '+yd+" dari "+YEARLY.length+" target selesai</p></div>";
+  html+='<div class="grp"><div class="glabel">Segera datang</div><div class="list">'+up.map(o=>evHTML(o)).join("")+"</div></div>";
+  html+='<div class="grp"><div class="glabel">Target tahun '+h.y+' H</div><div class="list">'+YEARLY.map(i=>itemHTML("year",i,st[i.id])).join("")+"</div></div>";
+  html+='<div class="grp"><div class="glabel">Kalender '+h.y+' H</div><div class="list months">';
+  for(let m=1;m<=12;m++){
+    const list=occ.filter(o=>o.h.y===h.y&&o.h.m===m), key="mon:"+m;
+    const isOpen=openSet.has(key)||(!openInit&&m===h.m);
+    if(!openInit&&m===h.m) openSet.add(key);
+    html+='<details data-key="'+key+'"'+(isOpen?" open":"")+(m===h.m?' class="cur"':"")+"><summary>"+HBLN[m]+'<span class="mc">'+list.length+' hari penting</span></summary><div class="evs">'+(list.length?list.map(o=>evHTML(o)).join(""):'<div class="ev"><div></div><div class="et">Tidak ada data</div></div>')+"</div></details>";
+  }
+  html+="</div></div>";
+  html+='<p class="note">Tanggal mengikuti kalender Hijriah Ummul Qura dan riwayat yang umum dipakai. Penetapan awal bulan oleh marja’ atau rukyat setempat bisa berbeda satu hari; atur koreksinya di tab Pedoman.</p>';
+  document.getElementById("v-tahun").innerHTML=html;
+  openInit=true;
+}
+
+function renderQuran(){
+  const q=M().quran, done=q.done.filter(Boolean).length, n=nextJuz(), lg=quranToday(), t=today0();
+  let html='<div class="vhead"><h2>One Day One Juz</h2><p class="lede">Satu juz sehari, khatam setiap bulan.</p></div>';
+  if(n){
+    const eta=addDays(t,(30-done)-(lg.length?0:1));
+    html+='<div class="qhero"><div class="qtop"><div class="qnum"><svg viewBox="0 0 78 78" aria-hidden="true"><path d="M39 4l10.3 14.1 17.2-2.6-2.6 17.2L78 39l-14.1 10.3 2.6 17.2-17.2-2.6L39 78 28.7 63.9l-17.2 2.6 2.6-17.2L0 39l14.1-10.3-2.6-17.2 17.2 2.6z"/></svg><b>'+n+'</b></div><div class="qinfo"><div class="k">'+(lg.length?"Juz berikutnya":"Juz hari ini")+"</div><h3>Juz "+n+"</h3><p>Mulai Surah "+JUZ[n]+"</p></div></div>"+
+      '<div class="qact"><a class="btn primary" href="'+quranUrl(n)+'" target="_blank" rel="noopener">Baca juz '+n+' ↗</a><button type="button" class="btn ghost" data-act="qnext">Tandai juz '+n+' selesai</button></div>'+
+      '<p class="note">'+(lg.length?"Hari ini sudah: juz "+lg.join(", ")+". ":"")+"Dengan 1 juz sehari, perkiraan khatam "+fmtShort(eta)+" "+eta.getFullYear()+".</p></div>";
+  } else {
+    html+='<div class="khatam"><h3>Khatam ke-'+(q.khatam+1)+" selesai</h3><p>Alhamdulillah. Hadiahkan pahalanya untuk Imam Zaman (ajtf) dan 14 Ma’shum as, lalu mulai putaran berikutnya.</p><div><button type=\"button\" class=\"btn primary\" data-act=\"qreset\">Mulai khatam baru</button></div></div>";
+  }
+  html+='<div class="stats"><div class="stat"><b>'+done+'/30</b><span>juz putaran ini</span></div><div class="stat"><b>'+q.khatam+'</b><span>kali khatam</span></div><div class="stat"><b>'+quranStreak()+'</b><span>hari berturut-turut</span></div></div>';
+  html+='<div class="grp"><div class="glabel">Putaran ke-'+(q.khatam+1)+'<span class="gl-note">Ketuk untuk menandai</span></div><div class="jgrid">';
+  for(let i=1;i<=30;i++) html+='<button type="button" class="juz'+(i===n?" is-next":"")+'" aria-pressed="'+(!!q.done[i])+'" aria-label="Juz '+i+'" data-act="juz" data-n="'+i+'">'+i+"</button>";
+  html+="</div></div>";
+  html+='<div class="grp"><div class="glabel">14 hari terakhir</div><div class="days14">';
+  for(let i=13;i>=0;i--){ const d=addDays(t,-i), c=(q.log[ymd(d)]||[]).length; html+='<div class="d14"><i class="'+(c>1?"two":c?"on":"")+'" title="'+fmtShort(d)+": "+c+' juz"></i>'+d.getDate()+"</div>"; }
+  html+='</div><div class="legend"><span><i class="dot wiladah"></i>1 juz</span><span><i class="dot fast"></i>Lebih dari 1 juz</span></div></div>';
+  html+='<p class="note">Sebelum membaca, mohonlah perlindungan dari setan dan niatkan pahalanya untuk Imam Zaman (ajtf). Di bulan Ramadhan, satu ayat setara dengan khatam di bulan lain menurut riwayat.</p>';
+  document.getElementById("v-quran").innerHTML=html;
+}
+
+function renderPedoman(){
+  let html='<div class="intro"><h2>Syiah yang dirindukan Imam</h2><p>Imam tidak hanya menanti pengikut yang banyak berdoa, tetapi pengikut yang bertakwa, jujur, berakhlak, berilmu, dan hidup di tengah masyarakat dengan baik. Inilah pegangan dari riwayat Ahlulbait as.</p><p class="ar" lang="ar" dir="rtl">'+AR.zain+"</p></div>";
+  html+='<div class="grp"><div class="glabel">Kumpulan doa & ziarah</div><div class="list dlib">'+Object.keys(DUA).map(k=>{const d=DUA[k];return '<div class="item"><div><div class="ititle">'+d.t+'</div><div class="isub">'+(d.w||"")+'</div><div class="irow">'+duaButtons(k,true)+"</div></div></div>";}).join("")+'</div><p class="note">Teks lengkap dibuka di duas.org (Arab, Latin, dan Inggris) dan WikiShia bahasa Indonesia. Teks pendek bisa dibaca langsung di aplikasi.</p></div>';
+  PEDOMAN.forEach((c,i)=>{
+    html+='<div class="pcard"><h3>'+c.h+'</h3><p class="q">'+c.q+"</p>"+(c.ar?'<p class="ar" lang="ar" dir="rtl">'+c.ar+'</p><p class="mean">'+c.mean+"</p>":"")+'<div class="src">Sumber: '+c.src+"</div><ul>"+c.p.map(x=>"<li>"+x+"</li>").join("")+"</ul></div>";
+  });
+  html+='<div class="pcard"><h3>Panduan shalat sunnah</h3><p class="q">Surah, qunut, dan doa yang dianjurkan dalam nafilah harian, serta tata cara Shalat Ghufailah.</p><div class="irow"><button type="button" class="mini solid" data-act="guide" data-g="nafilah">Panduan nafilah</button><button type="button" class="mini solid" data-act="guide" data-g="ghufailah">Shalat Ghufailah</button></div></div>';
+  html+='<div class="pcard"><h3>Kitab pegangan</h3><ul><li>Mafatih al-Jinan, Syekh Abbas al-Qummi: teks lengkap Doa Ahd, Kumayl, Nudbah, Tawassul, Ziarah Asyura, dan amalan bulan-bulan. <a href="https://www.duas.org/downloads/mafatih_al_jinan.pdf" target="_blank" rel="noopener">Versi Arab–Inggris (PDF) ↗</a></li><li>Shahifah Sajjadiyah, doa-doa Imam Ali Zainal Abidin as.</li><li>Nahjul Balaghah, khutbah dan hikmah Imam Ali as.</li><li>Risalah amaliyah marja’ taqlid Anda.</li></ul></div>';
+  const o=offset();
+  html+='<div class="pcard"><h3>Pengaturan</h3><div class="set"><div><div class="ititle">Koreksi tanggal Hijriah</div><div class="isub">Sesuaikan dengan pengumuman marja’ atau komunitas Anda</div></div><div class="step"><button type="button" data-act="off" data-d="-1" aria-label="Kurangi satu hari">−</button><output id="offOut">'+(o>0?"+"+o:o)+'</output><button type="button" data-act="off" data-d="1" aria-label="Tambah satu hari">+</button></div></div><div class="sync" id="syncLine" data-s="'+syncState+'">'+SYNCTXT[syncState]+"</div></div>";
+  if(!IN_APP) html+='<div class="pcard"><h3>Aplikasi Android</h3><p class="q">Pasang Jalan Muntazhir sebagai aplikasi di HP Android. Progres di aplikasi tersimpan di HP itu sendiri, terpisah dari halaman ini.</p><div class="irow"><a class="mini solid" href="'+APK_URL+'" target="_blank" rel="noopener">Unduh APK ↗</a><a class="mini" href="https://zakinajwahabsyi.github.io/muntazhir/" target="_blank" rel="noopener">Versi web ↗</a></div></div>';
+  document.getElementById("v-pedoman").innerHTML=html;
+}
+
+function render(){
+  const ae=document.activeElement, focusSel=ae&&ae.dataset&&ae.dataset.act?{act:ae.dataset.act,id:ae.dataset.id,n:ae.dataset.n,scope:ae.dataset.scope}:null;
+  const occ=occurrences();
+  renderHeader(occ); renderHarian(occ); renderPekan(); renderBulan(occ); renderTahun(occ); renderQuran(); renderPedoman();
+  if(focusSel){ let sel='[data-act="'+focusSel.act+'"]'; if(focusSel.id) sel+='[data-id="'+focusSel.id+'"]'; if(focusSel.scope) sel+='[data-scope="'+focusSel.scope+'"]'; if(focusSel.n) sel+='[data-n="'+focusSel.n+'"]';
+    const el=document.querySelector(".view:not([hidden]) "+sel)||document.querySelector(sel); if(el&&el.focus) try{el.focus({preventScroll:true});}catch(e){} }
+}
+
+/* ---------- tab ---------- */
+const TABS=["harian","pekan","bulan","tahun","quran","pedoman"];
+function showTab(t,scroll){
+  if(!TABS.includes(t)) t="harian";
+  TABS.forEach(id=>{document.getElementById("v-"+id).hidden=id!==t;});
+  document.querySelectorAll("nav.tabs button").forEach(b=>{ if(b.dataset.tab===t) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current"); });
+  if(scroll) window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",()=>showTab(location.hash.slice(1),true));
+
+/* ---------- penghitung dzikir ---------- */
+const PRESETS={
+  tasbih:{title:"Tasbih Fatimah az-Zahra",phases:[{ar:"اللهُ أَكْبَرُ",lat:"Allâhu Akbar",n:34},{ar:"اَلْحَمْدُ لِلّٰهِ",lat:"Alhamdulillâh",n:33},{ar:"سُبْحَانَ اللهِ",lat:"Subhânallâh",n:33}]},
+  shalawat:{title:"Shalawat 100×",mark:"shalawat",phases:[{ar:AR.shalawat,lat:"Allâhumma shalli ‘alâ Muhammad wa âli Muhammad wa ‘ajjil farajahum",n:100}]},
+  istighfar:{title:"Istighfar 70×",mark:"istighfar",phases:[{ar:AR.istighfar,lat:"Astaghfirullâha rabbî wa atûbu ilaih",n:70}]}
+};
+let C={key:"tasbih",phase:0,count:0,done:false,msg:""};
+const sheet=document.getElementById("sheet");
+const vib=p=>{try{navigator.vibrate&&navigator.vibrate(p);}catch(e){}};
+function drawCounter(){
+  const P=PRESETS[C.key], ph=P.phases[C.phase];
+  document.getElementById("cTitle").textContent=P.title;
+  document.getElementById("cAr").textContent=ph.ar;
+  document.getElementById("cLat").textContent=ph.lat;
+  document.getElementById("cNum").textContent=C.count;
+  document.getElementById("cOf").textContent="dari "+ph.n;
+  document.getElementById("cRing").setAttribute("stroke-dashoffset",(289.03*(1-C.count/ph.n)).toFixed(2));
+  const pe=document.getElementById("cPhases");
+  pe.innerHTML=P.phases.length>1?P.phases.map((x,i)=>'<span class="'+(i===C.phase&&!C.done?"on":i<C.phase||C.done?"ok":"")+'">'+x.n+"× "+x.lat+"</span>").join(""):"";
+  const dn=document.getElementById("cDone"); dn.hidden=!C.done; dn.textContent=C.msg;
+}
+function openCounter(k){ C={key:k,phase:0,count:0,done:false,msg:""}; sheet.hidden=false; drawCounter(); try{document.getElementById("cTap").focus({preventScroll:true});}catch(e){} }
+function closeCounter(){ sheet.hidden=true; }
+function tapCounter(){
+  if(C.done) return; const P=PRESETS[C.key]; C.count++; vib(10);
+  if(C.count>=P.phases[C.phase].n){
+    if(C.phase<P.phases.length-1){ C.phase++; C.count=0; vib(40); }
+    else { C.done=true; vib([60,40,60]); C.count=P.phases[C.phase].n;
+      const s=D(today0()); let id=P.mark||null;
+      if(C.key==="tasbih"){ id=null; for(let i=0;i<5;i++) if(!s["t"+i]){id="t"+i;break;} }
+      if(id&&!s[id]){ s[id]=true; updateStats(); touch(dayDocName(today0())); touch("main"); render();
+        C.msg="Selesai. Tercatat: "+(C.key==="tasbih"?"Tasbih setelah "+FARDHU[+id.slice(1)]:P.title)+"."; }
+      else C.msg="Selesai. Semoga diterima.";
+    }
+  }
+  drawCounter();
+}
+
+/* ---------- interaksi ---------- */
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-act]");
+  if(!b){ if(e.target===sheet) closeCounter(); if(e.target===reader) closeReader(); return; }
+  const a=b.dataset.act;
+  if(a==="tab"){ const t=b.dataset.tab; showTab(t,true); try{ if(location.hash!=="#"+t) location.hash=t; }catch(err){} }
+  else if(a==="chk") toggle(b.dataset.scope,b.dataset.id);
+  else if(a==="counter") openCounter(b.dataset.preset);
+  else if(a==="ctap") tapCounter();
+  else if(a==="cclose") closeCounter();
+  else if(a==="lvl"){ M().settings.lvl=+b.dataset.l; touch("main"); refreshNight(); }
+  else if(a==="motiv"){ motivIdx=(motivIdx+1)%MOTIV.length; refreshNight(); }
+  else if(a==="read") openReader(b.dataset.dua);
+  else if(a==="guide") openGuide(b.dataset.g);
+  else if(a==="rclose") closeReader();
+  else if(a==="creset"){ C={key:C.key,phase:0,count:0,done:false,msg:""}; drawCounter(); }
+  else if(a==="juz"){ const n=+b.dataset.n; setJuz(n,!M().quran.done[n]); updateStats(); touch("main"); touch(dayDocName(today0())); render(); }
+  else if(a==="qnext"){ const n=nextJuz(); if(n){ setJuz(n,true); updateStats(); touch("main"); touch(dayDocName(today0())); render(); } }
+  else if(a==="qreset"){ const q=M().quran; q.khatam++; q.done=[]; touch("main"); render(); }
+  else if(a==="off"){ const m=M(); let o=offset()+(+b.dataset.d); o=Math.max(-2,Math.min(2,o)); m.settings.offset=o; touch("main"); render(); }
+});
+document.addEventListener("keydown",e=>{ if(e.key!=="Escape") return; if(!sheet.hidden) closeCounter(); if(!reader.hidden) closeReader(); });
+let noteT=null;
+document.addEventListener("change",e=>{ if(e.target.id!=="citySel") return; M().settings.city=e.target.value; touch("main"); render(); });
+document.addEventListener("input",e=>{
+  if(e.target.id!=="monthNote") return;
+  const v=e.target.value; clearTimeout(noteT);
+  noteT=setTimeout(()=>{ const m=M(), k=monthKey(); m.months[k]=m.months[k]||{}; m.months[k]._note=v.slice(0,2000); touch("main"); },700);
+});
+
+/* pergantian hari saat aplikasi tetap terbuka */
+let lastDay=ymd(today0());
+setInterval(()=>{ const k=ymd(today0()); if(k!==lastDay){ lastDay=k; if(R.db) attach(dayDocName(today0())); render(); } else refreshNight(); },60000);
+document.addEventListener("visibilitychange",()=>{ if(!document.hidden){ const k=ymd(today0()); if(k!==lastDay){ lastDay=k; render(); } } });
+
+render();
+showTab(location.hash.slice(1),false);
+})();
+</script>
+<script>
+if("serviceWorker" in navigator && location.protocol==="https:"){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}
+</script>
+</body>
+</html>

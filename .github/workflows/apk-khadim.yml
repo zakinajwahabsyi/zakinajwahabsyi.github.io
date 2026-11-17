@@ -1,0 +1,64 @@
+name: Buat APK Menuju Khadim
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "khadim/**"
+      - "android-khadim/**"
+      - ".github/workflows/apk-khadim.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apk-khadim
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      - name: Salin aplikasi web ke dalam APK
+        run: |
+          mkdir -p android-khadim/app/src/main/assets
+          cp khadim/index.html android-khadim/app/src/main/assets/index.html
+          cp -r khadim/fonts android-khadim/app/src/main/assets/fonts
+
+      - name: Siapkan kunci tanda tangan
+        env:
+          KEYSTORE_B64: ${{ secrets.KHADIM_KEYSTORE_B64 }}
+        run: |
+          if [ -n "$KEYSTORE_B64" ]; then echo "$KEYSTORE_B64" | base64 -d > android-khadim/app/release.keystore; fi
+          test -f android-khadim/app/release.keystore
+
+      - name: Bangun APK
+        working-directory: android-khadim
+        env:
+          VERSION_CODE: ${{ github.run_number }}
+          KHADIM_KEYSTORE_PASS: ${{ secrets.KHADIM_KEYSTORE_PASS }}
+        run: gradle assembleRelease --no-daemon --stacktrace
+
+      - name: Terbitkan APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp android-khadim/app/build/outputs/apk/release/app-release.apk menuju-khadim.apk
+          gh release delete khadim-apk-latest --yes --cleanup-tag || true
+          gh release create khadim-apk-latest menuju-khadim.apk \
+            --target "${{ github.sha }}" \
+            --title "Menuju Khadim — APK terbaru" \
+            --notes "Unduh menuju-khadim.apk, buka di HP Android, lalu izinkan pemasangan dari sumber ini. Versi web: https://zakinajwahabsyi.github.io/khadim/ — build ${{ github.run_number }}." \
+            --latest=false

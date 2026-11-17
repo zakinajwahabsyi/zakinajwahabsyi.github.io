@@ -1,0 +1,1660 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Menuju Khadim</title>
+<meta name="description" content="Latihan harian pemaqtal dan radud: kalender syahadah Hijriah, materi bersumber, hafalan teks Arab, dan latihan spontan.">
+<meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1210" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Khadim">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/amiri-arabic-400-normal.woff2) format('woff2');
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1;
+}
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonts/amiri-arabic-700-normal.woff2) format('woff2');
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1;
+}
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/amiri-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/inter-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/inter-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonts/inter-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonts/inter-latin-ext-500-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonts/inter-latin-600-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonts/inter-latin-ext-600-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonts/inter-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonts/inter-latin-ext-700-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Marcellus';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/marcellus-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Marcellus';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/marcellus-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}</style>
+<style>
+/* Layout: aplikasi satu kolom ala HP — header tipis, isi bergulir, tab bawah tetap. Hitam-hijau kain majlis, emas dharih, merah darah untuk titik pecah. */
+:root{
+  --bg:#F1F2EE; --surface:#FFFFFF; --surface2:#E7EAE4; --line:#D3D8CF;
+  --fg:#16201B; --muted:#58645C;
+  --gold:#86651E; --gold-ink:#FFFFFF; --gold-soft:#F2E9D3;
+  --crimson:#9A1B2D; --crimson-soft:#F7E3E5;
+  --green:#1F6B4C; --green-soft:#DDEFE6;
+  --f-display:"Marcellus","Times New Roman",serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-ar:"Amiri","Noto Naskh Arabic","Geeza Pro","Traditional Arabic",serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1210; --surface:#141B18; --surface2:#1B2420; --line:#28332E;
+    --fg:#E8E5DC; --muted:#99A49D;
+    --gold:#D4AF5F; --gold-ink:#17130A; --gold-soft:#2A2416;
+    --crimson:#E46876; --crimson-soft:#371A1F;
+    --green:#62C497; --green-soft:#16302A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1210; --surface:#141B18; --surface2:#1B2420; --line:#28332E;
+  --fg:#E8E5DC; --muted:#99A49D;
+  --gold:#D4AF5F; --gold-ink:#17130A; --gold-soft:#2A2416;
+  --crimson:#E46876; --crimson-soft:#371A1F;
+  --green:#62C497; --green-soft:#16302A;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+button{font:inherit;color:inherit}
+button,input,textarea,select{font-family:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;padding-block:10px}
+.brand{font-family:var(--f-display);font-size:19px;letter-spacing:.02em;flex:1;min-width:0}
+.brand small{display:block;font-family:var(--f-body);font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.lvchip{border:1px solid var(--gold);color:var(--gold);background:transparent;border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:600;white-space:nowrap;cursor:pointer}
+
+main{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+main .wrap{padding-block:18px;display:flex;flex-direction:column;gap:22px}
+
+/* bottom tabs */
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabs .wrap{display:grid;grid-template-columns:repeat(5,1fr);padding-block:4px}
+.tabs button{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0 6px;font-size:11px;color:var(--muted);cursor:pointer;min-height:56px}
+.tabs button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tabs button[aria-current="page"]{color:var(--gold);font-weight:600}
+
+/* type */
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance}
+h1{font-size:28px;line-height:1.15}
+h2{font-size:21px;line-height:1.2}
+h3{font-size:17px;line-height:1.3}
+p{margin:0}
+.eyebrow{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.sec{display:flex;flex-direction:column;gap:12px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ar{font-family:var(--f-ar);direction:rtl;text-align:right;font-size:25px;line-height:2.05;unicode-bidi:isolate}
+.ar.sm{font-size:20px;line-height:1.9}
+.tr{font-style:italic;color:var(--muted);font-size:14px}
+
+/* surfaces */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.row{display:flex;align-items:center;gap:12px;padding:13px 14px;border-top:1px solid var(--line);background:none;border-left:0;border-right:0;border-bottom:0;width:100%;text-align:left;cursor:pointer;min-width:0}
+.row:first-child{border-top:0}
+.row .grow{flex:1;min-width:0}
+.row .t{font-weight:600;font-size:15px}
+.row .s{font-size:12.5px;color:var(--muted)}
+.callout{border-left:3px solid var(--crimson);background:var(--crimson-soft);border-radius:0 10px 10px 0;padding:12px 14px}
+.callout.gold{border-left-color:var(--gold);background:var(--gold-soft)}
+.callout.green{border-left-color:var(--green);background:var(--green-soft)}
+.callout .eyebrow{margin-bottom:4px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 16px;border-radius:11px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:600;font-size:14px;text-decoration:none}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--crimson);border-color:var(--crimson);background:transparent}
+.btn[disabled]{opacity:.5;cursor:default}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;font-size:13px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.pill{display:inline-block;font-size:12px;font-weight:600;border-radius:999px;padding:3px 9px;background:var(--surface2);color:var(--fg);white-space:nowrap}
+.pill.hot{background:var(--crimson);color:#fff}
+.pill.gold{background:var(--gold-soft);color:var(--gold)}
+.pill.ok{background:var(--green-soft);color:var(--green)}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:6px}
+.hdate{font-family:var(--f-display);font-size:34px;line-height:1.1}
+.hdate .arm{font-family:var(--f-ar);font-size:22px;color:var(--gold);margin-left:6px}
+.adj{display:inline-flex;align-items:center;gap:4px;margin-left:4px}
+.adj button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;line-height:1}
+
+/* progress */
+.bar{height:8px;border-radius:99px;background:var(--surface2);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--gold);border-radius:99px;transition:width .4s}
+
+/* steps */
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.step>summary{list-style:none;display:flex;align-items:center;gap:12px;padding:13px 14px;cursor:pointer}
+.step>summary::-webkit-details-marker{display:none}
+.tick{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--muted)}
+.step.done .tick{background:var(--green);border-color:var(--green);color:var(--bg)}
+.step .body{padding:0 14px 14px;display:flex;flex-direction:column;gap:10px}
+.step summary .t{font-weight:600}
+.step summary .s{font-size:12.5px;color:var(--muted)}
+.niat{font-family:var(--f-display);font-size:20px;line-height:1.4}
+
+/* timer */
+.timer{display:flex;align-items:center;gap:10px}
+.timer .clock{font-variant-numeric:tabular-nums;font-weight:700;font-size:20px;min-width:62px}
+
+/* agenda */
+.agenda .row{cursor:pointer}
+.datebox{flex:none;width:52px;text-align:center;border-radius:10px;background:var(--surface2);padding:6px 0;line-height:1.1}
+.datebox b{display:block;font-family:var(--f-display);font-size:20px;font-weight:400}
+.datebox span{font-size:10px;color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 2px}
+
+/* materi */
+.fig-h{display:flex;flex-direction:column;gap:4px}
+ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.quiz .blk{position:relative;cursor:pointer}
+.quiz .blk:not(.open)>.inner{filter:blur(7px);user-select:none;pointer-events:none}
+.quiz .blk:not(.open)::after{content:"Ketuk untuk membuka";position:absolute;inset:auto 0 50% 0;text-align:center;font-size:13px;font-weight:600;color:var(--fg)}
+.back{background:none;border:0;color:var(--gold);font-weight:600;padding:6px 0;cursor:pointer;align-self:flex-start}
+input[type=search],input[type=text],input[type=number],textarea{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:11px;padding:11px 12px;font-size:15px}
+textarea{min-height:110px;resize:vertical;line-height:1.5}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600}
+
+/* hafalan */
+.dots{display:inline-flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--surface2);border:1px solid var(--line)}
+.dots i.on{background:var(--gold);border-color:var(--gold)}
+.arl{display:block}
+.w{font:inherit;background:none;border:0;padding:0 1px;color:inherit}
+button.w{cursor:pointer;color:var(--gold);border-bottom:1.5px dashed var(--gold);border-radius:0}
+.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.levels .chip{text-align:center;padding:8px 4px;font-size:12.5px}
+.rate{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.rate .btn{width:100%}
+
+/* chat */
+.chat{display:flex;flex-direction:column;gap:12px}
+.msg{max-width:92%;padding:11px 13px;border-radius:14px;min-width:0;overflow-wrap:anywhere}
+.msg.u{align-self:flex-end;background:var(--gold-soft);border:1px solid var(--line);white-space:pre-wrap}
+.msg.a{align-self:flex-start;background:var(--surface);border:1px solid var(--line)}
+.msg.a p+p,.msg.a p+ul,.msg.a ul+p{margin-top:8px}
+.msg.a ul{margin:6px 0;padding-left:18px}
+.composer{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom,0px));background:var(--bg);padding-top:8px;display:flex;flex-direction:column;gap:8px}
+.composer textarea{min-height:64px}
+.mic{width:42px;min-height:42px;padding:0}
+.mic.on{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.hint{font-size:12.5px;color:var(--muted);min-height:1em}
+
+/* ladder */
+.ladder .row{cursor:default}
+.lvnum{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);border:1.5px solid var(--line)}
+.ladder .reached .lvnum{background:var(--gold);color:var(--gold-ink);border-color:var(--gold)}
+.ladder .now .lvnum{border-color:var(--gold);color:var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.stat b{display:block;font-family:var(--f-display);font-size:24px;font-weight:400;font-variant-numeric:tabular-nums}
+.stat span{font-size:11.5px;color:var(--muted)}
+
+.check{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-top:1px solid var(--line);cursor:pointer}
+.check:first-child{border-top:0}
+.check input{width:20px;height:20px;margin-top:1px;accent-color:var(--gold);flex:none}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:40;background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:14px;font-weight:600;max-width:calc(100% - 32px);box-shadow:0 6px 24px rgba(0,0,0,.25);transition:opacity .25s}
+.toast[hidden]{display:none}
+.tanc{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:start}
+.tanc b{font-family:var(--f-display);font-size:28px;color:var(--gold);line-height:1;text-align:center}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand">Menuju Khadim<small id="hdrSub">Latihan pemaqtal &amp; radud</small></div>
+  <button class="lvchip" id="lvchip" data-act="tab" data-tab="hari" data-scroll="jalan">Tingkat 1</button>
+</div></header>
+<main id="main"><div class="wrap" id="view"></div></main>
+<nav class="tabs" aria-label="Menu"><div class="wrap" id="tabs"></div></nav>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+"use strict";
+const IS_CLAUDE = !!window.claude;
+const IS_APK = /MenujuKhadimApp/.test(navigator.userAgent || "");
+let IS_PWA = false; try{ IS_PWA = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true; }catch(e){}
+const APK_URL = "https://github.com/zakinajwahabsyi/zakinajwahabsyi.github.io/releases/download/khadim-apk-latest/menuju-khadim.apk";
+const WEB_URL = "https://zakinajwahabsyi.github.io/khadim/";
+const CLAUDE_URL = "https://claude.ai/artifact/Y2JAVkCjeo5oNbMYSKPZ1K";
+/* ============================================================
+   DATA — Materi syahadah, hafalan, diksi, latihan
+   ============================================================ */
+const GROUPS = {maksumin:"14 Maksumin", wanita:"Zainab & Ummul Banin", karbala:"Syuhada Karbala", arbain:"Arbain", ahlulbait:"Syuhada Ahlul Bait"};
+
+const FIG = [
+/* ---------- 14 MAKSUMIN ---------- */
+{id:"nabi", g:"maksumin", n:"Nabi Muhammad ﷺ", ar:"مُحَمَّدٌ رَسُولُ اللَّهِ ﷺ", when:"28 Safar 11 H · Madinah", ev:[{m:2,d:28,l:"Wafat Rasulullah ﷺ"}],
+ ringkas:"Hari-hari terakhir Rasulullah dilalui dalam sakit yang berat, dan Fatimah tak beranjak dari sisinya. Beliau membisikkan sesuatu hingga Fatimah menangis, lalu berbisik lagi hingga ia tersenyum: kabar bahwa dialah keluarga pertama yang akan menyusul. Menurut riwayat Ahlul Bait, beliau wafat dalam dekapan Imam Ali.",
+ detail:["Bejana air di sisi ranjang: beliau mencelupkan tangan lalu mengusap wajahnya sendiri.","Fatimah berbisik lirih, “Duhai derita ayahku.”","Dua bisikan: yang pertama membuat Fatimah menangis, yang kedua membuatnya tersenyum.","Pintu rumah Fatimah, yang setelah hari itu menjadi saksi duka berikutnya."],
+ titik:"“Tidak ada lagi derita atas ayahmu setelah hari ini.” Derita sang ayah selesai; derita putrinya baru dimulai.",
+ maqam:"Hijaz untuk suasana khidmat dan rindu; turun ke Saba di penutup.",
+ sumber:["Shahih Bukhari, Kitab al-Maghazi (bab sakit dan wafat Nabi)","Al-Irsyad — Syekh Mufid","Bihar al-Anwar — Allamah Majlisi"],
+ catatan:["28 Safar mengikuti pendapat masyhur ulama Syiah; sumber Sunni umumnya menyebut 12 Rabiul Awal.","Riwayat tentang di pangkuan siapa beliau wafat berbeda antara sumber Sunni dan Syiah. Di majlis umum, fokus pada duka dan akhlak beliau."],
+ hafal:["nabi1","nabi2"]},
+
+{id:"fatimah", g:"maksumin", n:"Sayyidah Fatimah az-Zahra", ar:"فَاطِمَةُ الزَّهْرَاءُ", when:"13 Jumadil Ula atau 3 Jumadil Akhir 11 H · Madinah", ev:[{m:5,d:13,l:"Fatimiyah I (riwayat 75 hari)"},{m:6,d:3,l:"Fatimiyah II (riwayat 95 hari)"}],
+ ringkas:"Setelah ayahnya wafat, hari-hari Fatimah dipenuhi duka. Imam Ali membangunkan untuknya Baitul Ahzan, rumah duka di Baqi, tempat ia menangisi ayahnya. Ia wafat sangat muda, sekitar 18 tahun. Sesuai wasiatnya, ia dimandikan dan dimakamkan malam hari secara diam-diam, dan makamnya hingga kini tak diketahui pasti.",
+ detail:["Baitul Ahzan di Baqi, tempat tangisnya tak lagi dikeluhkan orang.","Wasiat: dimakamkan malam hari, tanpa diketahui orang-orang tertentu.","Makam yang hingga hari ini tak bertanda pasti.","Imam Ali berdiri di sisi kubur dan berbicara kepada Rasulullah.","Dalam riwayat Syiah: peristiwa di pintu rumah dan gugurnya janin Muhsin."],
+ titik:"Malam itu Imam Ali berkata kepada Rasulullah: kesabaranku atas kepergian putri pilihanmu telah berkurang.",
+ maqam:"Saba yang lirih; Nahawand saat mengenang kebersamaan dengan ayahnya.",
+ sumber:["Nahjul Balaghah — ucapan Imam Ali saat memakamkan Fatimah","Al-Kafi — Syekh Kulaini","Al-Amali — Syekh Mufid","Bihar al-Anwar"],
+ catatan:["Ada dua riwayat lama hidupnya setelah Nabi (75 dan 95 hari), karena itu Fatimiyah diperingati dua kali.","Riwayat peristiwa di pintu rumah sensitif di majlis campuran. Sampaikan dengan sumber dan adab."],
+ hafal:["fat1","fat2"]},
+
+{id:"ali", g:"maksumin", n:"Imam Ali bin Abi Thalib", ar:"عَلِيُّ بْنُ أَبِي طَالِبٍ", when:"21 Ramadhan 40 H · Kufah", ev:[{m:9,d:19,l:"Imam Ali ditebas di mihrab"},{m:9,d:21,l:"Syahadah Imam Ali"}],
+ ringkas:"Pada malam 19 Ramadhan beliau berbuka di rumah putrinya, Ummu Kultsum, lalu berangkat ke Masjid Kufah sebelum subuh. Di mihrab, Abdurrahman bin Muljam menebas kepalanya dengan pedang beracun. Dua hari kemudian beliau wafat, setelah berwasiat agar pembunuhnya diperlakukan adil.",
+ detail:["Dua hidangan di meja berbuka; ia meminta salah satunya diangkat.","Malam itu ia berkali-kali keluar memandang langit.","Angsa-angsa di halaman berteriak menghalangi langkahnya; ia berkata, biarkan, itu teriakan yang akan diikuti ratapan.","Darah di mihrab Masjid Kufah.","Wasiat: satu tebasan dibalas satu tebasan, dan jangan merusak jasadnya."],
+ titik:"Saat darah membasahi janggutnya, kalimat pertamanya justru kemenangan: “Demi Tuhan Ka’bah, aku telah menang.”",
+ maqam:"Bayati untuk kisah malam terakhir, Saba saat tebasan dan wasiat.",
+ sumber:["Al-Irsyad — Syekh Mufid","Maqatil ath-Thalibiyyin — Abul Faraj al-Isfahani","Nahjul Balaghah, surat 47 (wasiat kepada Hasan dan Husain)","Bihar al-Anwar"],
+ catatan:["Kisah anak-anak yatim Kufah membawa susu ke rumahnya masyhur di mimbar, tetapi sumbernya belakangan. Bawakan sebagai “diriwayatkan”, bukan kepastian."],
+ hafal:["ali1"]},
+
+{id:"hasan", g:"maksumin", n:"Imam Hasan al-Mujtaba", ar:"الْحَسَنُ الْمُجْتَبَى", when:"7 Safar (sebagian: 28 Safar) 50 H · Madinah", ev:[{m:2,d:7,l:"Syahadah Imam Hasan"}],
+ ringkas:"Beliau diracun oleh istrinya, Ja’dah binti Asy’ats, atas hasutan Muawiyah. Racun itu mengoyak isi perutnya hingga ia memuntahkan darah. Ia berwasiat agar jenazahnya dibawa ke makam kakeknya tanpa menumpahkan darah. Iring-iringan itu dihadang, kerandanya dihujani anak panah, dan ia dimakamkan di Baqi.",
+ detail:["Bejana di sisi ranjang tempat ia memuntahkan darah akibat racun.","Husain duduk di sisinya, dan Hasan justru menangisi hari adiknya.","Wasiat agar tak setetes darah pun tertumpah karena pemakamannya.","Anak panah yang menancap di keranda."],
+ titik:"Di ranjang kematiannya, ia menangisi adiknya: “Tiada hari seperti harimu, wahai Aba Abdillah.”",
+ maqam:"Hijaz untuk wasiat dan perpisahan dua saudara.",
+ sumber:["Al-Irsyad — Syekh Mufid","Al-Amali — Syekh Shaduq","Maqatil ath-Thalibiyyin","Al-Kafi"],
+ catatan:["Tanggal wafat diperselisihkan (7 atau 28 Safar).","Jumlah anak panah pada keranda berbeda antar riwayat. Cukup sebut “dihujani anak panah”."],
+ hafal:["hasan1"]},
+
+{id:"husain", g:"maksumin", n:"Imam Husain Sayyid asy-Syuhada", ar:"الْحُسَيْنُ سَيِّدُ الشُّهَدَاءِ", when:"10 Muharram 61 H · Karbala", ev:[{m:1,d:10,l:"Asyura — Syahadah Imam Husain"}],
+ ringkas:"Bersama keluarga dan sekitar 72 sahabat, Imam Husain dikepung pasukan Umar bin Sa’ad di Karbala, dan air dihalangi sejak 7 Muharram. Pada hari Asyura, satu per satu sahabat dan keluarganya gugur. Akhirnya beliau sendirian, berseru mencari pembela, lalu gugur kehausan. Kepalanya diangkat di ujung tombak, kemah-kemah dibakar, dan keluarganya ditawan.",
+ detail:["Malam Asyura: doa dan bacaan Quran para sahabat terdengar seperti dengung lebah.","Ia meminta penundaan satu malam untuk shalat, berdoa, dan membaca Quran.","Ia meminta pakaian usang yang tak diinginkan siapa pun dan merobeknya agar tak dirampas, namun tetap dirampas.","Kudanya kembali ke kemah tanpa penunggang, surainya basah darah.","Anak-anak menangis kehausan di balik kemah sejak hari ketujuh."],
+ titik:"Ia berseru, “Adakah pembela bagi keluarga Rasulullah?” Yang menjawab dari kemah hanya tangis perempuan dan anak-anak.",
+ maqam:"Bayati untuk pembuka, Hijaz untuk perjalanan dan perpisahan, Saba untuk puncak.",
+ sumber:["Al-Luhuf — Sayyid Ibnu Thawus","Al-Irsyad — Syekh Mufid","Tarikh ath-Thabari (riwayat Abu Mikhnaf)","Kamil az-Ziyarat — Ibnu Qulawaih","Nafas al-Mahmum — Syekh Abbas Qummi"],
+ catatan:["Angka 72 adalah yang masyhur; riwayat lain menyebut lebih.","Banyak tambahan dramatik di mimbar tak bersumber. Syahid Muthahhari mengkritiknya dalam Hamasah Husaini."],
+ hafal:["hus1","hus2","hus3","hus4","hus5"]},
+
+{id:"sajjad", g:"maksumin", n:"Imam Ali Zainal Abidin as-Sajjad", ar:"عَلِيُّ بْنُ الْحُسَيْنِ السَّجَّادُ", when:"25 Muharram 95 H · Madinah", ev:[{m:1,d:25,l:"Syahadah Imam Sajjad"}],
+ ringkas:"Saksi hidup Karbala yang selamat karena sakit pada hari Asyura. Ia memimpin rombongan tawanan ke Kufah dan Syam dalam belenggu, dan berkhutbah di masjid Damaskus. Sisa hidupnya dipenuhi tangis dan doa yang terhimpun dalam Shahifah Sajjadiyah. Ia wafat diracun atas perintah Walid bin Abdul Malik.",
+ detail:["Sakit yang membaringkannya di kemah pada hari Asyura.","Belenggu di lehernya dalam perjalanan ke Kufah dan Syam.","Khutbah di Damaskus: saat azan menyebut nama Muhammad, ia menoleh kepada Yazid, “Muhammad ini kakekku atau kakekmu?”","Bertahun-tahun ia menangis setiap kali melihat air dan makanan.","Ia membandingkan dirinya dengan Ya’qub yang kehilangan satu anak, sedang ia melihat ayah dan keluarganya disembelih di sekelilingnya."],
+ titik:"Ya’qub kehilangan satu anak hingga matanya memutih. Ia melihat ayah, saudara, dan keluarganya disembelih di depan mata. Bagaimana dukanya bisa hilang?",
+ maqam:"Hijaz untuk perjalanan tawanan; Rast untuk khutbah di Damaskus.",
+ sumber:["Al-Irsyad — Syekh Mufid","Al-Luhuf (bagian perjalanan tawanan)","Bihar al-Anwar","Ash-Shahifah as-Sajjadiyah"],
+ catatan:["Tanggal wafat juga diriwayatkan 12 Muharram, dan tahunnya 94 atau 95 H.","Kisah ia bertanya kepada tukang jagal apakah domba diberi minum sebelum disembelih populer, tetapi sumbernya lemah."],
+ hafal:["sajjad1"]},
+
+{id:"baqir", g:"maksumin", n:"Imam Muhammad al-Baqir", ar:"مُحَمَّدٌ الْبَاقِرُ", when:"7 Dzulhijjah 114 H · Madinah", ev:[{m:12,d:7,l:"Syahadah Imam Baqir"}],
+ ringkas:"Pembelah ilmu (baqir al-‘ulum). Di Karbala ia masih anak kecil, sekitar empat tahun. Ia wafat diracun atas perintah Hisyam bin Abdul Malik, dan berwasiat agar sebagian hartanya dipakai untuk mengadakan ratapan baginya di Mina selama sepuluh musim haji.",
+ detail:["Anak empat tahun di antara kemah-kemah yang terbakar.","Jabir bin Abdullah al-Anshari menyampaikan salam Rasulullah kepadanya.","Wasiat ratapan di Mina, di tengah jamaah haji, selama sepuluh tahun."],
+ titik:"Ia meminta ratapan di Mina, di tengah lautan haji, agar duka Ahlul Bait tidak dilupakan.",
+ maqam:"Bayati untuk kisah ilmu, Hijaz untuk wasiat.",
+ sumber:["Al-Kafi (wasiat ratapan di Mina)","Al-Irsyad — Syekh Mufid","Bihar al-Anwar"],
+ catatan:["Tahun wafat diperselisihkan (114 atau 117 H)."],
+ hafal:[]},
+
+{id:"shadiq", g:"maksumin", n:"Imam Ja’far ash-Shadiq", ar:"جَعْفَرٌ الصَّادِقُ", when:"25 Syawal 148 H · Madinah", ev:[{m:10,d:25,l:"Syahadah Imam Shadiq"}],
+ ringkas:"Guru ribuan murid yang berkali-kali dipanggil dan diancam oleh Manshur al-Abbasi, lalu wafat diracun atas perintahnya. Menjelang wafat ia meminta seluruh kerabatnya dikumpulkan, memandang mereka satu per satu, lalu berwasiat tentang shalat.",
+ detail:["Ummu Hamidah, istrinya, yang menceritakan saat-saat terakhir.","Ia membuka mata, meminta kerabat dikumpulkan, dan menatap mereka.","Rumah yang terus diawasi penguasa."],
+ titik:"Wasiat terakhirnya bukan tentang dirinya, tapi tentang kita: “Syafaat kami tidak sampai kepada yang meremehkan shalat.”",
+ maqam:"Bayati, lalu Hijaz di wasiat. Cocok untuk majlis yang mengajak muhasabah.",
+ sumber:["Al-Kafi","Al-Amali — Syekh Shaduq","Al-Irsyad — Syekh Mufid"],
+ catatan:["Duka yang berujung perbaikan diri. Tutup majlis ini dengan ajakan menjaga shalat."],
+ hafal:["shadiq1"]},
+
+{id:"kazhim", g:"maksumin", n:"Imam Musa al-Kazhim", ar:"مُوسَى الْكَاظِمُ", when:"25 Rajab 183 H · Baghdad", ev:[{m:7,d:25,l:"Syahadah Imam Kazhim"}],
+ ringkas:"Bertahun-tahun ia dipindah dari satu penjara ke penjara lain atas perintah Harun. Gelarnya al-Kazhim, yang menahan amarah. Ia wafat diracun di penjara Sindi bin Syahik di Baghdad, dan jenazahnya diletakkan di jembatan Baghdad dengan seruan yang merendahkan.",
+ detail:["Penjara Bashrah, lalu penjara-penjara Baghdad.","Dari atap, Harun melihat sesuatu seperti kain tergeletak di sel. Itu Imam dalam sujud panjang.","Belenggu berat di kakinya.","Jenazah di jembatan Baghdad, diumumkan dengan hinaan."],
+ titik:"Yang disiksa di dasar penjara, yang betisnya remuk oleh belenggu, dan yang jenazahnya diumumkan dengan hinaan.",
+ maqam:"Saba dari awal; ruang gelap dan sunyi.",
+ sumber:["‘Uyun Akhbar ar-Ridha — Syekh Shaduq","Al-Irsyad — Syekh Mufid","Mafatih al-Jinan (shalawat dan ziarah Imam Kazhim)"],
+ catatan:["Lamanya penahanan berbeda antar riwayat. Sebut “bertahun-tahun”."],
+ hafal:["kazhim1"]},
+
+{id:"ridha", g:"maksumin", n:"Imam Ali ar-Ridha", ar:"عَلِيُّ بْنُ مُوسَى الرِّضَا", when:"Akhir Safar 203 H · Thus (Masyhad)", ev:[{m:2,last:true,l:"Syahadah Imam Ridha"}],
+ ringkas:"Ia dipaksa meninggalkan Madinah menuju Marw dan dijadikan putra mahkota oleh Ma’mun. Di Thus ia diracun dan wafat jauh dari keluarga. Karena itu ia digelari gharib al-ghuraba’, yang paling asing di antara yang terasing.",
+ detail:["Sebelum berangkat, ia berulang kali ke makam Nabi dan menangis.","Ia meminta keluarganya meratapinya, karena tahu tak akan kembali.","Abu Shalt al-Harawi menemaninya hingga akhir di Thus.","Di’bil al-Khuza’i membacakan qasidah duka; Imam menangis dan menambahkan bait tentang “kubur di Thus”."],
+ titik:"Di Thus, jauh dari Madinah, yang menemaninya hanya seorang sahabat, dan putranya yang datang dari kejauhan.",
+ maqam:"Hijaz untuk keterasingan dan perjalanan jauh.",
+ sumber:["‘Uyun Akhbar ar-Ridha — Syekh Shaduq","Al-Irsyad — Syekh Mufid"],
+ catatan:["Tanggal wafat: akhir Safar (masyhur di Iran) atau 17 Safar.","Kisah kedatangan Imam Jawad di Thus berasal dari riwayat Abu Shalt dalam ‘Uyun."],
+ hafal:["ridha1"]},
+
+{id:"jawad", g:"maksumin", n:"Imam Muhammad al-Jawad", ar:"مُحَمَّدٌ الْجَوَادُ", when:"Akhir Dzulqa’dah 220 H · Baghdad", ev:[{m:11,last:true,l:"Syahadah Imam Jawad"}],
+ ringkas:"Imam termuda, menjadi Imam di usia sekitar delapan tahun. Ia dipanggil ke Baghdad oleh Mu’tashim dan wafat diracun di usia sekitar 25 tahun, menurut riwayat melalui istrinya, Ummul Fadhl. Ia dimakamkan di samping kakeknya, Imam Kazhim.",
+ detail:["Anak kecil yang menjawab pertanyaan ulama istana, Yahya bin Aktsam.","Usia dua puluh lima.","Kazhimain: kakek dan cucu berbaring berdampingan."],
+ titik:"Usia dua puluh lima, usia ketika kebanyakan kita baru memulai hidup.",
+ maqam:"Nahawand untuk masa kecilnya, Saba untuk wafatnya.",
+ sumber:["Al-Irsyad — Syekh Mufid","Al-Kafi","Bihar al-Anwar"],
+ catatan:["Rincian cara peracunan berbeda antar riwayat."],
+ hafal:[]},
+
+{id:"hadi", g:"maksumin", n:"Imam Ali al-Hadi", ar:"عَلِيٌّ الْهَادِي", when:"3 Rajab 254 H · Samarra", ev:[{m:7,d:3,l:"Syahadah Imam Hadi"}],
+ ringkas:"Ia dipindahkan paksa dari Madinah ke Samarra dan hidup di bawah pengawasan militer selama sekitar dua puluh tahun. Suatu malam rumahnya digeledah dan ia dibawa ke majelis minum Mutawakkil. Diminta bersyair, ia membacakan syair tentang para raja yang kini terkubur, hingga Mutawakkil menangis. Ia wafat diracun.",
+ detail:["Penggeledahan tengah malam; ia ditemukan sendirian menghadap kiblat.","Majelis minum sang khalifah.","Syair tentang istana yang ditinggalkan dan wajah-wajah yang kini dimakan tanah."],
+ titik:"Dibawa ke majelis mabuk untuk dihina, ia justru membacakan syair tentang kubur, hingga yang mabuk pun menangis.",
+ maqam:"Hijaz.",
+ sumber:["Muruj adz-Dzahab — Al-Mas’udi","Al-Irsyad — Syekh Mufid"],
+ catatan:["Ziarah Jami’ah Kabirah diajarkan oleh beliau. Bagus dihafal untuk majlisnya."],
+ hafal:["hadi1"]},
+
+{id:"askari", g:"maksumin", n:"Imam Hasan al-Askari", ar:"الْحَسَنُ الْعَسْكَرِيُّ", when:"8 Rabiul Awal 260 H · Samarra", ev:[{m:3,d:8,l:"Syahadah Imam Askari"}],
+ ringkas:"Ia hidup di bawah pengawasan di garnisun (‘askar) Samarra, asal gelarnya, dan wafat diracun pada usia sekitar 28 tahun. Saat shalat jenazahnya, seorang anak kecil maju dan meminta pamannya, Ja’far, mundur. Anak itu adalah Imam Mahdi, dan sejak itu ghaibah dimulai.",
+ detail:["Kota garnisun dan pengawasan yang tak putus.","Usia dua puluh delapan.","Seorang anak kecil menarik jubah pamannya: “Mundurlah, aku lebih berhak menyalati ayahku.”"],
+ titik:"Anak kecil itu menyalati ayahnya, dan setelah hari itu ia tak lagi terlihat.",
+ maqam:"Saba, lalu Hijaz menuju kerinduan kepada Imam Mahdi.",
+ sumber:["Kamal ad-Din — Syekh Shaduq","Al-Irsyad — Syekh Mufid"],
+ catatan:["Hadis “tanda mukmin ada lima”, termasuk ziarah Arbain, diriwayatkan dari beliau."],
+ hafal:["askari1"]},
+
+{id:"mahdi", g:"maksumin", n:"Imam al-Mahdi", ar:"الْمَهْدِيُّ الْمُنْتَظَرُ", when:"Lahir 15 Sya’ban 255 H · Samarra — ghaib", ev:[{m:8,d:15,l:"Kelahiran Imam Mahdi — majlis kerinduan"}],
+ ringkas:"Imam yang hidup dan ghaib. Majlisnya bukan majlis syahadah, melainkan majlis kerinduan (nudbah). Dalam Doa Nudbah, para Imam disebut satu per satu lalu ditanyakan: di mana? Doa ini dibaca setiap Jumat pagi dan pada hari raya.",
+ detail:["Rangkaian tanya “di mana” untuk setiap Imam.","“Di mana penuntut darah yang terbunuh di Karbala?”","Jumat pagi, jamaah yang menunggu."],
+ titik:"“Berat bagiku melihat semua makhluk, sementara engkau tak terlihat.”",
+ maqam:"Hijaz dan Nahawand: rindu, bukan ratap.",
+ sumber:["Doa Nudbah — Mishbah az-Za’ir (Ibnu Thawus)","Mafatih al-Jinan"],
+ catatan:["Majlis kerinduan cocok sebagai penutup rangkaian syahadah: membawa duka menuju harapan."],
+ hafal:["mahdi1","mahdi2"]},
+
+/* ---------- WANITA AGUNG ---------- */
+{id:"zainab", g:"wanita", n:"Sayyidah Zainab al-Kubra", ar:"زَيْنَبُ الْكُبْرَى", when:"15 Rajab 62 H · Damaskus (pendapat lain: Kairo)", ev:[{m:7,d:15,l:"Wafat Sayyidah Zainab"}],
+ ringkas:"Saksi Karbala dan juru bicaranya. Ia menjaga para perempuan dan anak-anak, melindungi Imam Sajjad, lalu berkhutbah di Kufah dan di istana Yazid. Ia mengubah barisan tawanan menjadi mimbar.",
+ detail:["Tal Zainabiyah: bukit kecil tempat ia menyaksikan saudaranya.","Malam ke-11: kemah terbakar, ia mengumpulkan anak-anak yang tercerai di padang.","Riwayat masyhur: ia tetap shalat malam dalam perjalanan, dengan duduk karena letih.","Di istana Kufah ia berdiri tegak di hadapan Ibnu Ziyad.","Di istana Yazid, khutbahnya membungkam seisi istana."],
+ titik:"Ditanya Ibnu Ziyad apa yang ia lihat dari perbuatan Allah atas saudaranya, ia menjawab, “Aku tidak melihat kecuali keindahan.”",
+ maqam:"Saba di Tal Zainabiyah; Rast yang tegak untuk khutbah.",
+ sumber:["Al-Luhuf — Ibnu Thawus","Al-Ihtijaj — Ath-Thabarsi","Balaghat an-Nisa’ — Ibnu Thaifur (khutbah Kufah)","Tarikh ath-Thabari"],
+ catatan:["Tempat makam dan tanggal wafat diperselisihkan.","Jangan bawakan Zainab hanya sebagai sosok yang menangis. Kekuatannya adalah pesan Asyura."],
+ hafal:["zainab1","zainab2","zainab3"]},
+
+{id:"ummulbanin", g:"wanita", n:"Ummul Banin", ar:"أُمُّ الْبَنِينَ", when:"13 Jumadil Akhir (masyhur) · Madinah", ev:[{m:6,d:13,l:"Wafat Ummul Banin"}],
+ ringkas:"Fatimah binti Hizam al-Kilabiyah, istri Imam Ali dan ibu Abbas, Abdullah, Ja’far, dan Utsman. Keempat putranya gugur di Karbala. Ia meminta agar tak lagi dipanggil Ummul Banin, ibu para putra, dan sering meratap di Baqi hingga orang yang memusuhi Ahlul Bait pun ikut menangis.",
+ detail:["Basyir bin Hadzlam datang ke Madinah membawa kabar.","Setiap nama putranya diumumkan gugur, ia bertanya tentang Husain.","Ia pergi ke Baqi membawa cucu kecilnya, Ubaidullah putra Abbas.","Ratapannya membuat Marwan ikut menangis."],
+ titik:"Setiap kali nama putranya disebut gugur, ia hanya bertanya: “Bagaimana kabar Husain?”",
+ maqam:"Saba yang dalam, tempo lambat.",
+ sumber:["Maqatil ath-Thalibiyyin — Abul Faraj al-Isfahani","Nafas al-Mahmum dan Muntaha al-Amal — Syekh Abbas Qummi"],
+ catatan:["Dialog panjang dengan Basyir dan kisah menggambar lima kuburan di tanah berasal dari sumber belakangan.","Tahun wafat umumnya disebut 64 H."],
+ hafal:["ub1"]},
+
+/* ---------- SYUHADA KARBALA ---------- */
+{id:"abbas", g:"karbala", n:"Abul Fadhl al-Abbas", ar:"أَبُو الْفَضْلِ الْعَبَّاسُ", when:"10 Muharram 61 H · Karbala (malam Tasu’a lazim dikhususkan)", ev:[{m:1,d:9,l:"Tasu’a — Abul Fadhl Abbas"}],
+ ringkas:"Pembawa panji dan pembawa air, bulan Bani Hasyim. Ia membawa kirbat ke Furat untuk anak-anak yang kehausan. Sampai di air, ia tak minum karena teringat haus saudaranya. Dalam perjalanan kembali, kedua tangannya ditebas, kirbatnya tertembus panah, dan airnya tumpah.",
+ detail:["Syimr membawa surat jaminan aman untuknya karena kekerabatan dari pihak ibu; ia menolaknya.","Air Furat di telapak tangannya; ia menuangkannya kembali.","Kirbat di pundak, yang ia jaga lebih dari tubuhnya sendiri.","Sakinah dan anak-anak menunggu di pintu kemah.","Imam Sajjad: Allah mengganti kedua tangannya dengan dua sayap, seperti Ja’far ath-Thayyar."],
+ titik:"Air sudah di telapak tangannya, lalu ia menuangkannya kembali ke sungai.",
+ maqam:"Bayati untuk keberangkatan, Hijaz di tepi Furat, Saba saat tangan ditebas.",
+ sumber:["Al-Irsyad — Syekh Mufid","Maqatil ath-Thalibiyyin","Al-Luhuf","Al-Amali dan Al-Khishal — Syekh Shaduq (ucapan Imam Sajjad tentang dua sayap)"],
+ catatan:["Detail menggigit kirbat dan sebagian rajaz berasal dari maqtal belakangan; riwayat awal lebih ringkas.","Hari dikhususkannya berbeda antar komunitas; di banyak majlis, Tasu’a (9 Muharram) adalah hari Abbas."],
+ hafal:["abbas1","abbas2"]},
+
+{id:"aliakbar", g:"karbala", n:"Ali al-Akbar", ar:"عَلِيٌّ الْأَكْبَرُ", when:"10 Muharram 61 H · Karbala", ev:[],
+ ringkas:"Putra Imam Husain yang paling mirip Rasulullah, dan orang pertama dari Bani Hasyim yang gugur. Ayahnya memandangnya lama lalu menengadah ke langit. Ia kembali sekali mengeluh haus, lalu maju lagi hingga gugur dikeroyok. Ayahnya meletakkan pipinya di pipi putranya.",
+ detail:["Ayahnya memandangnya lama, lalu menengadah ke langit.","“Ayah, haus membunuhku, dan beratnya besi melelahkanku.”","Menurut sebagian maqtal, Imam memberikan cincinnya untuk dikulum agar dahaganya reda sejenak.","Pipi ayah di pipi putranya."],
+ titik:"“Ayah, haus membunuhku.” Dan ayahnya sendiri sama hausnya.",
+ maqam:"Nahawand untuk kemiripannya dengan Nabi, Saba saat ia gugur.",
+ sumber:["Al-Luhuf","Al-Irsyad — Syekh Mufid","Maqatil ath-Thalibiyyin"],
+ catatan:["Usianya diperselisihkan (sekitar 18, 19, atau 25 tahun).","Di banyak majlis, malam ke-8 Muharram dikhususkan untuknya."],
+ hafal:["akbar1","akbar2","akbar3"]},
+
+{id:"qasim", g:"karbala", n:"Qasim bin Hasan", ar:"الْقَاسِمُ بْنُ الْحَسَنِ", when:"10 Muharram 61 H · Karbala", ev:[],
+ ringkas:"Putra Imam Hasan yang masih remaja. Pamannya awalnya menolak izinnya karena usianya. Seorang perawi dari pasukan musuh menggambarkan wajahnya seperti belahan bulan, dengan tali sandal yang putus. Ia gugur, dan pamannya membawa jasadnya dengan kaki terseret di tanah.",
+ detail:["Wajah seperti belahan bulan.","Tali sandal kirinya putus.","Ia memanggil pamannya saat jatuh.","Imam memikul jasadnya, kedua kakinya menyeret tanah, lalu membaringkannya di samping Ali Akbar."],
+ titik:"Bahkan perawi dari pasukan musuh masih mengingat tali sandalnya yang putus.",
+ maqam:"Nahawand.",
+ sumber:["Tarikh ath-Thabari (riwayat Humaid bin Muslim)","Al-Irsyad — Syekh Mufid","Maqatil ath-Thalibiyyin"],
+ catatan:["Kisah “pernikahan Qasim di Karbala” tidak bersumber kuat. Syahid Muthahhari dan Muhaddits Nuri mengkritiknya.","Ucapan “kematian lebih manis dari madu” masyhur, tetapi sumbernya belakangan.","Di banyak majlis, malam ke-6 Muharram dikhususkan untuknya."],
+ hafal:["qasim1"]},
+
+{id:"asghar", g:"karbala", n:"Ali al-Asghar (Abdullah ar-Radhi’)", ar:"عَبْدُ اللَّهِ الرَّضِيعُ", when:"10 Muharram 61 H · Karbala", ev:[],
+ ringkas:"Bayi berusia sekitar enam bulan. Susu ibunya telah kering. Imam Husain menggendongnya ke hadapan pasukan untuk meminta air, lalu panah Harmalah menembus lehernya. Imam menampung darahnya dan melemparkannya ke langit, dan tak setetes pun kembali.",
+ detail:["Rabab, ibunya, dan susu yang telah kering.","Bibir mungil yang pecah karena haus.","Panah Harmalah.","Darah yang dilempar ke langit dan tak kembali."],
+ titik:"“Yang meringankan semua ini: ia terjadi di hadapan pandangan Allah.”",
+ maqam:"Saba yang sangat lirih; nada nina bobo (Nahawand atau Kurd).",
+ sumber:["Al-Luhuf","Al-Irsyad (menyebutnya Abdullah, terpanah di pangkuan ayahnya)","Tarikh ath-Thabari"],
+ catatan:["Nama “Ali Asghar” populer; sumber awal menyebutnya Abdullah.","Dialog panjang Imam meminta air sering berupa tambahan mimbar. Pegang inti riwayatnya.","Di banyak majlis, malam ke-7 Muharram dikhususkan untuknya."],
+ hafal:["asghar1"]},
+
+{id:"hurr", g:"karbala", n:"Hurr bin Yazid ar-Riyahi", ar:"الْحُرُّ الرِّيَاحِيُّ", when:"10 Muharram 61 H · Karbala", ev:[],
+ ringkas:"Komandan yang pertama menghadang rombongan Imam Husain. Pagi Asyura tubuhnya gemetar, lalu ia memacu kudanya ke kemah Husain dengan kepala tertunduk dan bertaubat. Ia meminta maju pertama dan gugur sebagai syahid.",
+ detail:["Tubuh yang gemetar; temannya heran melihatnya.","“Adakah taubat bagiku?”","Yang kemarin menutup jalan, hari ini meminta maju pertama.","Dalam sebagian maqtal, Imam mengusap debu dan darah dari wajahnya."],
+ titik:"Orang yang kemarin menutup jalan Husain, hari ini gugur di pangkuannya.",
+ maqam:"Bayati, lalu Hijaz. Sangat cocok untuk jembatan taubat bagi jamaah.",
+ sumber:["Al-Luhuf","Al-Irsyad — Syekh Mufid","Tarikh ath-Thabari","Al-Amali — Syekh Shaduq"],
+ catatan:["Kisah Hurr adalah pintu terbaik untuk mengajak jamaah bertaubat. Jangan lewatkan jembatannya."],
+ hafal:["hurr1"]},
+
+{id:"habib", g:"karbala", n:"Habib bin Mazhahir", ar:"حَبِيبُ بْنُ مُظَاهِرٍ", when:"10 Muharram 61 H · Karbala", ev:[],
+ ringkas:"Sahabat tua dari Kufah dan sahabat Imam Ali. Ia menyusup ke Karbala dan memimpin sayap kiri pasukan kecil Imam Husain. Gugurnya membuat Imam tampak terguncang.",
+ detail:["Janggut putih, usia lanjut.","Ia datang menyusup ketika banyak orang Kufah memilih diam.","Saat ia gugur, Imam berkata bahwa kepada Allah ia menyerahkan dirinya dan para pembela sahabatnya."],
+ titik:"Seorang tua yang bisa saja tinggal di rumah memilih Karbala.",
+ maqam:"Bayati.",
+ sumber:["Tarikh ath-Thabari","Al-Irsyad — Syekh Mufid","Rijal al-Kasyi"],
+ catatan:["Cocok untuk jembatan kepada jamaah yang sudah berusia: tak ada kata terlambat untuk memilih."],
+ hafal:[]},
+
+{id:"abdullah", g:"karbala", n:"Abdullah bin Hasan", ar:"عَبْدُ اللَّهِ بْنُ الْحَسَنِ", when:"10 Muharram 61 H · Karbala", ev:[],
+ ringkas:"Anak kecil putra Imam Hasan. Ketika melihat pamannya terkepung sendirian, ia lari dari kemah. Ia menahan sabetan pedang dengan tangannya, lalu gugur terpanah dalam pelukan Imam Husain.",
+ detail:["Zainab berusaha menahannya di pintu kemah.","“Demi Allah, aku tak akan berpisah dari pamanku.”","Tangan kecil yang menahan pedang.","Ia gugur dalam pelukan pamannya."],
+ titik:"Seorang anak berlari ke arah yang ditakuti semua orang dewasa.",
+ maqam:"Kurd atau Nahawand, lalu Saba.",
+ sumber:["Al-Luhuf","Al-Irsyad — Syekh Mufid","Tarikh ath-Thabari"],
+ catatan:["Di banyak majlis, malam ke-5 Muharram dikhususkan untuknya."],
+ hafal:[]},
+
+/* ---------- ARBAIN ---------- */
+{id:"arbain", g:"arbain", n:"Arbain Imam Husain", ar:"الْأَرْبَعِينُ", when:"20 Safar", ev:[{m:2,d:20,l:"Arbain Imam Husain"}],
+ ringkas:"Empat puluh hari setelah Asyura. Jabir bin Abdullah al-Anshari, sahabat Nabi yang sudah buta, datang ke Karbala bersama Athiyyah al-Aufi. Ia mandi di Furat, memakai wewangian, berjalan pelan sambil berzikir, lalu meminta tangannya diletakkan di atas kubur. Ia pingsan, lalu memanggil “Ya Husain” tiga kali.",
+ detail:["Seorang tua buta yang mandi di Furat sebelum mendekat.","Tangan yang meraba kubur.","Tiga panggilan yang tak terjawab.","Ia lalu menjawab sendiri: bagaimana engkau bisa menjawab, sedang urat lehermu telah terputus.","Hari ini, jutaan peziarah berjalan kaki dari Najaf ke Karbala."],
+ titik:"“Kekasih tak menjawab kekasihnya?”",
+ maqam:"Hijaz untuk perjalanan, Saba di sisi kubur.",
+ sumber:["Bisyarah al-Mushthafa — Imaduddin ath-Thabari","Al-Luhuf","Tahdzib al-Ahkam dan Mishbah al-Mutahajjid — Syekh Thusi (ziarah Arbain)"],
+ catatan:["Apakah rombongan tawanan kembali ke Karbala pada Arbain tahun 61 H diperselisihkan. Al-Luhuf menyebutnya, sebagian ulama seperti Muhaddits Nuri meragukannya."],
+ hafal:["arbain1","arbain2","askari1"]},
+
+/* ---------- SYUHADA AHLUL BAIT ---------- */
+{id:"hamzah", g:"ahlulbait", n:"Hamzah bin Abdul Muthalib", ar:"حَمْزَةُ سَيِّدُ الشُّهَدَاءِ", when:"15 Syawal 3 H · Uhud", ev:[{m:10,d:15,l:"Syahadah Hamzah (Uhud)"}],
+ ringkas:"Paman Nabi, singa Allah, Sayyid asy-Syuhada sebelum Karbala. Ia gugur di Uhud oleh tombak Wahsyi, lalu jasadnya dirusak. Nabi berdiri di sisinya dan menangis. Ketika rumah-rumah Anshar meratapi syuhada mereka, Nabi berkata bahwa Hamzah tak punya yang menangisinya.",
+ detail:["Tombak lempar Wahsyi.","Jasad yang dirusak.","Nabi menangis di sisinya.","Sejak hari itu, perempuan Madinah meratapi Hamzah lebih dulu sebelum syuhada mereka sendiri."],
+ titik:"“Tetapi Hamzah, tak ada yang menangisinya.” Sejak hari itu, Madinah belajar meratap untuk Hamzah lebih dulu.",
+ maqam:"Hijaz.",
+ sumber:["Sirah Ibnu Hisyam","Musnad Ahmad","Al-Maghazi — Al-Waqidi"],
+ catatan:["Tanggal Uhud yang masyhur 15 Syawal; ada yang menyebut 7 Syawal.","Hadis ini dasar kuat bagi majlis ratapan, diterima Sunni dan Syiah."],
+ hafal:["hamzah1"]},
+
+{id:"jafar", g:"ahlulbait", n:"Ja’far ath-Thayyar", ar:"جَعْفَرٌ الطَّيَّارُ", when:"Jumadil Ula 8 H · Mu’tah", ev:[],
+ ringkas:"Saudara Imam Ali dan sepupu Nabi. Di Mu’tah ia memegang panji dengan tangan kanan hingga putus, lalu dengan tangan kiri hingga putus, lalu mendekapnya dengan lengan sampai gugur. Nabi mengabarkan Allah menggantinya dengan dua sayap di surga.",
+ detail:["Panji yang berpindah dari tangan ke tangan, lalu ke dada.","Dua sayap di surga.","Nabi mendatangi Asma’ binti Umais dan memeluk anak-anak Ja’far, matanya berlinang.","Nabi meminta keluarganya memasak untuk keluarga Ja’far karena mereka sedang berduka."],
+ titik:"Nabi memeluk anak-anak Ja’far sebelum menyampaikan kabar, dan Asma’ pun tahu.",
+ maqam:"Bayati, lalu Hijaz.",
+ sumber:["Sirah Ibnu Hisyam","Maqatil ath-Thalibiyyin","Sunan at-Tirmidzi dan Sunan Abi Dawud (hadis memasak untuk keluarga Ja’far)"],
+ catatan:["Jembatan indah ke Abbas: keduanya kehilangan dua tangan dan diganti dua sayap."],
+ hafal:[]},
+
+{id:"muslim", g:"ahlulbait", n:"Muslim bin Aqil", ar:"مُسْلِمُ بْنُ عَقِيلٍ", when:"9 Dzulhijjah 60 H · Kufah", ev:[{m:12,d:9,l:"Syahadah Muslim bin Aqil (hari Arafah)"}],
+ ringkas:"Utusan Imam Husain ke Kufah. Ribuan orang membaiatnya, lalu menghilang dalam satu malam. Ia berjalan sendirian di lorong Kufah, diberi perlindungan oleh Thau’ah, lalu dikepung dan ditangkap dengan janji keamanan palsu. Di atap istana ia bertasbih dan bershalawat sebelum dijatuhkan.",
+ detail:["Masjid yang penuh saat maghrib, kosong saat isya.","Lorong-lorong Kufah yang sepi.","Thau’ah berdiri di depan pintunya menunggu anaknya pulang, lalu menampung seorang asing.","Air yang ia minum bercampur darah; gigi depannya jatuh ke dalam cawan.","Ia menangis, bukan untuk dirinya."],
+ titik:"“Aku tidak menangis untuk diriku. Aku menangis untuk Husain dan keluarganya yang sedang menuju ke sini.”",
+ maqam:"Hijaz untuk keterasingan di lorong Kufah.",
+ sumber:["Tarikh ath-Thabari","Al-Irsyad — Syekh Mufid","Maqatil ath-Thalibiyyin"],
+ catatan:["Hani bin Urwah gugur bersamanya. Di banyak majlis, malam pertama atau kedua Muharram dikhususkan untuknya."],
+ hafal:["muslim1"]},
+
+{id:"tiflan", g:"ahlulbait", n:"Dua Putra Muslim", ar:"طِفْلَا مُسْلِمٍ", when:"Setelah Karbala · Kufah", ev:[],
+ ringkas:"Muhammad dan Ibrahim, dua kakak-beradik kecil putra Muslim bin Aqil, ditawan setelah Karbala. Setelah lama di penjara mereka lolos dan berlindung di rumah seorang perempuan tua. Menantu perempuan itu menemukan mereka dan membunuh keduanya di tepi Furat demi hadiah.",
+ detail:["Penjara yang lama dan makanan yang sedikit.","Malam terakhir: kakak dan adik berpelukan sebelum tidur.","Mereka meminta waktu untuk shalat.","Tepi Furat."],
+ titik:"Malam terakhir, dua kakak-adik berpelukan dan saling menghibur sebelum tidur.",
+ maqam:"Kurd atau Nahawand: sederhana, seperti cerita anak.",
+ sumber:["Al-Amali — Syekh Shaduq"],
+ catatan:["Kisah ini hanya tercatat dalam sumber yang terbatas, dan sebagian peneliti mempertanyakan rinciannya. Bawakan dengan “diriwayatkan”."],
+ hafal:[]},
+
+{id:"ruqayyah", g:"ahlulbait", n:"Sayyidah Ruqayyah", ar:"رُقَيَّةُ بِنْتُ الْحُسَيْنِ", when:"5 Safar (diperingati) · Damaskus", ev:[{m:2,d:5,l:"Wafat Sayyidah Ruqayyah"}],
+ ringkas:"Putri kecil Imam Husain yang menurut riwayat wafat di reruntuhan Syam, setelah terbangun mencari ayahnya dan diberi nampan berisi kepala sang ayah. Makamnya di Damaskus dikunjungi banyak peziarah.",
+ detail:["Reruntuhan tempat para tawanan ditampung di Syam.","Mimpi bertemu ayahnya.","Nampan yang ditutup kain."],
+ titik:"Ia meminta ayahnya, dan yang datang adalah sebuah nampan.",
+ maqam:"Kurd yang lirih, lalu Saba.",
+ sumber:["Kamil al-Baha’i — Imaduddin ath-Thabari (abad ke-7 H)","Nafas al-Mahmum (menukil dari sumber belakangan)"],
+ catatan:["Kisah ini tidak terdapat dalam sumber-sumber awal. Bawakan dengan “diriwayatkan”, jangan dengan kepastian."],
+ hafal:[]},
+
+{id:"zaid", g:"ahlulbait", n:"Zaid bin Ali", ar:"زَيْدُ بْنُ عَلِيٍّ", when:"Safar 122 H (sebagian: 121) · Kufah", ev:[],
+ ringkas:"Putra Imam Sajjad yang bangkit di Kufah melawan kezaliman Bani Umayyah, lalu ditinggal sebagian besar pembaiatnya. Anak panah mengenai dahinya dan ia gugur. Ia dimakamkan diam-diam di dasar aliran air, tetapi ditemukan, jasadnya disalib di Kufah bertahun-tahun, lalu dibakar.",
+ detail:["Panah di dahi; ia wafat saat panah itu dicabut.","Kubur rahasia di dasar aliran air.","Jasad yang disalib bertahun-tahun di Kufah."],
+ titik:"Mereka bahkan tak membiarkan jasadnya beristirahat di bawah tanah.",
+ maqam:"Hijaz, lalu Saba.",
+ sumber:["Maqatil ath-Thalibiyyin","‘Uyun Akhbar ar-Ridha (pujian para Imam atasnya)"],
+ catatan:["Tanggal pastinya tak disepakati, jadi tidak ditampilkan hitung mundur."],
+ hafal:[]}
+];
+const FIG_BY = Object.fromEntries(FIG.map(f=>[f.id,f]));
+
+const HAFAL = [
+{id:"hus1", f:"husain", t:"Salam Ziarah Asyura",
+ ar:"السَّلَامُ عَلَيْكَ يَا أَبَا عَبْدِ اللَّهِ، السَّلَامُ عَلَيْكَ يَا ابْنَ رَسُولِ اللَّهِ",
+ tr:"As-salāmu ‘alaika yā Abā ‘Abdillāh, as-salāmu ‘alaika yabna Rasūlillāh",
+ m:"Salam atasmu, wahai Aba Abdillah. Salam atasmu, wahai putra Rasulullah.",
+ s:"Ziarah Asyura — Kamil az-Ziyarat; Mishbah al-Mutahajjid"},
+{id:"hus2", f:"husain", t:"Ziarah Asyura: agungnya musibah",
+ ar:"يَا أَبَا عَبْدِ اللَّهِ، لَقَدْ عَظُمَتِ الرَّزِيَّةُ، وَجَلَّتْ وَعَظُمَتِ الْمُصِيبَةُ بِكَ عَلَيْنَا وَعَلَى جَمِيعِ أَهْلِ الْإِسْلَامِ",
+ tr:"Yā Abā ‘Abdillāh, laqad ‘azhumatir-raziyyah, wa jallat wa ‘azhumatil-mushībatu bika ‘alainā wa ‘alā jamī‘i ahlil-Islām",
+ m:"Wahai Aba Abdillah, sungguh agung duka ini. Besar dan agung musibahmu atas kami dan atas seluruh pemeluk Islam.",
+ s:"Ziarah Asyura — Kamil az-Ziyarat; Mishbah al-Mutahajjid"},
+{id:"hus5", f:"husain", t:"Ziarah Asyura: salam penutup",
+ ar:"السَّلَامُ عَلَى الْحُسَيْنِ، وَعَلَى عَلِيِّ بْنِ الْحُسَيْنِ، وَعَلَى أَوْلَادِ الْحُسَيْنِ، وَعَلَى أَصْحَابِ الْحُسَيْنِ",
+ tr:"As-salāmu ‘alal-Husain, wa ‘alā ‘Aliyyibnil-Husain, wa ‘alā aulādil-Husain, wa ‘alā ashhābil-Husain",
+ m:"Salam atas Husain, atas Ali putra Husain, atas anak-anak Husain, dan atas sahabat-sahabat Husain.",
+ s:"Ziarah Asyura — Kamil az-Ziyarat; Mishbah al-Mutahajjid"},
+{id:"hus3", f:"husain", t:"Seruan Imam Husain",
+ ar:"هَلْ مِنْ ذَابٍّ يَذُبُّ عَنْ حَرَمِ رَسُولِ اللَّهِ؟ هَلْ مِنْ مُوَحِّدٍ يَخَافُ اللَّهَ فِينَا؟",
+ tr:"Hal min dzābbin yadzubbu ‘an harami Rasūlillāh? Hal min muwahhidin yakhāfullāha fīnā?",
+ m:"Adakah pembela yang membela keluarga Rasulullah? Adakah seorang ahli tauhid yang takut kepada Allah dalam urusan kami?",
+ s:"Al-Luhuf — Ibnu Thawus",
+ n:"Kalimat populer “hal min nāshirin yanshurunā” adalah ringkasan lisan dari seruan ini."},
+{id:"hus4", f:"husain", t:"Hadis Rayyan bin Syabib",
+ ar:"يَا ابْنَ شَبِيبٍ، إِنْ كُنْتَ بَاكِيًا لِشَيْءٍ فَابْكِ لِلْحُسَيْنِ بْنِ عَلِيٍّ، فَإِنَّهُ ذُبِحَ كَمَا يُذْبَحُ الْكَبْشُ",
+ tr:"Yabna Syabīb, in kunta bākiyan lisyai’in fabki lil-Husainibni ‘Aliyy, fa-innahū dzubiha kamā yudzbahul-kabsy",
+ m:"Wahai putra Syabib, jika engkau hendak menangisi sesuatu, tangisilah Husain bin Ali, karena ia disembelih sebagaimana domba disembelih.",
+ s:"Imam Ridha — ‘Uyun Akhbar ar-Ridha; Al-Amali (Syekh Shaduq)",
+ n:"Hadis pegangan setiap pemaqtal: inilah alasan majlis ini ada."},
+{id:"asghar1", f:"asghar", t:"Imam Husain atas Ali Asghar",
+ ar:"هَوَّنَ عَلَيَّ مَا نَزَلَ بِي أَنَّهُ بِعَيْنِ اللَّهِ",
+ tr:"Hawwana ‘alayya mā nazala bī annahū bi‘ainillāh",
+ m:"Yang meringankan musibah yang menimpaku: semua ini terjadi di hadapan pandangan Allah.",
+ s:"Al-Luhuf — Ibnu Thawus"},
+{id:"akbar1", f:"aliakbar", t:"Doa Imam saat Ali Akbar maju",
+ ar:"اللَّهُمَّ اشْهَدْ عَلَى هَؤُلَاءِ الْقَوْمِ، فَقَدْ بَرَزَ إِلَيْهِمْ غُلَامٌ أَشْبَهُ النَّاسِ خَلْقًا وَخُلُقًا وَمَنْطِقًا بِرَسُولِكَ",
+ tr:"Allāhummasyhad ‘alā hā’ulā’il-qaum, faqad baraza ilaihim ghulāmun asybahun-nāsi khalqan wa khuluqan wa manthiqan bi rasūlik",
+ m:"Ya Allah, saksikanlah kaum ini: telah maju menghadapi mereka seorang pemuda yang paling mirip dengan Rasul-Mu dalam rupa, akhlak, dan tutur katanya.",
+ s:"Al-Luhuf — Ibnu Thawus"},
+{id:"akbar3", f:"aliakbar", t:"Keluhan Ali Akbar",
+ ar:"يَا أَبَهْ، الْعَطَشُ قَدْ قَتَلَنِي، وَثِقَلُ الْحَدِيدِ قَدْ أَجْهَدَنِي",
+ tr:"Yā abah, al-‘athasyu qad qatalanī, wa tsiqalul-hadīdi qad ajhadanī",
+ m:"Wahai ayah, haus telah membunuhku, dan beratnya besi telah melelahkanku.",
+ s:"Al-Luhuf — Ibnu Thawus"},
+{id:"akbar2", f:"aliakbar", t:"Imam di sisi jasad Ali Akbar",
+ ar:"عَلَى الدُّنْيَا بَعْدَكَ الْعَفَا",
+ tr:"‘Alad-dunyā ba‘dakal-‘afā",
+ m:"Setelah kepergianmu, binasalah dunia ini.",
+ s:"Al-Irsyad — Syekh Mufid; Tarikh ath-Thabari"},
+{id:"abbas1", f:"abbas", t:"Imam Husain atas Abbas",
+ ar:"الْآنَ انْكَسَرَ ظَهْرِي، وَقَلَّتْ حِيلَتِي",
+ tr:"Al-āna inkasara zhahrī, wa qallat hīlatī",
+ m:"Kini patahlah punggungku, dan habislah dayaku.",
+ s:"Bihar al-Anwar; Nafas al-Mahmum"},
+{id:"abbas2", f:"abbas", t:"Rajaz Abbas di tepi Furat",
+ ar:"يَا نَفْسُ مِنْ بَعْدِ الْحُسَيْنِ هُونِي، وَبَعْدَهُ لَا كُنْتِ أَنْ تَكُونِي",
+ tr:"Yā nafsu min ba‘dil-Husaini hūnī, wa ba‘dahū lā kunti an takūnī",
+ m:"Wahai diriku, setelah Husain hinalah engkau; setelahnya, tak pantas engkau tetap ada.",
+ s:"Masyhur dalam kitab-kitab maqtal",
+ n:"Sanadnya tidak sekuat riwayat Al-Irsyad. Bawakan sebagai syair yang masyhur dinisbatkan kepada Abbas."},
+{id:"qasim1", f:"qasim", t:"Jawaban Qasim tentang kematian",
+ ar:"يَا عَمِّ، أَحْلَى مِنَ الْعَسَلِ",
+ tr:"Yā ‘ammi, ahlā minal-‘asal",
+ m:"Wahai paman, (kematian bagiku) lebih manis dari madu.",
+ s:"Masyhur di mimbar; dinukil dalam sumber belakangan",
+ n:"Bawakan dengan “diriwayatkan”. Sumbernya jauh lebih belakangan dari Al-Irsyad dan Thabari."},
+{id:"hurr1", f:"hurr", t:"Imam Husain kepada Hurr",
+ ar:"أَنْتَ الْحُرُّ كَمَا سَمَّتْكَ أُمُّكَ، وَأَنْتَ الْحُرُّ فِي الدُّنْيَا وَالْآخِرَةِ",
+ tr:"Antal-hurru kamā sammatka ummuk, wa antal-hurru fid-dunyā wal-ākhirah",
+ m:"Engkau merdeka sebagaimana ibumu menamaimu. Engkau merdeka di dunia dan di akhirat.",
+ s:"Al-Luhuf; Al-Amali (Syekh Shaduq)"},
+{id:"zainab1", f:"zainab", t:"Ratapan Zainab di medan",
+ ar:"يَا مُحَمَّدَاهُ، صَلَّى عَلَيْكَ مَلِيكُ السَّمَاءِ، هَذَا حُسَيْنٌ بِالْعَرَاءِ، مُرَمَّلٌ بِالدِّمَاءِ، مُقَطَّعُ الْأَعْضَاءِ",
+ tr:"Yā Muhammadāh, shallā ‘alaika malīkus-samā’, hādzā Husainun bil-‘arā’, murammalun bid-dimā’, muqaththa‘ul-a‘dhā’",
+ m:"Wahai Muhammad! Semoga Raja langit bershalawat atasmu. Inilah Husain di tanah terbuka, berlumur darah, tercabik anggota tubuhnya.",
+ s:"Al-Luhuf; Tarikh ath-Thabari (riwayat Abu Mikhnaf)"},
+{id:"zainab2", f:"zainab", t:"Jawaban Zainab kepada Ibnu Ziyad",
+ ar:"مَا رَأَيْتُ إِلَّا جَمِيلًا",
+ tr:"Mā ra’aitu illā jamīlā",
+ m:"Aku tidak melihat kecuali keindahan.",
+ s:"Al-Luhuf — Ibnu Thawus"},
+{id:"zainab3", f:"zainab", t:"Khutbah Zainab di istana Yazid",
+ ar:"فَكِدْ كَيْدَكَ، وَاسْعَ سَعْيَكَ، وَنَاصِبْ جُهْدَكَ، فَوَاللَّهِ لَا تَمْحُو ذِكْرَنَا، وَلَا تُمِيتُ وَحْيَنَا",
+ tr:"Fakid kaidak, wasa‘ sa‘yak, wa nāshib juhdak, fawallāhi lā tamhū dzikranā, wa lā tumītu wahyanā",
+ m:"Lakukan tipu dayamu, kerahkan usahamu, curahkan seluruh tenagamu. Demi Allah, engkau takkan bisa menghapus sebutan kami, dan takkan bisa mematikan wahyu kami.",
+ s:"Al-Ihtijaj — Ath-Thabarsi; Al-Luhuf"},
+{id:"ub1", f:"ummulbanin", t:"Ratapan Ummul Banin di Baqi",
+ ar:"لَا تَدْعُوِنِّي وَيْكِ أُمَّ الْبَنِينْ، تُذَكِّرِينِي بِلُيُوثِ الْعَرِينْ\nكَانَتْ بَنُونٌ لِي أُدْعَى بِهِمْ، وَالْيَوْمَ أَصْبَحْتُ وَلَا مِنْ بَنِينْ",
+ tr:"Lā tad‘uwinnī waiki Ummal-Banīn, tudzakkirīnī biluyūtsil-‘arīn / Kānat banūnun lī ud‘ā bihim, wal-yauma ashbahtu wa lā min banīn",
+ m:"Jangan panggil aku Ummul Banin, kau mengingatkanku pada singa-singa di sarangnya. Dulu aku punya putra-putra yang membuatku dipanggil begitu; hari ini aku tak lagi punya putra.",
+ s:"Masyhur dalam kitab maqtal; ratapannya di Baqi disebut dalam Maqatil ath-Thalibiyyin"},
+{id:"fat1", f:"fatimah", t:"Syair Fatimah di makam ayahnya",
+ ar:"مَاذَا عَلَى مَنْ شَمَّ تُرْبَةَ أَحْمَدٍ، أَنْ لَا يَشَمَّ مَدَى الزَّمَانِ غَوَالِيَا\nصُبَّتْ عَلَيَّ مَصَائِبٌ لَوْ أَنَّهَا، صُبَّتْ عَلَى الْأَيَّامِ صِرْنَ لَيَالِيَا",
+ tr:"Mādzā ‘alā man syamma turbata Ahmadin, an lā yasyamma madaz-zamāni ghawāliyā / Shubbat ‘alayya mashā’ibun lau annahā, shubbat ‘alal-ayyāmi shirna layāliyā",
+ m:"Apa ruginya orang yang telah mencium tanah makam Ahmad bila sepanjang masa tak lagi mencium wewangian? Telah tercurah atasku musibah-musibah; andai tercurah pada siang hari, niscaya siang berubah menjadi malam.",
+ s:"Dinisbatkan kepada Sayyidah Fatimah; dinukil dalam banyak kitab sejarah dan adab"},
+{id:"fat2", f:"fatimah", t:"Imam Ali di sisi kubur Fatimah",
+ ar:"السَّلَامُ عَلَيْكَ يَا رَسُولَ اللَّهِ عَنِّي وَعَنِ ابْنَتِكَ النَّازِلَةِ فِي جِوَارِكَ، وَالسَّرِيعَةِ اللَّحَاقِ بِكَ. قَلَّ يَا رَسُولَ اللَّهِ عَنْ صَفِيَّتِكَ صَبْرِي",
+ tr:"As-salāmu ‘alaika yā Rasūlallāh ‘annī wa ‘anibnatikan-nāzilati fī jiwārik, was-sarī‘atil-lahāqi bik. Qalla yā Rasūlallāh ‘an shafiyyatika shabrī",
+ m:"Salam atasmu, wahai Rasulullah, dariku dan dari putrimu yang kini singgah di sisimu dan begitu cepat menyusulmu. Wahai Rasulullah, telah berkurang kesabaranku atas kepergian putri pilihanmu.",
+ s:"Nahjul Balaghah — ucapan Imam Ali saat memakamkan Fatimah"},
+{id:"nabi1", f:"nabi", t:"Jawaban Nabi kepada Fatimah",
+ ar:"لَيْسَ عَلَى أَبِيكِ كَرْبٌ بَعْدَ الْيَوْمِ",
+ tr:"Laisa ‘alā abīki karbun ba‘dal-yaum",
+ m:"Tidak ada lagi derita atas ayahmu setelah hari ini.",
+ s:"Shahih Bukhari, Kitab al-Maghazi"},
+{id:"nabi2", f:"nabi", t:"Husain dariku",
+ ar:"حُسَيْنٌ مِنِّي وَأَنَا مِنْ حُسَيْنٍ، أَحَبَّ اللَّهُ مَنْ أَحَبَّ حُسَيْنًا",
+ tr:"Husainun minnī wa ana min Husain, ahabballāhu man ahabba Husainā",
+ m:"Husain dariku dan aku dari Husain. Allah mencintai siapa yang mencintai Husain.",
+ s:"Sunan at-Tirmidzi; Sunan Ibnu Majah"},
+{id:"ali1", f:"ali", t:"Ucapan Imam Ali saat ditebas",
+ ar:"فُزْتُ وَرَبِّ الْكَعْبَةِ",
+ tr:"Fuztu wa rabbil-Ka‘bah",
+ m:"Demi Tuhan Ka’bah, aku telah menang.",
+ s:"Dinukil luas dalam sumber Sunni dan Syiah"},
+{id:"hasan1", f:"hasan", t:"Imam Hasan kepada Husain",
+ ar:"لَا يَوْمَ كَيَوْمِكَ يَا أَبَا عَبْدِ اللَّهِ",
+ tr:"Lā yauma kayaumika yā Abā ‘Abdillāh",
+ m:"Tiada hari seperti harimu, wahai Aba Abdillah.",
+ s:"Al-Amali — Syekh Shaduq"},
+{id:"sajjad1", f:"sajjad", t:"Khutbah Imam Sajjad di Damaskus",
+ ar:"أَنَا ابْنُ مَكَّةَ وَمِنَى، أَنَا ابْنُ زَمْزَمَ وَالصَّفَا",
+ tr:"Anabnu Makkata wa Minā, anabnu Zamzama wash-Shafā",
+ m:"Akulah putra Makkah dan Mina. Akulah putra Zamzam dan Shafa.",
+ s:"Bihar al-Anwar"},
+{id:"shadiq1", f:"shadiq", t:"Wasiat terakhir Imam Shadiq",
+ ar:"إِنَّ شَفَاعَتَنَا لَا تَنَالُ مُسْتَخِفًّا بِالصَّلَاةِ",
+ tr:"Inna syafā‘atanā lā tanālu mustakhiffan bish-shalāh",
+ m:"Sungguh, syafaat kami tidak akan sampai kepada orang yang meremehkan shalat.",
+ s:"Al-Kafi; Al-Amali (Syekh Shaduq), diriwayatkan oleh Ummu Hamidah"},
+{id:"kazhim1", f:"kazhim", t:"Dari shalawat untuk Imam Kazhim",
+ ar:"الْمُعَذَّبِ فِي قَعْرِ السُّجُونِ، وَظُلَمِ الْمَطَامِيرِ، ذِي السَّاقِ الْمَرْضُوضِ بِحَلَقِ الْقُيُودِ، وَالْجِنَازَةِ الْمُنَادَى عَلَيْهَا بِذُلِّ الِاسْتِخْفَافِ",
+ tr:"Al-mu‘adzdzabi fī qa‘ris-sujūn, wa zhulamil-mathāmīr, dzis-sāqil-mardhūdhi bihalaqil-quyūd, wal-janāzatil-munādā ‘alaihā bidzullil-istikhfāf",
+ m:"…yang disiksa di dasar penjara dan gelapnya ruang bawah tanah, yang betisnya remuk oleh lingkaran belenggu, dan yang jenazahnya diumumkan dengan hinaan.",
+ s:"Mafatih al-Jinan — shalawat dan ziarah Imam Kazhim",
+ n:"Ini potongan dari tengah kalimat, bukan pembuka."},
+{id:"ridha1", f:"ridha", t:"Qasidah Di’bil di hadapan Imam Ridha",
+ ar:"مَدَارِسُ آيَاتٍ خَلَتْ مِنْ تِلَاوَةٍ، وَمَنْزِلُ وَحْيٍ مُقْفِرُ الْعَرَصَاتِ",
+ tr:"Madārisu āyātin khalat min tilāwatin, wa manzilu wahyin muqfirul-‘arashāt",
+ m:"Madrasah-madrasah ayat kini sepi dari tilawah, dan rumah turunnya wahyu kini halamannya lengang.",
+ s:"Qasidah Ta’iyyah Di’bil al-Khuza’i — ‘Uyun Akhbar ar-Ridha"},
+{id:"hadi1", f:"hadi", t:"Pembuka Ziarah Jami’ah Kabirah",
+ ar:"السَّلَامُ عَلَيْكُمْ يَا أَهْلَ بَيْتِ النُّبُوَّةِ، وَمَوْضِعَ الرِّسَالَةِ، وَمُخْتَلَفَ الْمَلَائِكَةِ، وَمَهْبِطَ الْوَحْيِ",
+ tr:"As-salāmu ‘alaikum yā ahla baitin-nubuwwah, wa maudhi‘ar-risālah, wa mukhtalafal-malā’ikah, wa mahbithal-wahy",
+ m:"Salam atas kalian, wahai Ahlul Bait kenabian, tempat risalah, tempat lalu-lalang malaikat, dan tempat turunnya wahyu.",
+ s:"Ziarah Jami’ah Kabirah dari Imam Hadi — Man La Yahdhuruhu al-Faqih; Tahdzib al-Ahkam"},
+{id:"askari1", f:"askari", t:"Tanda mukmin ada lima",
+ ar:"عَلَامَاتُ الْمُؤْمِنِ خَمْسٌ: صَلَاةُ الْإِحْدَى وَالْخَمْسِينَ، وَزِيَارَةُ الْأَرْبَعِينَ، وَالتَّخَتُّمُ فِي الْيَمِينِ، وَتَعْفِيرُ الْجَبِينِ، وَالْجَهْرُ بِبِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
+ tr:"‘Alāmātul-mu’mini khams: shalātul-ihdā wal-khamsīn, wa ziyāratul-arba‘īn, wat-takhattumu fil-yamīn, wa ta‘fīrul-jabīn, wal-jahru bi bismillāhir-rahmānir-rahīm",
+ m:"Tanda mukmin ada lima: shalat lima puluh satu rakaat, ziarah Arbain, cincin di tangan kanan, menempelkan dahi di tanah, dan mengeraskan bismillah.",
+ s:"Imam Hasan al-Askari — Tahdzib al-Ahkam; Mishbah al-Mutahajjid"},
+{id:"mahdi1", f:"mahdi", t:"Doa Nudbah: di mana?",
+ ar:"أَيْنَ الْحَسَنُ؟ أَيْنَ الْحُسَيْنُ؟ أَيْنَ أَبْنَاءُ الْحُسَيْنِ؟ صَالِحٌ بَعْدَ صَالِحٍ، وَصَادِقٌ بَعْدَ صَادِقٍ",
+ tr:"Ainal-Hasan? Ainal-Husain? Aina abnā’ul-Husain? Shālihun ba‘da shālih, wa shādiqun ba‘da shādiq",
+ m:"Di mana Hasan? Di mana Husain? Di mana putra-putra Husain? Orang saleh demi orang saleh, orang jujur demi orang jujur.",
+ s:"Doa Nudbah — Mishbah az-Za’ir; Mafatih al-Jinan"},
+{id:"mahdi2", f:"mahdi", t:"Doa Nudbah: berat bagiku",
+ ar:"عَزِيزٌ عَلَيَّ أَنْ أَرَى الْخَلْقَ وَلَا تُرَى، وَلَا أَسْمَعُ لَكَ حَسِيسًا وَلَا نَجْوَى",
+ tr:"‘Azīzun ‘alayya an aral-khalqa wa lā turā, wa lā asma‘u laka hasīsan wa lā najwā",
+ m:"Berat bagiku melihat semua makhluk sementara engkau tak terlihat, dan tak kudengar darimu sedikit pun suara atau bisikan.",
+ s:"Doa Nudbah — Mishbah az-Za’ir; Mafatih al-Jinan"},
+{id:"arbain1", f:"arbain", t:"Ziarah Arbain",
+ ar:"وَبَذَلَ مُهْجَتَهُ فِيكَ لِيَسْتَنْقِذَ عِبَادَكَ مِنَ الْجَهَالَةِ وَحَيْرَةِ الضَّلَالَةِ",
+ tr:"Wa badzala muhjatahū fīka liyastanqidza ‘ibādaka minal-jahālati wa hairatidh-dhalālah",
+ m:"Ia mempersembahkan darah hatinya di jalan-Mu untuk menyelamatkan hamba-hamba-Mu dari kebodohan dan kebingungan kesesatan.",
+ s:"Ziarah Arbain dari Imam Shadiq — Tahdzib al-Ahkam; Mishbah al-Mutahajjid"},
+{id:"arbain2", f:"arbain", t:"Jabir di sisi kubur",
+ ar:"حَبِيبٌ لَا يُجِيبُ حَبِيبَهُ",
+ tr:"Habībun lā yujību habībah",
+ m:"Kekasih tak menjawab kekasihnya?",
+ s:"Bisyarah al-Mushthafa — Imaduddin ath-Thabari"},
+{id:"hamzah1", f:"hamzah", t:"Nabi atas Hamzah",
+ ar:"لَكِنَّ حَمْزَةَ لَا بَوَاكِيَ لَهُ",
+ tr:"Lākinna Hamzata lā bawākiya lah",
+ m:"Tetapi Hamzah, tak ada yang menangisinya.",
+ s:"Musnad Ahmad; Sirah Ibnu Hisyam"},
+{id:"muslim1", f:"muslim", t:"Tangis Muslim bin Aqil",
+ ar:"إِنِّي وَاللَّهِ مَا لِنَفْسِي أَبْكِي… وَلَكِنْ أَبْكِي لِأَهْلِي الْمُقْبِلِينَ إِلَيَّ، أَبْكِي لِلْحُسَيْنِ وَآلِ الْحُسَيْنِ",
+ tr:"Innī wallāhi mā linafsī abkī… wa lākin abkī li-ahliyal-muqbilīna ilayy, abkī lil-Husaini wa ālil-Husain",
+ m:"Demi Allah, aku tidak menangis untuk diriku… tetapi aku menangisi keluargaku yang sedang menuju kepadaku. Aku menangisi Husain dan keluarga Husain.",
+ s:"Tarikh ath-Thabari; Al-Irsyad",
+ n:"Bagian tengah kalimat dipotong (…)."}
+];
+const HAFAL_BY = Object.fromEntries(HAFAL.map(h=>[h.id,h]));
+
+const DIKSI = [
+ {k:"Haus & air", w:[["dahaga"],["kerongkongan kering"],["bibir merekah"],["tetes terakhir"],["riak sungai yang tak tersentuh"],["Furat","الْفُرَات"],["kirbat","قِرْبَة","kantong air dari kulit"],["al-‘athasy","الْعَطَش","haus"],["as-saqqā’","السَّقَّاء","pembawa air"]]},
+ {k:"Padang & kemah", w:[["padang tandus"],["pasir membara"],["debu yang menempel di kening"],["terik yang tak bergeser"],["tali kemah"],["tiang yang roboh"],["angin panas"],["ath-Thaff","الطَّفّ","nama lain Karbala"],["Ninawa","نِينَوَى"]]},
+ {k:"Luka & senjata", w:[["anak panah"],["ujung tombak"],["mata pedang"],["luka menganga"],["rebah"],["tersungkur"],["berlumur"],["an-nahr","النَّحْر","leher bagian atas dada"],["ad-dimā’","الدِّمَاء","darah"]]},
+ {k:"Malam & sunyi", w:[["malam terakhir"],["pelita yang bergoyang"],["dengung doa"],["rintih"],["senyap"],["fajar yang enggan datang"],["sajadah"],["sujud panjang"],["al-lail","اللَّيْل","malam"]]},
+ {k:"Ibu, ayah & anak", w:[["buaian"],["ayunan kosong"],["menimang"],["pangkuan"],["dekapan"],["ubun-ubun"],["rambut yang dibelai"],["yā bunayya","يَا بُنَيَّ","wahai anakku sayang"],["yā abatāh","يَا أَبَتَاهُ","duhai ayahku"],["yā ummāh","يَا أُمَّاهُ","duhai ibuku"]]},
+ {k:"Perpisahan", w:[["pamit"],["menoleh"],["lambaian"],["langkah terakhir"],["salam terakhir"],["pelukan yang dilepas pelan"],["punggung yang menjauh"],["al-wadā‘","الْوَدَاع","perpisahan"]]},
+ {k:"Tawanan & perjalanan", w:[["belenggu"],["rantai"],["unta tanpa pelana"],["cambuk"],["pasar yang ramai"],["tatapan asing"],["kerudung yang dirampas"],["reruntuhan"],["as-sabāyā","السَّبَايَا","tawanan perempuan"]]},
+ {k:"Cahaya & langit", w:[["bulan Bani Hasyim","قَمَرُ بَنِي هَاشِم"],["purnama"],["cahaya yang padam"],["bintang yang gugur"],["langit memerah"],["mentari tergelincir"]]},
+ {k:"Seruan (nida’)", w:[["Ya Aba Abdillah","يَا أَبَا عَبْدِ اللَّه"],["Wa Husainah","وَا حُسَيْنَاه"],["Ya Zahra","يَا زَهْرَاء"],["Ya Abal Fadhl","يَا أَبَا الْفَضْل"],["Ya Gharibal Ghuraba’","يَا غَرِيبَ الْغُرَبَاء","untuk Imam Ridha"],["Ya Mazhlum","يَا مَظْلُوم"],["Labbaik ya Husain","لَبَّيْكَ يَا حُسَيْن"],["Wa Muhammadah","وَا مُحَمَّدَاه"]]},
+ {k:"Kata kerja yang hidup", w:[["menggapai"],["mendekap"],["menyeka"],["meraup"],["terhuyung"],["menunduk"],["menggendong"],["merangkak"],["tergelincir"],["memeluk erat"]]}
+];
+
+const KLISE = [
+ ["“Sangat sedih sekali”","Tunjukkan reaksinya: “tangannya gemetar saat melepas kirbat.”"],
+ ["“Darah bercucuran”","“Pasir di bawahnya pelan-pelan berubah warna.”"],
+ ["“Beliau menangis tersedu-sedu”","“Suaranya hilang di tengah kalimat.”"],
+ ["“Kejam sekali mereka”","Sebut perbuatannya apa adanya. Biarkan jamaah yang menilai."],
+ ["“Hati kita hancur”","Tanya: “Siapa di antara kita yang pernah menggendong bayi yang kehausan?”"],
+ ["“Tragis”, “memilukan”","Hapus. Ganti dengan satu detail benda."],
+ ["“Pahlawan gagah berani”","“Ia maju tanpa menoleh, padahal tahu tak akan kembali.”"]
+];
+
+const MAQAM = [
+ {n:"Bayati", rasa:"Hangat, membumi, akrab.", kapan:"Pembuka, narasi, salam, mengenalkan tokoh.", lat:"Baca salam Ziarah Asyura pelan dalam Bayati. Rasakan nada “pulang ke rumah” di akhir kalimat."},
+ {n:"Saba (Shoba)", rasa:"Pilu, terasa seperti jatuh.", kapan:"Puncak duka, momen syahadah, titik pecah.", lat:"Ambil titik pecah tokoh hari ini. Baca dalam Saba dengan tempo lambat, tanpa mengeraskan suara."},
+ {n:"Hijaz", rasa:"Rindu, jauh, padang pasir.", kapan:"Perjalanan, perpisahan, seruan dari kejauhan.", lat:"Serukan “Ya Aba Abdillah” panjang dalam Hijaz, lalu putuskan dengan tarikan napas."},
+ {n:"Nahawand", rasa:"Lembut, nostalgis.", kapan:"Kenangan, kasih ayah-anak, sosok ibu.", lat:"Ceritakan masa kecil tokoh hari ini dalam Nahawand, sebelum musibah datang."},
+ {n:"Rast", rasa:"Tegak, agung.", kapan:"Khutbah dan keteguhan: Zainab di istana, Imam Sajjad di Damaskus.", lat:"Baca “Fakid kaidak…” dengan suara tegak. Ini bukan tangis, ini kehormatan."},
+ {n:"Kurd", rasa:"Polos, sederhana, pilu tanpa hiasan.", kapan:"Kisah anak-anak, bisikan, nina bobo.", lat:"Kisahkan Ali Asghar seperti menidurkan bayi. Turunkan volume di setiap akhir kalimat."}
+];
+
+const NAPAS = [
+ {t:"Desis panjang", d:"Tarik napas 4 hitungan lewat hidung sampai perut mengembang. Keluarkan “sss” serata mungkin. Ulangi 3 kali dan catat waktu terbaik.", log:true},
+ {t:"Satu napas, satu kalimat", d:"Ambil satu kutipan hafalan. Baca dalam satu napas tanpa terburu-buru. Lalu baca dalam dua napas dengan jeda yang Anda pilih sendiri. Rasakan bedanya."},
+ {t:"Hitung lantang", d:"Tarik napas, lalu hitung “satu, dua, tiga…” dengan suara sedang dan stabil. Berhenti sebelum suara bergetar. Target 25 hitungan."},
+ {t:"Napas senyap", d:"Latih mengambil napas cepat lewat mulut tanpa bunyi. Napas yang terdengar di mikrofon memecah suasana. Sepuluh kali; rekam dengan HP dan dengarkan."},
+ {t:"4-7-8 penenang", d:"Tarik 4 hitungan, tahan 7, buang 8. Enam putaran. Pakai juga 10 menit sebelum naik mimbar."}
+];
+
+const SUARA = [
+ {t:"Tangga dinamika", d:"Ucapkan “Ya Aba Abdillah” lima kali, dari bisikan (1) sampai lantang (5), lalu turun lagi ke bisikan. Nada tetap; hanya volume yang berubah."},
+ {t:"Isak yang aman", d:"Sisipkan hela napas pendek berbunyi “ha” di tengah kata, tanpa menekan leher. Jika tenggorokan terasa tercekik, berhenti. Isak lahir dari napas, bukan dari otot leher."},
+ {t:"Jeda yang berani", d:"Baca titik pecah tokoh hari ini. Sebelum kalimat utamanya, diam tiga detik penuh. Ulangi lima kali sampai diam itu terasa nyaman."},
+ {t:"Gerak mikrofon", d:"Pura-pura memegang mic: mundur sejengkal di bagian lantang, mendekat dua jari di bagian bisikan. Latih sampai gerakannya otomatis."},
+ {t:"Getar bibir & dengung", d:"Getarkan bibir “brrr” naik-turun nada selama satu menit, lalu dengungkan “mmm” sambil merasakan getar di wajah. Pemanasan terbaik sebelum maqam."}
+];
+
+const SEHAT = ["Minum air hangat, bukan es, sebelum majlis.","Jangan berdehem keras; telan ludah atau minum.","Kurangi bicara di siang hari sebelum majlis besar.","Hirup uap air hangat 5 menit setelah majlis panjang.","Tidur cukup. Suara yang lelah pecah karena lelah, bukan karena rasa."];
+
+const NIAT = [
+ "Ya Allah, jadikan aku pelayan majlis Husain, bukan pemain di atasnya.",
+ "Sebelum membuat orang menangis, biarkan aku menangis lebih dulu karena-Mu.",
+ "Aku membawa kisah mereka, bukan diriku.",
+ "Jika jamaah menangis, itu karunia-Mu. Jika tidak, aku tetap berkhidmat.",
+ "Kebenaran riwayat lebih kujaga daripada derasnya air mata.",
+ "Suara ini titipan. Bantu aku menjaganya.",
+ "Biarkan yang tertinggal di hati jamaah adalah Husain, bukan namaku."
+];
+
+const KENDALA = ["Mulai dengan berbisik.","Pakai kala kini: ceritakan seolah sedang terjadi.","Tanpa kata “sedih”, “tangis”, dan “pilu”.","Bicara dari sudut pandang seorang ibu.","Bicara dari sudut pandang seorang anak kecil.","Sisipkan satu kutipan Arab yang sudah Anda hafal.","Maksimal lima kalimat.","Akhiri dengan sapaan langsung kepada tokohnya.","Jadikan satu benda kecil sebagai pusat cerita.","Mulai dari sebuah suara: langkah, rintih, atau angin.","Jembatani ke pengalaman jamaah di tengah cerita.","Diam tiga detik sebelum kalimat puncak."];
+
+const TANGIS = [
+ ["T","Tempat & waktu","Pijakkan jamaah di satu titik.","“Sore itu, di tepi Furat…”"],
+ ["A","Akrab","Kasih sebelum kehilangan. Duka sedalam cinta yang mendahuluinya.","“Sejak kecil Abbas selalu berjalan selangkah di belakang Husain, menjaga, bukan mendahului.”"],
+ ["N","Nyata","Satu detail kecil yang bisa dilihat: benda, suara, warna.","“Kirbat di pundaknya, basah dan berat.”"],
+ ["G","Gema tokoh","Biarkan satu tokoh berbicara dengan suaranya sendiri.","“Bagaimana aku minum, sedang saudaraku haus?”"],
+ ["I","Ikat ke jamaah","Jembatan ke hidup mereka, lalu kembali ke Karbala.","“Siapa di antara kita yang pernah menunggu seseorang pulang… dan ia tak pernah pulang?”"],
+ ["S","Seruan","Sapaan langsung dan penutup.","“Ya Abal Fadhl… ya Abal Fadhl…”"]
+];
+
+const PRE = ["Wudhu dan niat khidmat","Tiga tiang pancang ditulis: pembuka, puncak, penutup","Riwayat yang akan dibawa sudah dicek sumbernya","Maqam per bagian sudah ditentukan","Pemanasan 5 menit: getar bibir, dengung, tangga dinamika","Air hangat di dekat mimbar","Cek mic dan gema (reverb secukupnya)","Napas 4-7-8 sebelum naik"];
+
+const LEVELS = [
+ {n:"Murid", xp:0, d:"Membangun kebiasaan: latihan harian, napas, dan niat."},
+ {n:"Qari’ Masa’ib", xp:300, d:"Hafal urutan peristiwa, tanggal, dan sumber utama."},
+ {n:"Penghayat", xp:900, d:"Mengendalikan dinamika, jeda, dan maqam."},
+ {n:"Penyair Duka", xp:2000, d:"Menulis bait sendiri dengan diksi yang hidup."},
+ {n:"Pemandu Majlis", xp:3800, d:"Spontan tapi terarah; membaca ruangan."},
+ {n:"Khadim", xp:6000, d:"Melayani majlis Husain. Latihan menjadi ibadah."}
+];
+
+const HM = ["Muharram","Safar","Rabiul Awal","Rabiul Akhir","Jumadil Ula","Jumadil Akhir","Rajab","Sya’ban","Ramadhan","Syawal","Dzulqa’dah","Dzulhijjah"];
+const HM_S = ["Muharram","Safar","R. Awal","R. Akhir","J. Ula","J. Akhir","Rajab","Sya’ban","Ramadhan","Syawal","Dzulqa’dah","Dzulhijjah"];
+const HM_AR = ["مُحَرَّم","صَفَر","رَبِيع الْأَوَّل","رَبِيع الْآخِر","جُمَادَى الْأُولَى","جُمَادَى الْآخِرَة","رَجَب","شَعْبَان","رَمَضَان","شَوَّال","ذُو الْقَعْدَة","ذُو الْحِجَّة"];
+
+const STEPS = [
+ {id:"niat", t:"Niat & adab", min:1},
+ {id:"napas", t:"Napas", min:5},
+ {id:"suara", t:"Suara & maqam", min:8},
+ {id:"hafal", t:"Hafalan", min:8},
+ {id:"materi", t:"Kuasai materi", min:8},
+ {id:"spontan", t:"Latihan spontan", min:8},
+ {id:"diksi", t:"Diksi & bait", min:3}
+];
+
+/* ============================================================
+   STATE & PERSISTENCE
+   ============================================================ */
+const LS = "menuju-khadim-v1";
+const DEFAULT = {v:1, updatedAt:0, xp:0, days:{}, practiceDays:0, cards:{}, studied:{}, spontan:0, spontanFb:0, breathBest:0, journal:[], baits:[], hijriOffset:0, chat:[], lastNew:{d:"",n:0}, firstDay:"", studiedOn:{}};
+const clone = o => JSON.parse(JSON.stringify(o));
+function load(){ try{ const r = localStorage.getItem(LS); if(r) return Object.assign(clone(DEFAULT), JSON.parse(r)); }catch(e){} return clone(DEFAULT); }
+let S = load();
+let REF = null, SYNC = "local", writing = false, pendingWrite = false, saveTimer = null;
+let SAMPLE = null, SAMPLE_OFF = false, DICT = null;
+
+function prune(){
+  const keys = Object.keys(S.days).sort();
+  const cut = dk(-120);
+  keys.forEach(k=>{ if(k < cut) delete S.days[k]; });
+  if(S.chat.length > 24) S.chat = S.chat.slice(-24);
+  S.chat = S.chat.map(m => m.content.length > 5000 ? {role:m.role, content:m.content.slice(0, 5000)} : m);
+  if(S.journal.length > 60) S.journal = S.journal.slice(-60);
+  if(S.baits.length > 120) S.baits = S.baits.slice(-120);
+}
+function save(){
+  S.updatedAt = Date.now(); prune();
+  try{ localStorage.setItem(LS, JSON.stringify(S)); }catch(e){}
+  clearTimeout(saveTimer); saveTimer = setTimeout(flush, 1200);
+}
+async function flush(){
+  if(!REF) return;
+  if(writing){ pendingWrite = true; return; }
+  writing = true;
+  try{ await REF.set(clone(S)); SYNC = "ok"; }catch(e){ SYNC = "err"; }
+  writing = false;
+  if(pendingWrite){ pendingWrite = false; flush(); }
+}
+const timeout = (p, ms) => Promise.race([p, new Promise((_,rej)=>setTimeout(()=>rej({code:"timeout"}), ms))]);
+
+async function initCaps(){
+  const C = window.claude;
+  if(!C || typeof C.use !== "function"){ SAMPLE_OFF = true; rerender(); return; }
+  C.use("sample").then(s=>{ SAMPLE = s; if(!s) SAMPLE_OFF = true; rerender(); }).catch(()=>{ SAMPLE_OFF = true; rerender(); });
+  C.use("dictation").then(d=>{ if(d) setupDict(d); rerender(); }).catch(()=>{});
+  try{
+    const [u, db] = await Promise.all([C.use("user"), C.use("db")]);
+    if(!u || !db) return;
+    const id = await u.id(); if(!id) return;
+    REF = db.doc("data/users/" + id + "/progress");
+    const snap = await timeout(REF.get(), 10000);
+    if(snap.exists){
+      const r = snap.data();
+      if((r.updatedAt||0) > (S.updatedAt||0)){
+        S = Object.assign(clone(DEFAULT), clone(r));
+        try{ localStorage.setItem(LS, JSON.stringify(S)); }catch(e){}
+        rerender();
+      } else if((S.updatedAt||0) > (r.updatedAt||0)) flush();
+    } else if(S.updatedAt) flush();
+    SYNC = "ok"; rerender();
+  }catch(e){ SYNC = "local"; }
+}
+
+/* ============================================================
+   DATES & HIJRI
+   ============================================================ */
+function dk(off){ const d = new Date(); d.setHours(12,0,0,0); d.setDate(d.getDate()+(off||0)); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function dateOf(off){ const d = new Date(); d.setHours(12,0,0,0); d.setDate(d.getDate()+(off||0)); return d; }
+const dayNum = () => { const d = new Date(); return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())/864e5); };
+
+let INTL = null;
+try{
+  const f = new Intl.DateTimeFormat("en-u-ca-islamic-umalqura-nu-latn", {day:"numeric", month:"numeric", year:"numeric", timeZone:"UTC"});
+  if(/islamic/.test(f.resolvedOptions().calendar)) INTL = f;
+}catch(e){}
+function tabular(y, m, d){
+  const jd = Math.floor(Date.UTC(y, m-1, d)/864e5) + 2440588;
+  let l = jd - 1948440 + 10632;
+  const n = Math.floor((l-1)/10631); l = l - 10631*n + 354;
+  const j = Math.floor((10985-l)/5316)*Math.floor((50*l)/17719) + Math.floor(l/5670)*Math.floor((43*l)/15238);
+  l = l - Math.floor((30-j)/15)*Math.floor((17719*j)/50) - Math.floor(j/16)*Math.floor((15238*j)/43) + 29;
+  const hm = Math.floor((24*l)/709), hd = l - Math.floor((709*hm)/24), hy = 30*n + j - 30;
+  return {y:hy, m:hm, d:hd};
+}
+function hijriYMD(y, m, d){
+  if(INTL){
+    try{
+      const o = {};
+      INTL.formatToParts(new Date(Date.UTC(y, m-1, d, 12))).forEach(p=>{
+        if(p.type==="day") o.d = parseInt(p.value,10);
+        else if(p.type==="month") o.m = parseInt(p.value,10);
+        else if(p.type==="year" || p.type==="relatedYear") o.y = parseInt(p.value,10);
+      });
+      if(o.d && o.m && o.y) return o;
+    }catch(e){}
+  }
+  return tabular(y, m, d);
+}
+const HCACHE = {};
+function H(off){
+  const key = dk(0) + "|" + S.hijriOffset + "|" + off;
+  if(HCACHE[key]) return HCACHE[key];
+  const d = dateOf(off + S.hijriOffset);
+  return (HCACHE[key] = hijriYMD(d.getFullYear(), d.getMonth()+1, d.getDate()));
+}
+function nextOcc(ev){
+  if(!ev.d && !ev.last) return null;
+  for(let i=0; i<=400; i++){
+    const h = H(i); if(h.m !== ev.m) continue;
+    if(ev.last){ if(H(i+1).m !== ev.m) return i; }
+    else if(h.d === ev.d) return i;
+  }
+  return null;
+}
+let UPC = null, UPC_KEY = "";
+function upcoming(){
+  const key = dk(0) + "|" + S.hijriOffset;
+  if(UPC && UPC_KEY === key) return UPC;
+  const list = [];
+  FIG.forEach(f => (f.ev||[]).forEach(ev => { const days = nextOcc(ev); if(days !== null) list.push({fid:f.id, l:ev.l, days, m:ev.m, d:ev.d, last:ev.last}); }));
+  list.sort((a,b)=>a.days-b.days);
+  UPC = list; UPC_KEY = key; return list;
+}
+const dayWord = n => n===0 ? "hari ini" : n===1 ? "besok" : n + " hari lagi";
+const gShort = off => dateOf(off).toLocaleDateString("id-ID", {weekday:"short", day:"numeric", month:"short"});
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+const esc = s => String(s==null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function seeded(seed){ let a = seed >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const pick = (arr, r) => arr[Math.floor(r()*arr.length)];
+function day(){ const k = dk(0); if(!S.days[k]) S.days[k] = {steps:{}, pre:{}}; return S.days[k]; }
+function stepsDone(d){ return STEPS.filter(s => d && d.steps && d.steps[s.id]).length; }
+function streak(){
+  let n = 0;
+  const today = S.days[dk(0)];
+  let start = (today && stepsDone(today) >= 4) ? 0 : -1;
+  for(let i=start; i>=-120; i--){ const d = S.days[dk(i)]; if(d && stepsDone(d) >= 4) n++; else break; }
+  return n;
+}
+function mastered(){ return Object.values(S.cards).filter(c => c.box >= 5).length; }
+function studiedCount(){ return Object.keys(S.studied).filter(k => S.studied[k] > 0).length; }
+function khadimReq(){
+  return [
+    ["40 hari latihan", S.practiceDays >= 40, S.practiceDays + "/40"],
+    ["15 hafalan lancar", mastered() >= 15, mastered() + "/15"],
+    ["Semua tokoh dipelajari", studiedCount() >= FIG.length, studiedCount() + "/" + FIG.length],
+    ["30 latihan spontan", S.spontan >= 30, S.spontan + "/30"],
+    ["5 catatan majlis", S.journal.length >= 5, S.journal.length + "/5"]
+  ];
+}
+function levelIdx(){
+  let i = 0; LEVELS.forEach((L, k) => { if(S.xp >= L.xp) i = k; });
+  if(i === 5 && !khadimReq().every(r => r[1])) i = 4;
+  return i;
+}
+function addXP(n, msg){
+  const before = levelIdx();
+  S.xp += n; save();
+  const after = levelIdx();
+  if(after > before) toast("Naik tingkat: " + LEVELS[after].n);
+  else toast("+" + n + " XP" + (msg ? " · " + msg : ""));
+}
+function completeStep(id){
+  const d = day();
+  if(d.steps[id]) return;
+  d.steps[id] = 1;
+  let gain = 10;
+  const done = stepsDone(d);
+  if(done >= 4 && !d.counted){ d.counted = 1; S.practiceDays++; if(!S.firstDay) S.firstDay = dk(0); }
+  if(done === STEPS.length){ gain += 30; }
+  addXP(gain, done === STEPS.length ? "Sesi lengkap" : STEPS.find(s=>s.id===id).t);
+}
+let toastT = null;
+function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(()=>{ t.hidden = true; }, 2400); }
+
+function focusFig(){
+  const up = upcoming().find(e => e.days <= 10);
+  if(up) return {f:FIG_BY[up.fid], why:"Persiapan " + up.l + " (" + dayWord(up.days) + ")"};
+  return {f:FIG[dayNum() % FIG.length], why:"Giliran harian"};
+}
+function daily(){
+  const r = seeded(dayNum() * 7919);
+  const n = dayNum();
+  const ff = focusFig().f;
+  const cats = DIKSI.slice(0, 8);
+  const c1 = pick(cats, r), c2 = pick(cats.filter(c=>c!==c1), r), c3 = pick(cats.filter(c=>c!==c1 && c!==c2), r);
+  return {
+    niat: NIAT[n % NIAT.length], napas: NAPAS[n % NAPAS.length], suara: SUARA[(n+2) % SUARA.length],
+    maqam: MAQAM[n % MAQAM.length], sehat: SEHAT[n % SEHAT.length], fig: ff,
+    words: [pick(c1.w, r), pick(c2.w, r), pick(c3.w, r)]
+  };
+}
+
+/* simple markdown for AI replies */
+function md(text){
+  const lines = esc(text).split(/\n/);
+  let html = "", inList = false, para = [];
+  const inline = s => s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/(^|[^*])\*(?!\s)(.+?)\*(?!\*)/g, "$1<em>$2</em>").replace(/_\((.+?)\)_/g, "<em>($1)</em>");
+  const flushP = () => { if(para.length){ html += '<p dir="auto">' + inline(para.join("<br>")) + "</p>"; para = []; } };
+  lines.forEach(l => {
+    const m = l.match(/^\s*(?:[-•*]|\d+[.)])\s+(.*)$/);
+    const h = l.match(/^\s*#{1,4}\s+(.*)$/);
+    if(m){ flushP(); if(!inList){ html += "<ul>"; inList = true; } html += '<li dir="auto">' + inline(m[1]) + "</li>"; }
+    else { if(inList){ html += "</ul>"; inList = false; }
+      if(!l.trim()) flushP();
+      else if(h){ flushP(); html += '<p dir="auto"><strong>' + inline(h[1]) + "</strong></p>"; }
+      else para.push(l); }
+  });
+  if(inList) html += "</ul>"; flushP();
+  return html;
+}
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+let TIMER = null, wakeLock = null;
+function fmt(sec){ sec = Math.max(0, Math.ceil(sec)); return Math.floor(sec/60) + ":" + String(sec%60).padStart(2,"0"); }
+function timerHTML(id, sec){
+  const on = TIMER && TIMER.id === id;
+  const left = on ? (TIMER.end - Date.now())/1000 : sec;
+  return '<div class="timer"><span class="clock" id="clk-' + id + '">' + fmt(left) + '</span><button class="btn ghost" data-act="timer" data-id="' + id + '" data-sec="' + sec + '">' + (on ? "Hentikan" : "Mulai") + "</button></div>";
+}
+function startTimer(id, sec){
+  if(TIMER && TIMER.id === id){ stopTimer(); rerender(); return; }
+  stopTimer();
+  TIMER = {id, end: Date.now() + sec*1000};
+  try{ if(navigator.wakeLock) navigator.wakeLock.request("screen").then(w => { wakeLock = w; }).catch(()=>{}); }catch(e){}
+  TIMER.iv = setInterval(() => {
+    const left = (TIMER.end - Date.now())/1000;
+    const el = document.getElementById("clk-" + id);
+    if(el) el.textContent = fmt(left);
+    if(left <= 0){ stopTimer(); toast("Waktu habis"); try{ navigator.vibrate && navigator.vibrate([200,100,200]); }catch(e){} rerender(); }
+  }, 250);
+  rerender();
+}
+function stopTimer(){ if(TIMER){ clearInterval(TIMER.iv); TIMER = null; } try{ if(wakeLock){ wakeLock.release(); wakeLock = null; } }catch(e){} }
+
+/* ============================================================
+   DICTATION
+   ============================================================ */
+let DICT_T = null, DICT_ON = false;
+function setupDict(d){
+  DICT = d;
+  d.onFinal(({text}) => {
+    const t = document.getElementById(DICT_T); if(!t) return;
+    t.value = t.value ? t.value + text : text.replace(/^\s+/, "");
+    t.dispatchEvent(new Event("input", {bubbles:true}));
+  });
+  d.onPartial(({text}) => { const h = document.getElementById((DICT_T||"") + "-hint"); if(h) h.textContent = text; });
+  d.onState(({state, reason}) => {
+    DICT_ON = state !== "idle";
+    document.querySelectorAll('[data-act="dict"]').forEach(b => b.classList.toggle("on", DICT_ON && b.dataset.t === DICT_T));
+    if(state === "idle"){ const h = document.getElementById((DICT_T||"") + "-hint"); if(h) h.textContent = ""; if(reason === "unavailable" || reason === "not_granted"){ DICT = null; rerender(); } }
+  });
+}
+function micBtn(target){
+  if(!DICT) return "";
+  return '<button class="btn mic" data-act="dict" data-t="' + target + '" aria-label="Dikte dengan suara"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>';
+}
+
+/* ============================================================
+   VIEWS
+   ============================================================ */
+const TABS = [
+ {id:"hari", l:"Hari Ini", i:'<rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>'},
+ {id:"materi", l:"Materi", i:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5"/>'},
+ {id:"hafal", l:"Hafal", i:'<rect x="6" y="3" width="13" height="16" rx="2"/><path d="M4 7v12a2 2 0 0 0 2 2h10"/><path d="M10 9h5M10 13h5"/>'},
+ {id:"latih", l:"Latih", i:'<path d="M3 12h3l2-6 4 13 3-9 2 2h4"/>'},
+ {id:"guru", l:"Guru", i:'<path d="M20 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 12.5h5"/>'}
+];
+let TAB = "hari";
+const UI = {bk:null, bkText:"", bkErr:"", bkConfirm:false, fig:null, grp:"all", q:"", quiz:false, sess:null, latih:"spontan", spon:null, sponText:"", fb:"", fbBusy:false, fbErr:"", guruIn:"", guruBusy:false, guruLive:"", guruErr:"", clearAsk:false, j:{tema:"",titik:"",ok:"",fix:""}, bait:"", openStep:null, breath:""};
+
+function renderTabs(){
+  document.getElementById("tabs").innerHTML = TABS.map(t => '<button data-act="tab" data-tab="' + t.id + '"' + (TAB===t.id ? ' aria-current="page"' : "") + '><svg viewBox="0 0 24 24">' + t.i + "</svg>" + t.l + "</button>").join("");
+  document.getElementById("lvchip").textContent = "Tingkat " + (levelIdx()+1) + " · " + LEVELS[levelIdx()].n;
+}
+
+function rerender(){
+  renderTabs();
+  const v = document.getElementById("view");
+  const ae = document.activeElement;
+  const keep = ae && ae.id && v.contains(ae) ? {id:ae.id, s:ae.selectionStart, e:ae.selectionEnd} : null;
+  v.innerHTML = ({hari:vHari, materi:vMateri, hafal:vHafal, latih:vLatih, guru:vGuru})[TAB]();
+  if(keep){ const el = document.getElementById(keep.id); if(el){ el.focus({preventScroll:true}); try{ el.setSelectionRange(keep.s, keep.e); }catch(e){} } }
+  if(TAB === "guru"){ const c = document.getElementById("chatEnd"); if(c && UI.guruScroll){ c.scrollIntoView({block:"end"}); UI.guruScroll = false; } }
+}
+
+/* ---------- HARI INI ---------- */
+function vHari(){
+  const h = H(0), D = daily(), d = S.days[dk(0)] || {steps:{}, pre:{}};
+  const up = upcoming(), ff = focusFig();
+  const prep = up.find(e => e.days <= 21);
+  const done = stepsDone(d);
+  const totalMin = STEPS.reduce((a,s)=>a+s.min, 0);
+  const due = HAFAL.filter(x => S.cards[x.id] && S.cards[x.id].due <= dk(0)).length;
+  const fresh = newQueue().length;
+  const L = levelIdx(), next = LEVELS[Math.min(5, L+1)];
+  const lvPct = L >= 5 ? 100 : Math.min(100, Math.round((S.xp - LEVELS[L].xp) / (next.xp - LEVELS[L].xp) * 100));
+
+  const stepBody = {
+    niat: () => '<p class="niat">' + esc(D.niat) + '</p><p class="small muted">Baca pelan, lalu diam 30 detik. Ingat untuk siapa Anda berlatih.</p>' + timerHTML("niat", 60),
+    napas: () => '<h3>' + esc(D.napas.t) + '</h3><p>' + esc(D.napas.d) + '</p>' + (D.napas.log ? '<label class="f">Desis terbaik hari ini (detik)<input type="number" id="breathIn" inputmode="numeric" min="0" max="180" value="' + esc(UI.breath) + '" placeholder="mis. 32"></label><p class="small muted">Rekor Anda: ' + (S.breathBest || "–") + ' detik. Target 30 detik atau lebih.</p>' : "") + timerHTML("napas", 300),
+    suara: () => '<div class="callout gold"><div class="eyebrow">Maqam hari ini</div><h3>' + esc(D.maqam.n) + '</h3><p class="small">' + esc(D.maqam.rasa) + ' Untuk: ' + esc(D.maqam.kapan) + '</p><p>' + esc(D.maqam.lat) + '</p></div><h3>' + esc(D.suara.t) + '</h3><p>' + esc(D.suara.d) + '</p><p class="small muted">Jaga suara: ' + esc(D.sehat) + '</p>' + timerHTML("suara", 480),
+    hafal: () => '<p>' + (due ? due + " kartu perlu diulang" : "Tidak ada kartu jatuh tempo") + (fresh ? ", " + fresh + " kartu baru siap." : ".") + '</p><p class="small muted">Satu kartu: baca 3 kali, sembunyikan bertahap, lalu ucapkan tanpa melihat.</p><div class="btns"><button class="btn primary" data-act="startHafal">Mulai hafalan</button></div>',
+    materi: () => '<p><strong>' + esc(D.fig.n) + '</strong> · ' + esc(D.fig.when) + '</p><p class="small muted">Baca kisahnya, lalu tutup layar dan jawab: tiga detail kecil apa yang bisa Anda lukiskan? Di mana titik pecahnya? Apa sumber utamanya?</p><div class="btns"><button class="btn primary" data-act="openFig" data-id="' + D.fig.id + '">Buka materi</button></div>',
+    spontan: () => '<p>Satu latihan spontan 60–120 detik tentang <strong>' + esc(D.fig.n) + '</strong> dengan Kompas TANGIS.</p><div class="btns"><button class="btn primary" data-act="goSpontan">Mulai latihan spontan</button></div>',
+    diksi: () => '<p class="small muted">Tulis satu bait (2–4 baris) yang memakai ketiga kata ini.</p><div class="chips" style="flex-wrap:wrap">' + D.words.map(w => '<span class="chip">' + esc(w[0]) + (w[1] ? ' <span class="ar sm" style="font-size:17px;line-height:1">' + esc(w[1]) + "</span>" : "") + "</span>").join("") + '</div><textarea id="baitIn" placeholder="Tulis bait Anda di sini…">' + esc(UI.bait) + '</textarea><div class="btns"><button class="btn primary" data-act="saveBait">Simpan bait</button></div>'
+  };
+
+  const stepsHTML = STEPS.map(s => {
+    const isDone = !!d.steps[s.id];
+    const open = UI.openStep === s.id;
+    let sub = s.min + " menit";
+    if(s.id==="napas") sub += " · " + D.napas.t;
+    if(s.id==="suara") sub += " · " + D.maqam.n;
+    if(s.id==="materi") sub += " · " + D.fig.n;
+    if(s.id==="hafal") sub += " · " + (due + fresh) + " kartu";
+    return '<details class="step' + (isDone ? " done" : "") + '"' + (open ? " open" : "") + ' data-step="' + s.id + '"><summary><span class="tick">' + (isDone ? "✓" : STEPS.indexOf(s)+1) + '</span><span class="grow" style="flex:1;min-width:0"><span class="t">' + esc(s.t) + '</span><br><span class="s">' + esc(sub) + '</span></span></summary><div class="body">' + stepBody[s.id]() + (isDone ? '<p class="small" style="color:var(--green);font-weight:600">Selesai hari ini</p>' : '<div class="btns"><button class="btn" data-act="doneStep" data-id="' + s.id + '">Tandai selesai</button></div>') + "</div></details>";
+  }).join("");
+
+  const agenda = up.slice(0, 6).map(e => {
+    const hh = H(e.days), f = FIG_BY[e.fid];
+    return '<button class="row" data-act="openFig" data-id="' + e.fid + '"><span class="datebox"><b>' + hh.d + '</b><span>' + esc(HM_S[hh.m-1]) + '</span></span><span class="grow"><span class="t">' + esc(e.l) + '</span><br><span class="s">' + esc(gShort(e.days)) + " · " + esc(f.n) + '</span></span><span class="pill' + (e.days <= 7 ? " hot" : "") + '">' + esc(dayWord(e.days)) + "</span></button>";
+  }).join("");
+
+  const pre = PRE.map((p,i) => '<label class="check"><input type="checkbox" data-act="pre" data-i="' + i + '"' + (d.pre && d.pre[i] ? " checked" : "") + "><span>" + esc(p) + "</span></label>").join("");
+  const jr = S.journal.slice(-4).reverse().map(j => '<div class="card"><div class="eyebrow">' + esc(j.d) + '</div><h3>' + esc(j.tema || "Majlis") + '</h3>' + (j.titik ? '<p class="small"><strong>Titik pecah:</strong> ' + esc(j.titik) + "</p>" : "") + (j.ok ? '<p class="small"><strong>Berhasil:</strong> ' + esc(j.ok) + "</p>" : "") + (j.fix ? '<p class="small"><strong>Perbaiki:</strong> ' + esc(j.fix) + "</p>" : "") + "</div>").join("");
+
+  const ladder = LEVELS.map((Lv, i) => {
+    const cls = i < L ? "reached" : i === L ? "reached now" : "";
+    let extra = "";
+    if(i === 5){ extra = '<ul class="clean small" style="margin-top:6px">' + khadimReq().map(r => "<li>" + (r[1] ? "✓ " : "") + esc(r[0]) + " — " + esc(r[2]) + "</li>").join("") + "</ul>"; }
+    return '<div class="row ' + cls + '"><span class="lvnum">' + (i+1) + '</span><span class="grow"><span class="t">' + esc(Lv.n) + '</span> <span class="s">· ' + Lv.xp + ' XP</span><br><span class="s">' + esc(Lv.d) + "</span>" + extra + "</span></div>";
+  }).join("");
+
+  return '' +
+  '<section class="hero"><div class="eyebrow">Hari ini</div>' +
+    '<div class="hdate">' + h.d + " " + esc(HM[h.m-1]) + " " + h.y + '&nbsp;H<span class="arm">' + esc(HM_AR[h.m-1]) + "</span></div>" +
+    '<div class="small muted">' + esc(new Date().toLocaleDateString("id-ID", {weekday:"long", day:"numeric", month:"long", year:"numeric"})) +
+    ' <span class="adj">· sesuaikan <button data-act="hadj" data-v="-1" aria-label="Mundurkan satu hari">−</button><button data-act="hadj" data-v="1" aria-label="Majukan satu hari">+</button></span>' + (S.hijriOffset ? " (" + (S.hijriOffset > 0 ? "+" : "") + S.hijriOffset + ")" : "") + "</div>" +
+  "</section>" +
+  (!IS_CLAUDE && !IS_APK && !IS_PWA && !S.hideInstall ? '<section class="card"><div class="eyebrow">Pasang di HP</div><p>Pakai sebagai aplikasi agar bisa dibuka tanpa internet.</p><div class="btns"><a class="btn primary" href="' + APK_URL + '" rel="noopener">Unduh APK Android</a><button class="btn ghost" data-act="hideInstall">Sembunyikan</button></div><p class="small muted">Di iPhone: buka di Safari, ketuk Bagikan, lalu “Tambah ke Layar Utama”. Saat memasang APK, izinkan pemasangan dari sumber ini.</p></section>' : "") +
+  (prep ? '<section class="callout"><div class="eyebrow">Persiapan majlis</div><h3>' + esc(prep.l) + '</h3><p class="small">' + esc(gShort(prep.days)) + " · " + esc(dayWord(prep.days)) + '. Majlis biasanya dimulai malam sebelumnya. Fokus latihan hari ini diarahkan ke tokoh ini.</p><div class="btns" style="margin-top:8px"><button class="btn" data-act="openFig" data-id="' + prep.fid + '">Buka materi</button><button class="btn ghost" data-act="planGuru" data-id="' + prep.fid + '">Rancang majlis dengan Guru</button></div></section>' : "") +
+  '<section class="sec"><div class="sec-h"><h2>Sesi latihan hari ini</h2><span class="small muted">' + done + "/" + STEPS.length + " · ±" + totalMin + ' menit</span></div>' +
+    '<div class="bar" aria-hidden="true"><i style="width:' + Math.round(done/STEPS.length*100) + '%"></i></div>' +
+    '<p class="small muted">Fokus: ' + esc(ff.f.n) + " — " + esc(ff.why) + "</p>" + stepsHTML + "</section>" +
+  '<section class="sec"><div class="sec-h"><h2>Agenda syahadah</h2><span class="small muted">kalender Hijriah, ±1 hari</span></div><div class="list agenda">' + agenda + "</div></section>" +
+  '<section class="sec"><h2>Majlis</h2><div class="eyebrow">Sebelum naik mimbar</div><div class="list">' + pre + "</div>" +
+    '<div class="eyebrow" style="margin-top:6px">Catat majlis</div><div class="card">' +
+    '<label class="f">Tema / tokoh<input type="text" id="jTema" value="' + esc(UI.j.tema) + '" placeholder="mis. Malam 7 Muharram — Ali Asghar"></label>' +
+    '<label class="f">Di bagian mana jamaah mulai menangis?<textarea id="jTitik" placeholder="Tulis apa yang terjadi tepat sebelumnya">' + esc(UI.j.titik) + "</textarea></label>" +
+    '<label class="f">Yang berhasil<textarea id="jOk">' + esc(UI.j.ok) + "</textarea></label>" +
+    '<label class="f">Yang harus diperbaiki<textarea id="jFix">' + esc(UI.j.fix) + "</textarea></label>" +
+    '<div class="btns"><button class="btn primary" data-act="saveJ">Simpan catatan</button>' + (S.journal.length ? '<button class="btn ghost" data-act="jGuru">Minta Guru menganalisis</button>' : "") + "</div></div>" + jr + "</section>" +
+  '<section class="sec" id="jalan"><div class="sec-h"><h2>Jalan menuju Khadim</h2><span class="small muted">' + S.xp + " XP</span></div>" +
+    '<div class="card"><div class="sec-h"><h3>Tingkat ' + (L+1) + " · " + esc(LEVELS[L].n) + '</h3><span class="small muted">' + (L >= 5 ? "Tercapai" : "menuju " + esc(next.n)) + '</span></div><div class="bar"><i style="width:' + lvPct + '%"></i></div></div>' +
+    '<div class="stats"><div class="stat"><b>' + S.practiceDays + '</b><span>hari latihan</span></div><div class="stat"><b>' + streak() + '</b><span>hari beruntun</span></div><div class="stat"><b>' + mastered() + '</b><span>hafalan lancar</span></div><div class="stat"><b>' + studiedCount() + '</b><span>tokoh dipelajari</span></div><div class="stat"><b>' + S.spontan + '</b><span>latihan spontan</span></div><div class="stat"><b>' + S.journal.length + '</b><span>catatan majlis</span></div></div>' +
+    '<div class="list ladder">' + ladder + "</div>" + bkHTML() +
+    '<p class="small muted">Gelar di aplikasi ini hanya penanda latihan. Khadim sejati ditentukan oleh niat dan khidmat, bukan oleh angka. ' + (SYNC === "ok" ? "Progres tersimpan di akun Claude Anda." : "Progres tersimpan di perangkat ini; buat cadangan sesekali.") + "</p></section>";
+}
+
+function bkHTML(){
+  let inner = "";
+  if(UI.bk === "out") inner = '<textarea id="bkOutTxt" readonly>' + esc(JSON.stringify(S)) + '</textarea><p class="small muted">Jika belum tersalin otomatis, tekan lama teks di atas, pilih semua, lalu salin. Simpan di catatan atau chat pribadi.</p>';
+  if(UI.bk === "in") inner = '<textarea id="bkInTxt" placeholder="Tempel teks cadangan di sini">' + esc(UI.bkText) + '</textarea>' +
+    (UI.bkErr ? '<p class="small" style="color:var(--crimson)">' + esc(UI.bkErr) + "</p>" : "") +
+    (UI.bkConfirm ? '<p class="small" style="color:var(--crimson)">Progres di perangkat ini akan diganti dengan isi cadangan.</p><div class="btns"><button class="btn danger" data-act="bkYes">Ganti progres</button><button class="btn ghost" data-act="bkNo">Batal</button></div>' : '<div class="btns"><button class="btn primary" data-act="bkCheck">Pulihkan dari teks ini</button></div>');
+  return '<div class="card"><h3>Cadangan progres</h3><p class="small muted">Pindahkan progres antara aplikasi HP, situs web, dan versi Claude.</p><div class="btns"><button class="btn" data-act="bkOut">' + (UI.bk === "out" ? "Tutup cadangan" : "Buat cadangan") + '</button><button class="btn" data-act="bkIn">' + (UI.bk === "in" ? "Tutup" : "Pulihkan") + "</button></div>" + inner + "</div>";
+}
+function parseBackup(t){
+  try{ const o = JSON.parse((t || "").trim()); if(o && typeof o.xp === "number" && o.days && typeof o.days === "object") return o; }catch(e){}
+  return null;
+}
+
+/* ---------- MATERI ---------- */
+function vMateri(){
+  if(UI.fig) return vFig(FIG_BY[UI.fig]);
+  const q = UI.q.trim().toLowerCase();
+  const list = FIG.filter(f => (UI.grp === "all" || f.g === UI.grp) && (!q || (f.n + " " + f.when + " " + f.ringkas).toLowerCase().includes(q)));
+  const up = upcoming();
+  const chips = [["all","Semua"]].concat(Object.entries(GROUPS)).map(([k,l]) => '<button class="chip" data-act="grp" data-g="' + k + '" aria-pressed="' + (UI.grp===k) + '">' + esc(l) + "</button>").join("");
+  const rows = list.map(f => {
+    const e = up.find(x => x.fid === f.id);
+    const st = S.studied[f.id];
+    return '<button class="row" data-act="openFig" data-id="' + f.id + '"><span class="grow"><span class="t">' + esc(f.n) + '</span><br><span class="s">' + esc(f.when) + "</span></span>" + (e && e.days <= 30 ? '<span class="pill' + (e.days<=7?" hot":"") + '">' + esc(dayWord(e.days)) + "</span>" : st ? '<span class="pill ok">dipelajari</span>' : "") + "</button>";
+  }).join("");
+  return '<section class="sec"><h1>Materi syahadah</h1><p class="muted small">30 tokoh: kisah, detail untuk dilukiskan, titik pecah, arah maqam, sumber, dan catatan riwayat.</p>' +
+    '<input type="search" id="figQ" placeholder="Cari tokoh atau peristiwa" value="' + esc(UI.q) + '">' +
+    '<div class="chips">' + chips + "</div>" +
+    '<div class="list">' + (rows || '<p class="muted" style="padding:14px">Tidak ada yang cocok.</p>') + "</div></section>";
+}
+function vFig(f){
+  const up = upcoming().filter(e => e.fid === f.id);
+  const hs = (f.hafal||[]).map(id => HAFAL_BY[id]).filter(Boolean);
+  const blk = (title, inner, cls) => '<div class="blk' + (UI.quiz ? "" : " open") + (cls ? " " + cls : "") + '" data-act="unblur"><div class="eyebrow">' + title + '</div><div class="inner">' + inner + "</div></div>";
+  return '<section class="sec' + (UI.quiz ? " quiz" : "") + '">' +
+    '<button class="back" data-act="figBack">← Semua tokoh</button>' +
+    '<div class="fig-h"><div class="eyebrow">' + esc(GROUPS[f.g]) + '</div><h1>' + esc(f.n) + '</h1><div class="ar sm">' + esc(f.ar) + '</div><p class="small muted">' + esc(f.when) + (up.length ? " · " + up.map(e => esc(e.l) + ": " + esc(dayWord(e.days))).join(" · ") : "") + "</p></div>" +
+    '<div class="btns"><button class="btn' + (UI.quiz ? " primary" : "") + '" data-act="quiz">' + (UI.quiz ? "Mode uji: aktif" : "Mode uji") + '</button><button class="btn" data-act="studied" data-id="' + f.id + '">' + (S.studied[f.id] ? "Pelajari lagi (+10)" : "Tandai dipelajari (+10)") + "</button></div>" +
+    (UI.quiz ? '<p class="small muted">Jawab dalam hati dulu, lalu ketuk setiap bagian untuk mencocokkan.</p>' : "") +
+    '<div class="card">' + blk("Kisah ringkas", "<p>" + esc(f.ringkas) + "</p>") + "</div>" +
+    '<div class="card">' + blk("Detail untuk dilukiskan", '<ul class="clean">' + f.detail.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>") + "</div>" +
+    '<div class="callout">' + blk("Titik pecah", "<p>" + esc(f.titik) + "</p>") + "</div>" +
+    '<div class="callout gold"><div class="eyebrow">Arah suara</div><p>' + esc(f.maqam) + "</p></div>" +
+    (hs.length ? '<div class="sec"><div class="eyebrow">Hafalan terkait</div><div class="list">' + hs.map(x => '<button class="row" data-act="hafalOne" data-id="' + x.id + '"><span class="grow"><span class="t">' + esc(x.t) + '</span><br><span class="ar sm" style="display:block">' + esc(x.ar.split("\n")[0].slice(0, 60)) + (x.ar.length > 60 ? "…" : "") + "</span></span>" + dots(x.id) + "</button>").join("") + "</div></div>" : "") +
+    '<div class="card">' + blk("Sumber", '<ul class="clean small">' + f.sumber.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>") + "</div>" +
+    '<div class="callout green"><div class="eyebrow">Catatan riwayat</div><ul class="clean small">' + f.catatan.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul></div>" +
+    '<div class="btns"><button class="btn primary" data-act="planGuru" data-id="' + f.id + '">Rancang majlis dengan Guru</button><button class="btn" data-act="sponFig" data-id="' + f.id + '">Latihan spontan</button><button class="btn ghost" data-act="quizGuru" data-id="' + f.id + '">Uji saya (Guru)</button></div>' +
+    "</section>";
+}
+
+/* ---------- HAFAL ---------- */
+function dots(id){ const b = (S.cards[id] && S.cards[id].box) || 0; let s = '<span class="dots" aria-label="Tingkat ' + b + ' dari 6">'; for(let i=1;i<=6;i++) s += '<i class="' + (i <= b ? "on" : "") + '"></i>'; return s + "</span>"; }
+function newQueue(){
+  const t = dk(0), used = S.lastNew.d === t ? S.lastNew.n : 0, avail = Math.max(0, 2 - used);
+  const ff = focusFig().f.id;
+  return HAFAL.filter(h => !S.cards[h.id]).sort((a,b) => (a.f===ff?0:1) - (b.f===ff?0:1)).slice(0, avail);
+}
+function vHafal(){
+  if(UI.sess) return vCard();
+  const t = dk(0);
+  const due = HAFAL.filter(h => S.cards[h.id] && S.cards[h.id].due <= t);
+  const fresh = newQueue();
+  const byFig = {};
+  HAFAL.forEach(h => { (byFig[h.f] = byFig[h.f] || []).push(h); });
+  const groups = Object.keys(GROUPS).map(g => {
+    const items = FIG.filter(f => f.g === g).flatMap(f => byFig[f.id] || []);
+    if(!items.length) return "";
+    return '<div class="eyebrow" style="margin-top:6px">' + esc(GROUPS[g]) + '</div><div class="list">' + items.map(h => '<button class="row" data-act="hafalOne" data-id="' + h.id + '"><span class="grow"><span class="t">' + esc(h.t) + '</span><br><span class="s">' + esc(FIG_BY[h.f].n) + "</span></span>" + dots(h.id) + "</button>").join("") + "</div>";
+  }).join("");
+  return '<section class="sec"><h1>Hafalan</h1>' +
+    '<div class="stats"><div class="stat"><b>' + due.length + '</b><span>perlu diulang</span></div><div class="stat"><b>' + fresh.length + '</b><span>kartu baru hari ini</span></div><div class="stat"><b>' + mastered() + "/" + HAFAL.length + '</b><span>lancar</span></div></div>' +
+    '<div class="btns"><button class="btn primary" data-act="startHafal"' + (due.length + fresh.length ? "" : " disabled") + ">" + (due.length + fresh.length ? "Mulai sesi (" + (due.length + fresh.length) + " kartu)" : "Semua beres untuk hari ini") + "</button></div>" +
+    '<div class="card"><h3>Metode empat lapis</h3><ol class="clean small" style="padding-left:20px"><li><strong>Baca:</strong> lihat teks, arti, dan transliterasi. Ucapkan tiga kali dengan maqam pelan.</li><li><strong>Rumpang:</strong> sebagian kata disembunyikan. Ucapkan utuh, ketuk kata untuk mengecek.</li><li><strong>Huruf awal:</strong> hanya huruf pertama tiap kata yang tampak.</li><li><strong>Kosong:</strong> ucapkan seluruhnya tanpa melihat, lalu nilai diri Anda dengan jujur.</li></ol><p class="small muted">Kartu “Lancar” muncul lagi makin jarang (1, 2, 4, 7, 15, 30 hari). Kartu “Lupa” diulang hari ini juga. Dua kartu baru per hari, diutamakan tokoh yang sedang menjadi fokus.</p></div>' +
+    groups + "</section>";
+}
+function firstLetter(w){
+  const marks = /[ً-ٰٟۖ-ۭ]/;
+  const chars = Array.from(w); let out = "", base = 0;
+  const startsAl = chars.filter(c => !marks.test(c)).slice(0,2).join("") === "ال";
+  const need = startsAl ? 3 : 1;
+  for(const c of chars){ if(!marks.test(c)){ if(base >= need) break; base++; } out += c; }
+  return out;
+}
+function arBlock(text, level, rev){
+  return text.split("\n").map((line, li) => '<span class="arl">' + line.split(" ").filter(Boolean).map((w, wi) => {
+    const key = li + "-" + wi;
+    const hide = level === 1 ? (wi % 3 === 1) : level >= 2;
+    if(!hide || rev[key]) return '<span class="w">' + esc(w) + "</span>";
+    if(level === 2) return '<button class="w" data-act="rev" data-k="' + key + '">' + esc(firstLetter(w)) + "ـ…</button>";
+    return '<button class="w" data-act="rev" data-k="' + key + '">' + "ـ".repeat(Math.min(7, Math.max(3, Math.round(w.length/2)))) + "</button>";
+  }).join(" ") + "</span>").join("");
+}
+function vCard(){
+  const s = UI.sess; const id = s.q[s.i]; const h = HAFAL_BY[id]; const f = FIG_BY[h.f];
+  const lv = ["Baca","Rumpang","Huruf awal","Kosong"];
+  return '<section class="sec"><div class="sec-h"><button class="back" data-act="endSess">← Selesai</button><span class="small muted">Kartu ' + (s.i+1) + " dari " + s.q.length + "</span></div>" +
+    '<div class="fig-h"><div class="eyebrow">' + esc(f.n) + "</div><h2>" + esc(h.t) + "</h2></div>" +
+    '<div class="levels">' + lv.map((l,i) => '<button class="chip" data-act="lvl" data-l="' + i + '" aria-pressed="' + (s.lv===i) + '">' + l + "</button>").join("") + "</div>" +
+    '<div class="card"><div class="ar">' + arBlock(h.ar, s.lv, s.rev) + "</div>" +
+    (s.lv === 0 || s.showTr ? '<p class="tr">' + esc(h.tr) + "</p>" : "") +
+    (s.lv === 0 || s.showTr ? "<p>" + esc(h.m) + "</p>" : "") +
+    (s.lv > 0 ? '<div class="btns"><button class="btn ghost" data-act="showTr">' + (s.showTr ? "Sembunyikan arti" : "Lihat transliterasi & arti") + '</button><button class="btn ghost" data-act="revAll">Buka semua kata</button></div>' : "") +
+    '<p class="small muted">Sumber: ' + esc(h.s) + "</p>" + (h.n ? '<p class="small" style="color:var(--crimson)">' + esc(h.n) + "</p>" : "") + "</div>" +
+    (s.lv < 3 ? '<button class="btn" data-act="lvl" data-l="' + (s.lv+1) + '">Lapis berikutnya: ' + lv[s.lv+1] + " →</button>" : "") +
+    '<div class="eyebrow">Seberapa lancar tanpa melihat?</div><div class="rate"><button class="btn danger" data-act="rate" data-r="lupa">Lupa</button><button class="btn" data-act="rate" data-r="ragu">Ragu</button><button class="btn primary" data-act="rate" data-r="lancar">Lancar</button></div></section>';
+}
+
+/* ---------- LATIH ---------- */
+function newSpon(figId){
+  const r = Math.random;
+  const f = figId ? FIG_BY[figId] : (Math.random() < .5 ? focusFig().f : pick(FIG, r));
+  return {fid:f.id, scene:pick(f.detail, r), rule:pick(KENDALA, r), dur:pick([60,90,120], r)};
+}
+function vLatih(){
+  const subs = [["spontan","Spontan"],["kompas","Kompas TANGIS"],["diksi","Diksi"],["maqam","Maqam & suara"]];
+  const nav = '<div class="chips">' + subs.map(([k,l]) => '<button class="chip" data-act="sub" data-s="' + k + '" aria-pressed="' + (UI.latih===k) + '">' + l + "</button>").join("") + "</div>";
+  let body = "";
+  if(UI.latih === "spontan"){
+    if(!UI.spon) UI.spon = newSpon();
+    const sp = UI.spon, f = FIG_BY[sp.fid];
+    const checks = TANGIS.map((t,i) => '<label class="check"><input type="checkbox" data-act="sc" data-i="' + i + '"' + (sp.sc && sp.sc[i] ? " checked" : "") + '><span><strong>' + t[0] + "</strong> " + esc(t[1]) + "</span></label>").join("");
+    const canAI = SAMPLE && !SAMPLE_OFF;
+    body = '<div class="card"><div class="eyebrow">Tantangan</div><h2>' + esc(f.n) + '</h2><p><strong>Adegan:</strong> ' + esc(sp.scene) + '</p><p><strong>Batasan:</strong> ' + esc(sp.rule) + '</p><p class="small muted">' + sp.dur + ' detik · ucapkan dengan suara, seperti di mimbar.</p>' + timerHTML("spon", sp.dur) +
+      '<div class="btns"><button class="btn ghost" data-act="sponNew">Acak lagi</button><button class="btn ghost" data-act="sponFocus">Tokoh fokus hari ini</button></div></div>' +
+      '<label class="f">Tuliskan atau diktekan apa yang Anda ucapkan<textarea id="sponIn" placeholder="Di HP, tekan ikon mikrofon pada keyboard untuk mendikte.">' + esc(UI.sponText) + '</textarea></label>' +
+      '<div class="btns">' + micBtn("sponIn") + "</div><div class=\"hint\" id=\"sponIn-hint\"></div>" +
+      '<div class="eyebrow">Nilai sendiri dengan Kompas TANGIS</div><div class="list">' + checks + "</div>" +
+      '<div class="btns"><button class="btn" data-act="sponDone">Selesai (+15)</button>' + (canAI ? '<button class="btn primary" data-act="sponFb"' + (UI.fbBusy ? " disabled" : "") + ">" + (UI.fbBusy ? "Guru sedang membaca…" : "Minta umpan balik Guru") + "</button>" : "") + (UI.fbBusy ? '<button class="btn ghost" data-act="fbStop">Hentikan</button>' : "") + "</div>" +
+      (UI.fbErr ? '<p class="small" style="color:var(--crimson)">' + esc(UI.fbErr) + "</p>" : "") +
+      (UI.fb || UI.fbBusy ? '<div class="msg a" id="fbBox" style="max-width:100%">' + (UI.fb ? md(UI.fb) : '<p class="muted">Guru sedang berpikir…</p>') + "</div>" : "") +
+      '<div class="callout gold"><div class="eyebrow">Rem darurat saat blank</div><ol class="clean small" style="padding-left:20px"><li>Ulangi seruan (“Ya Aba Abdillah…”) sambil menarik napas. Jamaah merasakannya sebagai penghayatan, bukan lupa.</li><li>Kembali ke benda terakhir yang Anda sebut (kirbat, buaian, panji) dan gambarkan dari sisi lain.</li><li>Masuk ke kutipan hafalan, misalnya salam Ziarah Asyura. Hafalan adalah pijakan saat improvisasi goyah.</li></ol></div>';
+  } else if(UI.latih === "kompas"){
+    body = '<p>Kompas untuk spontan yang tetap terarah. Urutannya membentuk lengkung duka: menapak, mencintai, melihat, mendengar, merasakan, lalu menyeru.</p>' +
+      TANGIS.map(t => '<div class="card tanc"><b>' + t[0] + '</b><div><h3>' + esc(t[1]) + '</h3><p class="small">' + esc(t[2]) + '</p><p class="small muted"><em>' + esc(t[3]) + "</em></p></div></div>").join("") +
+      '<div class="callout"><div class="eyebrow">Tiga tiang pancang</div><p>Sebelum majlis, tulis tiga kalimat yang tidak boleh berubah: pembuka, puncak, dan penutup. Berimprovisasilah dengan bebas di antara ketiganya, tetapi selalu bergerak menuju tiang berikutnya. Dengan begitu spontanitas Anda punya arah.</p></div>' +
+      '<div class="callout green"><div class="eyebrow">Aturan lengkung</div><ul class="clean small"><li>Jangan memuncak sebelum dua pertiga waktu.</li><li>Kalimat paling menyayat diucapkan pelan, bukan diteriakkan.</li><li>Rasakan 100%, pegang kendali 20%. Jika Anda ambruk, jamaah melihat Anda, bukan Husain.</li><li>Satu detail kecil lebih kuat dari sepuluh kata sifat.</li></ul></div>';
+  } else if(UI.latih === "diksi"){
+    body = '<p class="small muted">Kosakata untuk dilukis, bukan dihias. Ketuk kategori untuk membuka.</p>' +
+      DIKSI.map(c => '<details class="step"><summary><span class="grow" style="flex:1"><span class="t">' + esc(c.k) + '</span><br><span class="s">' + c.w.length + ' kata</span></span></summary><div class="body"><div class="list">' + c.w.map(w => '<div class="row" style="cursor:default"><span class="grow"><span class="t">' + esc(w[0]) + "</span>" + (w[2] ? '<br><span class="s">' + esc(w[2]) + "</span>" : "") + "</span>" + (w[1] ? '<span class="ar sm" style="font-size:19px">' + esc(w[1]) + "</span>" : "") + "</div>").join("") + "</div></div></details>").join("") +
+      '<h2 style="margin-top:8px">Klise dan gantinya</h2><div class="list">' + KLISE.map(k => '<div class="row" style="cursor:default;align-items:flex-start"><span class="grow"><span class="t" style="color:var(--crimson)">' + esc(k[0]) + '</span><br><span class="small">' + esc(k[1]) + "</span></span></div>").join("") + "</div>" +
+      '<h2 style="margin-top:8px">Bait saya</h2>' + (S.baits.length ? '<div class="list">' + S.baits.slice().reverse().slice(0, 30).map(b => '<div class="row" style="cursor:default;align-items:flex-start"><span class="grow"><span class="s">' + esc(b.d) + " · " + esc(b.w.join(", ")) + '</span><br><span style="white-space:pre-wrap">' + esc(b.t) + "</span></span></div>").join("") + "</div>" : '<p class="small muted">Belum ada. Tulis bait pertama Anda di langkah “Diksi & bait” pada sesi harian.</p>');
+  } else {
+    body = MAQAM.map(m => '<div class="card"><div class="sec-h"><h3>' + esc(m.n) + '</h3><span class="small muted">' + esc(m.rasa) + '</span></div><p class="small"><strong>Kapan:</strong> ' + esc(m.kapan) + '</p><p class="small"><strong>Latihan:</strong> ' + esc(m.lat) + "</p></div>").join("") +
+      '<p class="small muted">Rasa dan nama maqam bisa berbeda antar guru. Telinga Anda dan guru maqam secara langsung tetap rujukan utama.</p>' +
+      '<h2 style="margin-top:8px">Latihan suara</h2>' + SUARA.map(s => '<div class="card"><h3>' + esc(s.t) + '</h3><p class="small">' + esc(s.d) + "</p></div>").join("") +
+      '<h2 style="margin-top:8px">Napas</h2>' + NAPAS.map(s => '<div class="card"><h3>' + esc(s.t) + '</h3><p class="small">' + esc(s.d) + "</p></div>").join("") +
+      '<div class="callout green"><div class="eyebrow">Merawat suara</div><ul class="clean small">' + SEHAT.map(s => "<li>" + esc(s) + "</li>").join("") + "</ul></div>";
+  }
+  return '<section class="sec"><h1>Latihan</h1>' + nav + body + "</section>";
+}
+
+/* ---------- GURU ---------- */
+function vGuru(){
+  const canAI = SAMPLE && !SAMPLE_OFF;
+  const starters = [
+    ["Bedah teks saya","Bedah teks maqtal/syair berikut. Tandai struktur TANGIS, titik pecah, jeda, dinamika, dan maqam per bagian. Tunjukkan riwayat yang lemah bila ada.\n\nTeks:\n"],
+    ["Latih spontan","Beri saya satu tantangan spontan tentang " + focusFig().f.n + ". Setelah saya menjawab, nilai dengan Kompas TANGIS."],
+    ["Uji sumber","Uji penguasaan sumber saya tentang " + focusFig().f.n + ": ajukan satu pertanyaan, tunggu jawaban saya, koreksi, lalu lanjut. Total lima pertanyaan."],
+    ["Bantu bait","Bantu saya menulis bait syair duka (rima a-a-a-a) tentang: "],
+    ["Diagnosa saya","Saya sudah 8 tahun tampil sebagai pemaqtal/radud. Ajukan 5 pertanyaan diagnosa satu per satu untuk menemukan kelemahan terbesar saya, lalu buat rencana latihan 14 hari."]
+  ];
+  const msgs = S.chat.map(m => '<div class="msg ' + (m.role === "user" ? "u" : "a") + '">' + (m.role === "user" ? esc(m.content) : md(m.content)) + "</div>").join("");
+  const live = UI.guruBusy ? '<div class="msg a" id="liveMsg">' + (UI.guruLive ? md(UI.guruLive) : '<p class="muted">Guru sedang berpikir…</p>') + "</div>" : "";
+  const empty = !S.chat.length && !UI.guruBusy ? '<div class="card"><h3>Pembimbing pribadi</h3><p class="small">Guru membaca teks Anda, memberi tantangan spontan, menguji sumber, dan membantu menulis bait. Mulai dari salah satu pilihan di bawah, atau tulis pertanyaan sendiri.</p><p class="small muted">Guru bisa keliru. Cocokkan setiap riwayat dan teks Arab dengan kitab sumbernya.</p></div>' : "";
+  if(!canAI){
+    const msg = !window.claude ? "Guru memakai Claude, jadi hanya aktif di versi Claude. Semua latihan lain di sini tetap berjalan tanpa internet.</p><div class=\"btns\" style=\"margin-top:8px\"><a class=\"btn primary\" href=\"" + CLAUDE_URL + "\" target=\"_blank\" rel=\"noopener\">Buka Guru di Claude</a></div><p class=\"small muted\" style=\"margin-top:8px\">Progres di Claude dan di perangkat ini tersimpan terpisah. Pindahkan dengan Cadangan progres di halaman Hari Ini."
+      : !SAMPLE_OFF ? "Menyiapkan Guru…"
+      : "Pembimbing AI belum tersedia di tampilan ini. Jika Anda menolak izin, muat ulang halaman lalu pilih izinkan, atau buka menu Izin artefak ini. Semua latihan lain tetap berjalan.";
+    return '<section class="sec"><h1>Guru</h1><div class="callout gold"><div class="eyebrow">Pembimbing AI</div><p>' + msg + "</p></div>" + (msgs ? '<div class="chat">' + msgs + "</div>" : "") + "</section>";
+  }
+  return '<section class="sec"><div class="sec-h"><h1>Guru</h1>' + (S.chat.length ? (UI.clearAsk ? '<span class="btns"><button class="btn danger" data-act="clearYes">Hapus semua</button><button class="btn ghost" data-act="clearNo">Batal</button></span>' : '<button class="btn ghost" data-act="clearAsk">Hapus percakapan</button>') : "") + "</div>" +
+    empty + '<div class="chat">' + msgs + live + '<div id="chatEnd"></div></div>' +
+    (UI.guruErr ? '<p class="small" style="color:var(--crimson)">' + esc(UI.guruErr) + "</p>" : "") +
+    '<div class="composer"><div class="chips">' + starters.map((s,i) => '<button class="chip" data-act="starter" data-i="' + i + '">' + esc(s[0]) + "</button>").join("") + "</div>" +
+    '<textarea id="guruIn" placeholder="Tulis pertanyaan, tempel teks, atau jawab Guru…">' + esc(UI.guruIn) + '</textarea><div class="hint" id="guruIn-hint"></div>' +
+    '<div class="btns">' + micBtn("guruIn") + (UI.guruBusy ? '<button class="btn" data-act="guruStop">Hentikan</button>' : '<button class="btn primary" data-act="guruSend" style="flex:1">Kirim</button>') + "</div></div></section>";
+}
+
+/* ============================================================
+   AI
+   ============================================================ */
+function guruRules(){
+  const ff = focusFig(); const up = upcoming()[0];
+  return "Kamu adalah \"Guru\", pembimbing pribadi seorang pembaca maqtal, radud latmiyah, dan pemaktam di Indonesia yang sudah tampil sekitar 8 tahun dan ingin matang menjadi khadim majlis Imam Husain.\n\n" +
+  "Cara membimbing:\n- Jawab dalam bahasa Indonesia, ringkas dan padat (umumnya 120–250 kata) karena dibaca di layar HP. Pakai poin bila membantu.\n- Langsung ke inti. Beri koreksi konkret dan contoh kalimat, bukan pujian panjang.\n- Untuk struktur spontan gunakan Kompas TANGIS: Tempat & waktu, Akrab (kasih sebelum kehilangan), Nyata (satu detail kecil), Gema tokoh (suara tokoh), Ikat ke jamaah (jembatan), Seruan (sapaan langsung).\n- Untuk menandai teks pakai [jeda], [bisik], [naik], [turun], [maqam: Saba] dan sejenisnya.\n- Ketepatan riwayat: bedakan riwayat kuat, masyhur tapi bersumber belakangan, dan lemah. Sebut sumber di tingkat kitab (mis. Al-Luhuf, Al-Irsyad, Tarikh ath-Thabari, Nafas al-Mahmum, Maqatil ath-Thalibiyyin) tanpa nomor halaman. Jangan mengarang riwayat, kutipan, sumber, atau teks Arab. Bila tidak yakin, katakan \"perlu dicek di sumber\".\n- Teks Arab hanya bila yakin, berharakat, disertai transliterasi dan arti.\n- Hormati semua mazhab; fokus pada duka, akhlak, dan pesan Asyura, bukan menyerang pihak lain.\n- Bila diminta mengajukan pertanyaan bertahap, ajukan satu per satu dan tunggu jawaban.\n\n" +
+  "Konteks pengguna saat ini: tingkat " + (levelIdx()+1) + " (" + LEVELS[levelIdx()].n + "), " + S.practiceDays + " hari latihan, " + mastered() + " hafalan lancar. Fokus hari ini: " + ff.f.n + " (" + ff.why + ")." + (up ? " Agenda terdekat: " + up.l + ", " + dayWord(up.days) + "." : "");
+}
+function aiErr(e){
+  const c = e && e.code;
+  if(["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(c)){ SAMPLE_OFF = true; return "Pembimbing AI tidak diizinkan di tampilan ini."; }
+  if(c === "rate_limited") return "Terlalu banyak permintaan. Coba lagi beberapa saat lagi.";
+  if(c === "session_expired") return "Sesi Claude berakhir. Silakan masuk kembali.";
+  if(c === "refused") return "Guru tidak bisa menjawab permintaan itu. Coba ubah kalimatnya.";
+  if(c === "prompt_too_large") return "Teksnya terlalu panjang. Kirim sebagian dulu.";
+  if(c === "cancelled") return "";
+  return "Koneksi terputus. Coba kirim lagi.";
+}
+let GURU_CTL = null;
+async function guruSend(text){
+  text = (text || "").trim();
+  if(!text || !SAMPLE || UI.guruBusy) return;
+  S.chat.push({role:"user", content:text.slice(0, 8000)});
+  UI.guruIn = ""; UI.guruErr = ""; UI.guruBusy = true; UI.guruLive = ""; UI.guruScroll = true;
+  save();
+  if(TAB !== "guru") go("guru"); else rerender();
+  const ctl = new AbortController(); GURU_CTL = ctl;
+  const turns = [{role:"user", content:guruRules()}].concat(S.chat.slice(-16).map(m => ({role:m.role, content:m.content})));
+  try{
+    const res = await SAMPLE(turns, {cache:false, signal:ctl.signal, onText:({text}) => {
+      UI.guruLive = text; const el = document.getElementById("liveMsg"); if(el) el.innerHTML = md(text);
+    }});
+    S.chat.push({role:"assistant", content:res.text + (res.truncated ? "\n\n_(jawaban terpotong — minta Guru melanjutkan)_" : "")});
+  }catch(e){
+    if(e && e.text) S.chat.push({role:"assistant", content:e.text + "\n\n_(terhenti)_"});
+    UI.guruErr = aiErr(e);
+  }
+  UI.guruBusy = false; UI.guruLive = ""; GURU_CTL = null; UI.guruScroll = true;
+  save(); rerender();
+}
+let FB_CTL = null;
+async function sponFeedback(){
+  if(!SAMPLE || UI.fbBusy) return;
+  const sp = UI.spon, f = FIG_BY[sp.fid];
+  const text = (UI.sponText || "").trim();
+  if(text.length < 20){ UI.fbErr = "Tulis atau diktekan dulu latihan Anda (minimal satu-dua kalimat)."; rerender(); return; }
+  UI.fbBusy = true; UI.fb = ""; UI.fbErr = ""; rerender();
+  const prompt = "Kamu pembimbing pembaca maqtal dan radud di Indonesia. Nilai latihan spontan berikut dalam bahasa Indonesia, ringkas (maksimal 220 kata).\n\n" +
+    "Tokoh: " + f.n + " (" + f.when + ")\nAdegan: " + sp.scene + "\nBatasan latihan: " + sp.rule + "\nDurasi: " + sp.dur + " detik\n" +
+    "Fakta pegangan — titik pecah: " + f.titik + "\nDetail: " + f.detail.join(" | ") + "\nCatatan riwayat: " + f.catatan.join(" | ") + "\n\n" +
+    "Teks/transkrip latihan:\n\"\"\"\n" + text.slice(0, 6000) + "\n\"\"\"\n\n" +
+    "Format jawaban:\n1. Skor TANGIS dalam satu baris (T, A, N, G, I, S masing-masing 1–5). TANGIS = Tempat & waktu, Akrab, Nyata, Gema tokoh, Ikat ke jamaah, Seruan.\n2. Apakah batasan latihan dipenuhi (satu kalimat).\n3. Dua perbaikan terpenting, konkret.\n4. Satu versi contoh 3–5 kalimat dengan tanda [jeda], [bisik], [naik].\n5. Bila ada klaim riwayat yang lemah atau tak bersumber di teks, sebutkan singkat.\nJangan mengarang kutipan Arab atau sumber.";
+  const ctl = new AbortController(); FB_CTL = ctl;
+  try{
+    const res = await SAMPLE(prompt, {cache:false, signal:ctl.signal, onText:({text}) => { UI.fb = text; const el = document.getElementById("fbBox"); if(el) el.innerHTML = md(text); }});
+    UI.fb = res.text; S.spontanFb++; addXP(5, "umpan balik Guru");
+  }catch(e){ if(e && e.text) UI.fb = e.text; UI.fbErr = aiErr(e); }
+  UI.fbBusy = false; FB_CTL = null; rerender();
+}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+function go(tab){ TAB = tab; rerender(); window.scrollTo(0,0); try{ if(location.hash !== "#" + tab) location.hash = tab; }catch(e){} }
+function startSession(ids){
+  const q = ids || HAFAL.filter(h => S.cards[h.id] && S.cards[h.id].due <= dk(0)).map(h => h.id).concat(newQueue().map(h => h.id));
+  if(!q.length){ toast("Tidak ada kartu untuk hari ini"); return; }
+  UI.sess = {q, i:0, lv:0, rev:{}, showTr:false, retry:{}, full:!ids};
+  go("hafal");
+}
+const IV = [0,1,2,4,7,15,30];
+function rate(r){
+  const s = UI.sess; const id = s.q[s.i];
+  const wasNew = !S.cards[id];
+  const c = S.cards[id] || {box:0, due:dk(0), n:0};
+  c.n++;
+  if(r === "lancar"){ c.box = Math.min(6, c.box + 1); c.due = dk(IV[c.box]); }
+  else if(r === "ragu"){ c.box = Math.max(1, c.box); c.due = dk(1); }
+  else { c.box = 0; c.due = dk(0); if(!s.retry[id]){ s.retry[id] = 1; s.q.push(id); } }
+  S.cards[id] = c;
+  if(wasNew){ const t = dk(0); if(S.lastNew.d !== t) S.lastNew = {d:t, n:0}; S.lastNew.n++; }
+  let gain = 3;
+  if(c.box >= 5 && !c.m){ c.m = 1; gain += 20; }
+  S.xp += gain;
+  s.i++; s.lv = 0; s.rev = {}; s.showTr = false;
+  if(s.i >= s.q.length){
+    const full = s.full; UI.sess = null; save();
+    if(full && !day().steps.hafal) completeStep("hafal"); else toast("Selesai · +" + gain + " XP");
+  } else { save(); toast(gain > 3 ? "Hafalan lancar! +" + gain + " XP" : "+" + gain + " XP"); }
+  rerender(); window.scrollTo(0,0);
+}
+
+const ACT = {
+  tab: el => { if(el.dataset.tab === "materi" && TAB === "materi") UI.fig = null; go(el.dataset.tab); if(el.dataset.scroll){ const t = document.getElementById(el.dataset.scroll); if(t) t.scrollIntoView({behavior:"smooth", block:"start"}); } },
+  hadj: el => { S.hijriOffset = Math.max(-2, Math.min(2, S.hijriOffset + parseInt(el.dataset.v,10))); save(); rerender(); },
+  timer: el => startTimer(el.dataset.id, parseInt(el.dataset.sec,10)),
+  doneStep: el => { const id = el.dataset.id; if(id === "napas") saveBreath(); completeStep(id); UI.openStep = null; rerender(); },
+  startHafal: () => startSession(),
+  hafalOne: el => startSession([el.dataset.id]),
+  openFig: el => { UI.fig = el.dataset.id; UI.quiz = false; go("materi"); window.scrollTo(0,0); },
+  figBack: () => { UI.fig = null; rerender(); window.scrollTo(0,0); },
+  grp: el => { UI.grp = el.dataset.g; rerender(); },
+  quiz: () => { UI.quiz = !UI.quiz; rerender(); },
+  unblur: el => { if(UI.quiz) el.classList.add("open"); },
+  studied: el => {
+    const id = el.dataset.id, t = dk(0);
+    S.studiedOn = S.studiedOn || {};
+    if(S.studiedOn[id] === t){ toast("Sudah dicatat hari ini"); return; }
+    S.studiedOn[id] = t; S.studied[id] = (S.studied[id] || 0) + 1;
+    addXP(10, "materi");
+    if(focusFig().f.id === id && !day().steps.materi) completeStep("materi");
+    rerender();
+  },
+  planGuru: el => { const f = FIG_BY[el.dataset.id]; guruSend("Rancang kerangka majlis 10–15 menit tentang " + f.n + " (" + f.when + ") memakai Kompas TANGIS. Tandai maqam dan dinamika per bagian ([jeda], [bisik], [naik]), dan beri tiga tiang pancang: kalimat pembuka, puncak, dan penutup.\n\nPegang fakta ini:\n- Ringkas: " + f.ringkas + "\n- Detail: " + f.detail.join("; ") + "\n- Titik pecah: " + f.titik + "\n- Catatan riwayat: " + f.catatan.join("; ")); },
+  quizGuru: el => { const f = FIG_BY[el.dataset.id]; guruSend("Uji penguasaan saya tentang " + f.n + ": ajukan satu pertanyaan tentang peristiwa, detail, tanggal, atau sumbernya. Tunggu jawaban saya, koreksi, lalu lanjut. Total lima pertanyaan. Fakta rujukan: " + f.ringkas + " Sumber: " + f.sumber.join("; ") + ". Catatan: " + f.catatan.join("; ")); },
+  sponFig: el => { UI.spon = newSpon(el.dataset.id); UI.sponText = ""; UI.fb = ""; UI.fbErr = ""; UI.latih = "spontan"; go("latih"); },
+  goSpontan: () => { UI.spon = newSpon(focusFig().f.id); UI.sponText = ""; UI.fb = ""; UI.fbErr = ""; UI.latih = "spontan"; go("latih"); },
+  sub: el => { UI.latih = el.dataset.s; rerender(); },
+  sponNew: () => { stopTimer(); UI.spon = newSpon(); UI.fb = ""; UI.fbErr = ""; rerender(); },
+  sponFocus: () => { stopTimer(); UI.spon = newSpon(focusFig().f.id); UI.fb = ""; UI.fbErr = ""; rerender(); },
+  sponDone: () => {
+    S.spontan++; addXP(15, "latihan spontan");
+    if(!day().steps.spontan) completeStep("spontan");
+    stopTimer(); UI.spon = newSpon(); UI.sponText = ""; UI.fb = ""; UI.fbErr = ""; rerender();
+  },
+  sponFb: () => sponFeedback(),
+  fbStop: () => { if(FB_CTL) FB_CTL.abort(); },
+  rev: el => { UI.sess.rev[el.dataset.k] = 1; rerender(); },
+  revAll: () => { const h = HAFAL_BY[UI.sess.q[UI.sess.i]]; h.ar.split("\n").forEach((l,li) => l.split(" ").filter(Boolean).forEach((w,wi) => { UI.sess.rev[li+"-"+wi] = 1; })); rerender(); },
+  lvl: el => { UI.sess.lv = parseInt(el.dataset.l,10); UI.sess.rev = {}; rerender(); },
+  showTr: () => { UI.sess.showTr = !UI.sess.showTr; rerender(); },
+  rate: el => rate(el.dataset.r),
+  endSess: () => { UI.sess = null; rerender(); },
+  saveBait: () => {
+    const t = (UI.bait || "").trim(); if(t.length < 10){ toast("Tulis baitnya dulu"); return; }
+    S.baits.push({d:dk(0), t, w:daily().words.map(w => w[0])}); UI.bait = "";
+    if(!day().steps.diksi) completeStep("diksi"); else { save(); toast("Bait tersimpan"); }
+    rerender();
+  },
+  saveJ: () => {
+    const j = UI.j; if(!(j.tema + j.titik + j.ok + j.fix).trim()){ toast("Isi catatannya dulu"); return; }
+    S.journal.push({d:dk(0), tema:j.tema.trim(), titik:j.titik.trim(), ok:j.ok.trim(), fix:j.fix.trim()});
+    UI.j = {tema:"", titik:"", ok:"", fix:""}; addXP(20, "catatan majlis"); rerender();
+  },
+  jGuru: () => { const last = S.journal.slice(-5).map(j => "- " + j.d + " | " + (j.tema||"Majlis") + " | titik pecah: " + (j.titik||"-") + " | berhasil: " + (j.ok||"-") + " | perbaiki: " + (j.fix||"-")).join("\n"); guruSend("Analisis catatan majlis saya berikut. Temukan pola: di mana jamaah biasanya pecah, kebiasaan yang perlu diubah, dan tiga latihan khusus untuk minggu ini.\n\n" + last); },
+  starter: el => {
+    const ff = focusFig().f.n;
+    const st = [
+      "Bedah teks maqtal/syair berikut. Tandai struktur TANGIS, titik pecah, jeda, dinamika, dan maqam per bagian. Tunjukkan riwayat yang lemah bila ada.\n\nTeks:\n",
+      "Beri saya satu tantangan spontan tentang " + ff + ". Setelah saya menjawab, nilai dengan Kompas TANGIS.",
+      "Uji penguasaan sumber saya tentang " + ff + ": ajukan satu pertanyaan, tunggu jawaban saya, koreksi, lalu lanjut. Total lima pertanyaan.",
+      "Bantu saya menulis bait syair duka (rima a-a-a-a) tentang: ",
+      "Saya sudah 8 tahun tampil sebagai pemaqtal/radud. Ajukan 5 pertanyaan diagnosa satu per satu untuk menemukan kelemahan terbesar saya, lalu buat rencana latihan 14 hari."
+    ][parseInt(el.dataset.i,10)];
+    UI.guruIn = st; rerender();
+    const t = document.getElementById("guruIn"); if(t){ t.focus(); t.setSelectionRange(t.value.length, t.value.length); }
+  },
+  guruSend: () => guruSend(UI.guruIn),
+  guruStop: () => { if(GURU_CTL) GURU_CTL.abort(); },
+  clearAsk: () => { UI.clearAsk = true; rerender(); },
+  clearNo: () => { UI.clearAsk = false; rerender(); },
+  clearYes: () => { S.chat = []; UI.clearAsk = false; save(); rerender(); },
+  hideInstall: () => { S.hideInstall = 1; save(); rerender(); },
+  bkOut: () => {
+    if(UI.bk === "out"){ UI.bk = null; rerender(); return; }
+    UI.bk = "out"; const txt = JSON.stringify(S);
+    try{ if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(() => toast("Cadangan disalin"), () => {}); }catch(e){}
+    rerender();
+    const t = document.getElementById("bkOutTxt"); if(t){ try{ t.focus(); t.select(); }catch(e){} }
+  },
+  bkIn: () => { UI.bk = UI.bk === "in" ? null : "in"; UI.bkConfirm = false; UI.bkErr = ""; rerender(); },
+  bkCheck: () => { if(parseBackup(UI.bkText)){ UI.bkConfirm = true; UI.bkErr = ""; } else { UI.bkErr = "Teks cadangan tidak dikenali. Pastikan seluruh teks tersalin."; UI.bkConfirm = false; } rerender(); },
+  bkNo: () => { UI.bkConfirm = false; rerender(); },
+  bkYes: () => {
+    const o = parseBackup(UI.bkText); if(!o) return;
+    S = Object.assign(clone(DEFAULT), o); UI.bk = null; UI.bkText = ""; UI.bkConfirm = false;
+    save(); toast("Progres dipulihkan"); rerender();
+  },
+  dict: el => {
+    if(!DICT) return;
+    if(DICT_ON){ DICT.stop().catch(()=>{}); return; }
+    DICT_T = el.dataset.t;
+    DICT.start().catch(e => { if(e && (e.code === "not_granted" || e.code === "unavailable")){ DICT = null; rerender(); } else if(e && e.code !== "stopped" && e.code !== "dismissed") toast("Dikte tidak bisa dimulai"); });
+  }
+};
+function saveBreath(){
+  const v = parseInt(UI.breath, 10);
+  if(v > 0 && v < 600){ if(v > (S.breathBest||0)){ S.breathBest = v; toast("Rekor baru: " + v + " detik"); } UI.breath = ""; }
+}
+
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-act]");
+  if(!el) return;
+  const a = el.dataset.act;
+  if(a === "pre" || a === "sc") return; /* checkboxes handled on change */
+  if(ACT[a]){ if(el.tagName === "BUTTON" || el.tagName === "A") e.preventDefault(); ACT[a](el, e); }
+});
+document.addEventListener("change", e => {
+  const el = e.target;
+  if(el.dataset && el.dataset.act === "pre"){ const d = day(); d.pre = d.pre || {}; d.pre[el.dataset.i] = el.checked ? 1 : 0; save(); }
+  if(el.dataset && el.dataset.act === "sc"){ UI.spon.sc = UI.spon.sc || {}; UI.spon.sc[el.dataset.i] = el.checked; }
+});
+document.addEventListener("input", e => {
+  const el = e.target, id = el.id;
+  if(id === "figQ"){ UI.q = el.value; rerender(); }
+  else if(id === "sponIn") UI.sponText = el.value;
+  else if(id === "guruIn") UI.guruIn = el.value;
+  else if(id === "baitIn") UI.bait = el.value;
+  else if(id === "breathIn") UI.breath = el.value;
+  else if(id === "jTema") UI.j.tema = el.value;
+  else if(id === "jTitik") UI.j.titik = el.value;
+  else if(id === "jOk") UI.j.ok = el.value;
+  else if(id === "jFix") UI.j.fix = el.value;
+  else if(id === "bkInTxt") UI.bkText = el.value;
+});
+document.addEventListener("toggle", e => {
+  const el = e.target;
+  if(el.classList && el.classList.contains("step") && el.dataset.step){ if(el.open) UI.openStep = el.dataset.step; else if(UI.openStep === el.dataset.step) UI.openStep = null; }
+}, true);
+document.addEventListener("keydown", e => {
+  if(e.target && e.target.id === "guruIn" && e.key === "Enter" && (e.metaKey || e.ctrlKey)){ e.preventDefault(); guruSend(UI.guruIn); }
+});
+
+function fromHash(){ const h = (location.hash || "").replace("#",""); if(TABS.some(t => t.id === h)) TAB = h; }
+window.addEventListener("hashchange", () => { const prev = TAB; fromHash(); if(TAB !== prev){ rerender(); window.scrollTo(0,0); } });
+fromHash();
+rerender();
+initCaps();
+if(!IS_CLAUDE && !IS_APK && "serviceWorker" in navigator && location.protocol === "https:"){ try{ navigator.serviceWorker.register("sw.js").catch(() => {}); }catch(e){} }
+</script>
+</body>
+</html>
